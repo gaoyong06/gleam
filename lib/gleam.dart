@@ -1,7 +1,9 @@
+/*
+ * @Author: gaoyong06@qq.com
+ * @Date: 2020-11-04 13:36:23
+ * @Last Modified by: gaoyong06@qq.com
+ * @Last Modified time: 2020-11-04 13:36:23
+ */
 library gleam;
 
-/// A Calculator.
-class Calculator {
-  /// Returns [value] plus 1.
-  int addOne(int value) => value + 1;
-}
+export 'src/tag.dart';

@@ -1,14 +1,16 @@
+|      |      |
+| ---- | ---- |
+|  作者    |  [高勇](mailto:gaoyong06@qq.com) |
+|  创建时间    | 2020-11-04 13:40:00      |
 # gleam
 
-A new Flutter package project.
+一个简单、轻量、可靠的Flutter UI 组件库
 
-## Getting Started
+## 介绍
 
-This project is a starting point for a Dart
-[package](https://flutter.dev/developing-packages/),
-a library module containing code that can be shared easily across
-multiple Flutter or Dart projects.
+在业务开发中经常会有一些常用的组件，将这些常用的组件标准化后，有了这个库
 
-For help getting started with Flutter, view our 
-[online documentation](https://flutter.dev/docs), which offers tutorials, 
-samples, guidance on mobile development, and a full API reference.
+思路上有借鉴[Vant](https://youzan.github.io/vant-weapp/#/intro),
+
+希望gleam是一个简单、轻量、可靠的Flutter UI 组件库
+
