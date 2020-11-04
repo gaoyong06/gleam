@@ -7,3 +7,5 @@
 library gleam;
 
 export 'src/tag.dart';
+export 'src/filled_button.dart';
+export 'src/gleam_outline_button.dart';
