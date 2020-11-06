@@ -10,11 +10,11 @@ import 'package:gleam/style/app_colors.dart';
 import 'package:gleam/style/dimens.dart';
 
 ///占位图Widegt
-class PlaceholderWidget extends StatelessWidget {
+class Placeholder extends StatelessWidget {
   final String assetName;
   final void Function() onPressed;
 
-  const PlaceholderWidget({Key key, this.assetName, this.onPressed})
+  const Placeholder({Key key, this.assetName, this.onPressed})
       : super(key: key);
 
   @override

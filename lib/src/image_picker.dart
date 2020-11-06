@@ -11,6 +11,7 @@ import 'package:wechat_assets_picker/wechat_assets_picker.dart';
 import 'package:wechat_camera_picker/wechat_camera_picker.dart';
 
 ///
+/// 照片选择
 /// 本机图片
 /// 相机+相册
 /// 弹窗ios风格

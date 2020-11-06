@@ -10,8 +10,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:gleam/style/style.dart';
 
-class FormTextFieldTile extends StatefulWidget {
-  const FormTextFieldTile({
+///文本输入框
+class GleamTextField extends StatefulWidget {
+  const GleamTextField({
     Key key,
     @required this.title,
     this.height = 58,
@@ -47,10 +48,10 @@ class FormTextFieldTile extends StatefulWidget {
   final TextAlign textAlign; // textField 的textAlign
 
   @override
-  _FormTextFieldTileState createState() => _FormTextFieldTileState();
+  _GleamTextFieldState createState() => _GleamTextFieldState();
 }
 
-class _FormTextFieldTileState extends State<FormTextFieldTile> {
+class _GleamTextFieldState extends State<GleamTextField> {
   TextEditingController _controller = TextEditingController();
 
   @override
