@@ -12,10 +12,6 @@ import 'package:flutter/material.dart';
 ///
 ///
 ///文字水平
-const horizontal = 6;
-const vertical = 2;
-const width = 0.5;
-
 class Tag extends StatelessWidget {
   //是否为空心样式
   final bool plain;
