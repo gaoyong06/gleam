@@ -20,10 +20,14 @@ import 'package:gleam/style/style.dart';
 ///     暂无内容
 ///
 class Empty extends StatelessWidget {
+  //
+  final dynamic imgPath;
+  //描述文字
   final String emptyText;
-  final String imgPath;
+  //底部控件
+  final Widget bottomWidget;
 
-  Empty({this.emptyText, this.imgPath});
+  Empty({this.imgPath, this.emptyText, this.bottomWidget});
 
   @override
   Widget build(BuildContext context) {
@@ -38,6 +42,8 @@ class Empty extends StatelessWidget {
           ),
           SizedBox(height: ScreenUtil().setWidth(Dimens.gapDp20)),
           Text(emptyText ?? "暂无内容", style: Style.ts_999999_14),
+          SizedBox(height: ScreenUtil().setWidth(Dimens.gapDp20)),
+          bottomWidget ?? Container()
         ],
       ),
     );

@@ -9,6 +9,7 @@ import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:gleam/gleam.dart';
 import 'package:gleam/style/style.dart';
+import 'package:gleam_example/pages/empty_page.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
@@ -16,9 +17,6 @@ void main() {
   //强制竖屏
   SystemChrome.setPreferredOrientations(
       [DeviceOrientation.portraitUp, DeviceOrientation.portraitDown]);
-
-  //设置适配尺寸 (填入设计稿中设备的屏幕尺寸) 此处假如设计稿是按iPhone6的尺寸设计的(iPhone6 750*1334)
-  ScreenUtil.init(designSize: Size(750 / 2, 1334 / 2), allowFontScaling: false);
   runApp(MyApp());
 }
 
@@ -48,6 +46,9 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
+    //设置适配尺寸 (填入设计稿中设备的屏幕尺寸) 此处假如设计稿是按iPhone6的尺寸设计的(iPhone6 750*1334)
+    ScreenUtil.init(context,
+        designSize: Size(750 / 2, 1334 / 2), allowFontScaling: false);
     return Scaffold(
       appBar: AppBar(
         title: Text(widget.title),
@@ -98,7 +99,12 @@ class _MyHomePageState extends State<MyHomePage> {
           GleamOutlineButton(
             margin: EdgeInsets.only(top: 10.0),
             text: 'Empty 空状态',
-            onPressed: () {},
+            onPressed: () {
+              Navigator.push(
+                context,
+                new MaterialPageRoute(builder: (context) => EmptyPage()),
+              );
+            },
           ),
           GleamOutlineButton(
             margin: EdgeInsets.only(top: 10.0),

@@ -99,11 +99,13 @@ class GleamImage extends StatelessWidget {
     } else if (image is AssetEntity) {
       imageProvider = AssetEntityImageProvider(image, isOriginal: isOriginal);
     } else if (image is File) {
+      print("#### FileImage #####");
       imageProvider = FileImage(image);
     } else if (image is Uint8List) {
       imageProvider = MemoryImage(image);
     } else {
-      imageProvider = AssetImage(image);
+      print("#### AssetImage #####");
+      imageProvider = AssetImage(image, bundle: null, package: 'gleam');
     }
 
     return ExtendedImage(
