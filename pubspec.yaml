@@ -17,6 +17,7 @@ dependencies:
   wechat_assets_picker: ^4.2.1
   wechat_camera_picker: ^1.2.0
   flutter_custom_dialog: ^1.0.20
+  string_validator: ^0.1.4
 
 dev_dependencies:
   flutter_test:

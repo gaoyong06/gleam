@@ -8,6 +8,7 @@ import 'dart:io';
 
 import 'package:flutter/material.dart';
 import 'package:gleam/gleam.dart';
+import 'package:gleam/style/style.dart';
 import 'package:gleam_example/r.dart';
 
 class EmptyPage extends StatelessWidget {
@@ -17,7 +18,10 @@ class EmptyPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Empty 空状态"),
+        title: Text(
+          "Empty 空状态",
+          style: Style.ts_FFFFFF_18_bold,
+        ),
       ),
       body: ListView(
         padding: EdgeInsets.symmetric(vertical: 0, horizontal: 16.0),

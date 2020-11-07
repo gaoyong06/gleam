@@ -9,7 +9,9 @@ import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:gleam/gleam.dart';
 import 'package:gleam/style/style.dart';
+import 'package:gleam_example/pages/bottom_sheet_page.dart';
 import 'package:gleam_example/pages/empty_page.dart';
+import 'package:oktoast/oktoast.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
@@ -23,14 +25,16 @@ void main() {
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false, //去掉Flutter右上角的debug
-      title: 'gleam example',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-        visualDensity: VisualDensity.adaptivePlatformDensity,
+    return OKToast(
+      child: MaterialApp(
+        debugShowCheckedModeBanner: false, //去掉Flutter右上角的debug
+        title: 'gleam example',
+        theme: ThemeData(
+          primarySwatch: Colors.blue,
+          visualDensity: VisualDensity.adaptivePlatformDensity,
+        ),
+        home: MyHomePage(title: 'gleam example'),
       ),
-      home: MyHomePage(title: 'gleam example'),
     );
   }
 }
@@ -51,7 +55,10 @@ class _MyHomePageState extends State<MyHomePage> {
         designSize: Size(750 / 2, 1334 / 2), allowFontScaling: false);
     return Scaffold(
       appBar: AppBar(
-        title: Text(widget.title),
+        title: Text(
+          widget.title,
+          style: Style.ts_FFFFFF_18_bold,
+        ),
       ),
       body: ListView(
         padding: EdgeInsets.symmetric(vertical: 0, horizontal: 16.0),
@@ -89,7 +96,12 @@ class _MyHomePageState extends State<MyHomePage> {
           GleamOutlineButton(
             margin: EdgeInsets.only(top: 10.0),
             text: 'BottomSheet 底部菜单弹窗',
-            onPressed: () {},
+            onPressed: () {
+              Navigator.push(
+                context,
+                new MaterialPageRoute(builder: (context) => BottomSheetPage()),
+              );
+            },
           ),
           GleamOutlineButton(
             margin: EdgeInsets.only(top: 10.0),

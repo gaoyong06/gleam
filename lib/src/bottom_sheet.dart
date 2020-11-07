@@ -7,12 +7,48 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:gleam/style/style.dart';
+import 'package:string_validator/string_validator.dart';
 
 ///底部上拉菜单
-showBottomSheet(BuildContext context, List<Widget> itemList) {
-  List<Widget> list = itemList;
-  list.add(Container(color: Color(0xffF0F0F0), height: 5.w));
-  list.add(BottomSheetAction('取消', hiddenLine: true));
+showGleamBottomSheet(
+  BuildContext context, {
+  List<Widget> actions,
+  Widget contentWidget,
+  dynamic description,
+  String cancelText,
+  GestureTapCallback onCancelTap,
+}) {
+  List<Widget> list = [];
+
+  //描述信息
+  if (description != null) {
+    list.add(description);
+    list.add(Container(
+      height: 1,
+      decoration: BoxDecoration(
+        color: Color(0x4dd8d8d8),
+        borderRadius: BorderRadius.all(Radius.circular(1)),
+      ),
+    ));
+  }
+
+  //选择项列表
+  if (actions is List && actions.length > 0) {
+    list.addAll(actions);
+  }
+
+  //取消
+  if (!isNull(cancelText)) {
+    list.add(Container(color: Color(0xffF0F0F0), height: 5.w));
+    list.add(
+        BottomSheetAction(cancelText, onTap: onCancelTap, hiddenDivider: true));
+  }
+
+  Widget bodyWidget = Column(
+    mainAxisSize: MainAxisSize.min,
+    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+    children: list,
+  );
 
   showModalBottomSheet(
     context: context,
@@ -25,11 +61,7 @@ showBottomSheet(BuildContext context, List<Widget> itemList) {
           borderRadius: BorderRadius.only(
               topLeft: Radius.circular(10.w), topRight: Radius.circular(10.w)),
         ),
-        child: Column(
-          mainAxisSize: MainAxisSize.min,
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          children: list,
-        ),
+        child: contentWidget ?? bodyWidget,
       );
     },
   );
@@ -40,23 +72,23 @@ class BottomSheetAction extends StatelessWidget {
   final dynamic item;
   final double height;
   final GestureTapCallback onTap;
-  final bool hiddenLine;
+  final bool hiddenDivider;
 
   BottomSheetAction(this.item,
-      {this.onTap, this.height = 50, this.hiddenLine = false});
+      {this.onTap, this.height = 50, this.hiddenDivider = false});
 
   @override
   Widget build(BuildContext context) {
-    var title;
+    var action;
     if (item is String) {
-      title = Text(
+      action = Text(
         item,
         style: Style.ts_333333_15,
       );
     } else if (item is Widget) {
-      title = item;
+      action = item;
     } else {
-      title = Container();
+      action = Container();
     }
 
     return GestureDetector(
@@ -70,11 +102,11 @@ class BottomSheetAction extends StatelessWidget {
         child: Stack(
           alignment: Alignment.center,
           children: <Widget>[
-            title,
+            action,
             Align(
               alignment: Alignment.bottomCenter,
               child: Offstage(
-                offstage: hiddenLine,
+                offstage: hiddenDivider,
                 child: Container(
                   height: 1,
                   decoration: BoxDecoration(
