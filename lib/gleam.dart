@@ -10,7 +10,7 @@ export 'src/bottom_sheet.dart';
 export 'src/dialog.dart';
 export 'src/empty.dart';
 export 'src/filled_button.dart';
-export 'src/form_textfield_tile.dart';
+export 'src/gleam_textfield.dart';
 export 'src/gleam_icon.dart';
 export 'src/gleam_image.dart';
 export 'src/gleam_outline_button.dart';

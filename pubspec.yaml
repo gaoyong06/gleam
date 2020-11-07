@@ -12,7 +12,7 @@ dependencies:
   flutter:
     sdk: flutter
 
-  flutter_screenutil: 3.0.2+1
+  flutter_screenutil: ^3.2.0
   extended_image: ^1.1.2
   wechat_assets_picker: ^4.2.1
   wechat_camera_picker: ^1.2.0
@@ -21,9 +21,6 @@ dependencies:
 dev_dependencies:
   flutter_test:
     sdk: flutter
-
-  gleam:
-    path: ../
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec

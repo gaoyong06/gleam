@@ -1,4 +1,4 @@
-# example
+# gleam_example
 
 A new Flutter project.
 

@@ -8,7 +8,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:gleam/style/style.dart';
 
-///底部菜单弹窗
+///底部上拉菜单
 showBottomSheet(BuildContext context, List<Widget> itemList) {
   List<Widget> list = itemList;
   list.add(Container(color: Color(0xffF0F0F0), height: 5.w));
