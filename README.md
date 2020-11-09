@@ -24,7 +24,7 @@
 ​	底部弹出的菜单
 
 ###### 示意图
-<img src="https://github.com/gaoyong06/gleam/blob/master/doc/1604912567034167.gif" style="zoom:40%"/>
+<img src="https://github.com/gaoyong06/gleam/blob/master/doc/1604912567034167.gif" style="max-width: 40%;"/>
 
 
 |  <img src="https://ww1.sinaimg.cn/mw690/00019562gy1gkj1gbkf8kj20u01t0tbu.jpg" style="zoom:40%"/>    | <img src="https://ww1.sinaimg.cn/mw690/00019562gy1gkj1gq2kx0j20u01t077m.jpg" style="zoom:40%"/>     |   <img src="https://ww1.sinaimg.cn/mw690/00019562gy1gkj1h1fc9jj20u01t0424.jpg" style="zoom:40%"/>   |   <img src="https://ww1.sinaimg.cn/mw690/00019562gy1gkj1h9l63pj20u01t0tce.jpg" style="zoom:40%"/>   |   <img src="https://ww1.sinaimg.cn/mw690/00019562gy1gkj1hrawwyj20u01t0q61.jpg" style="zoom:40%"/>   |
