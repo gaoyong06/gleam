@@ -14,14 +14,23 @@
 
 ## 安装
 
-​	第一步：在项目的pubspec.yaml中在增加下面配置：gleam: ^1.0.0
-​	第二步：然后在项目根目录(pubspec.yaml 所在的目录)执行命令：flutter pub get
+1. 在项目的pubspec.yaml中在增加下面配置：gleam: ^1.0.0
+2. 第二步：然后在项目根目录(pubspec.yaml 所在的目录)执行命令：flutter pub get
 
-## UI 组件介绍
+## 介绍
 
 ##### BottomSheet 底部菜单弹窗
 
 ​	底部弹出的菜单
+
+###### 示意图
+<img src="http://ww1.sinaimg.cn/large/00019562ly1gkj165p0pvg20cg0qokjq.gif" style="zoom:70%" />
+
+
+|  <img src="http://ww1.sinaimg.cn/mw690/00019562ly1gkj0l1xlnbj20u01t0424.jpg" style="zoom:40%"/>    | <img src="http://ww1.sinaimg.cn/mw690/00019562ly1gkj0l88pr8j20u01t077m.jpg" style="zoom:40%"/>     |   <img src="http://ww1.sinaimg.cn/mw690/00019562ly1gkj0lfk10kj20u01t0tbu.jpg" style="zoom:40%"/>   |   <img src="http://ww1.sinaimg.cn/mw690/00019562ly1gkj08mkrolj20u01t0tce.jpg" style="zoom:40%"/>   |   <img src="http://ww1.sinaimg.cn/large/00019562ly1gkj01hz0v6j20u01t0q61.jpg" style="zoom:40%"/>   |
+| ---- | ---- | ---- | ---- | ---- |
+|  基础用法    |   展示取消按钮   |   展示描述信息   |  选项状态    |  自定义面板   |
+
 
 调用showGleamBottomSheet函数后弹出的底部菜单弹窗，其中操作项使用**BottomSheetAction**组件
 
