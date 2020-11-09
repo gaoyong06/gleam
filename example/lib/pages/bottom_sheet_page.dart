@@ -7,6 +7,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:gleam/gleam.dart';
+import 'package:gleam/style/app_colors.dart';
 import 'package:gleam/style/style.dart';
 import 'package:oktoast/oktoast.dart';
 
@@ -175,11 +176,43 @@ class BottomSheetPage extends StatelessWidget {
             onTap: () {
               showGleamBottomSheet(
                 context,
-                // actions: [],
                 contentWidget: Container(
                   height: 200.0,
-                  child: Center(
-                    child: Text('内容'),
+                  child: Stack(
+                    children: [
+                      Positioned(
+                        top: 0,
+                        right: 0,
+                        child: IconButton(
+                          icon: Icon(Icons.close),
+                          color: AppColors.clA1A1A1,
+                          onPressed: () {
+                            Navigator.of(context).pop();
+                          },
+                        ),
+                      ),
+                      Column(
+                        children: [
+                          SizedBox(
+                            height: 16.0,
+                          ),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Text(
+                                "标题",
+                                style: Style.ts_333333_15_bold,
+                              )
+                            ],
+                          ),
+                          Expanded(
+                            child: Center(
+                              child: Text('内容'),
+                            ),
+                          ),
+                        ],
+                      ),
+                    ],
                   ),
                 ),
               );
