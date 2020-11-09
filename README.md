@@ -24,10 +24,10 @@
 ​	底部弹出的菜单
 
 ###### 示意图
-<img src="http://ww1.sinaimg.cn/large/00019562ly1gkj165p0pvg20cg0qokjq.gif" style="zoom:70%" />
+<img src="https://ww1.sinaimg.cn/mw690/00019562gy1gkj1fqzoirg20cg0qokjq.gif" style="zoom:70%" />
 
 
-|  <img src="http://ww1.sinaimg.cn/mw690/00019562ly1gkj0l1xlnbj20u01t0424.jpg" style="zoom:40%"/>    | <img src="http://ww1.sinaimg.cn/mw690/00019562ly1gkj0l88pr8j20u01t077m.jpg" style="zoom:40%"/>     |   <img src="http://ww1.sinaimg.cn/mw690/00019562ly1gkj0lfk10kj20u01t0tbu.jpg" style="zoom:40%"/>   |   <img src="http://ww1.sinaimg.cn/mw690/00019562ly1gkj08mkrolj20u01t0tce.jpg" style="zoom:40%"/>   |   <img src="http://ww1.sinaimg.cn/large/00019562ly1gkj01hz0v6j20u01t0q61.jpg" style="zoom:40%"/>   |
+|  <img src="https://ww1.sinaimg.cn/mw690/00019562gy1gkj1gbkf8kj20u01t0tbu.jpg" style="zoom:40%"/>    | <img src="https://ww1.sinaimg.cn/mw690/00019562gy1gkj1gq2kx0j20u01t077m.jpg" style="zoom:40%"/>     |   <img src="https://ww1.sinaimg.cn/mw690/00019562gy1gkj1h1fc9jj20u01t0424.jpg" style="zoom:40%"/>   |   <img src="https://ww1.sinaimg.cn/mw690/00019562gy1gkj1h9l63pj20u01t0tce.jpg" style="zoom:40%"/>   |   <img src="https://ww1.sinaimg.cn/mw690/00019562gy1gkj1hrawwyj20u01t0q61.jpg" style="zoom:40%"/>   |
 | ---- | ---- | ---- | ---- | ---- |
 |  基础用法    |   展示取消按钮   |   展示描述信息   |  选项状态    |  自定义面板   |
 
