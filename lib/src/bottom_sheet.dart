@@ -10,6 +10,12 @@ import 'package:gleam/style/style.dart';
 import 'package:string_validator/string_validator.dart';
 
 ///底部上拉菜单
+/// context 上下文
+/// actions 操作项列表
+/// contentWidget 内容区域Widget (如果设置contentWidget，则actions、description、cancelText、onCancelTap的设置不生效)
+/// description 顶部显示的描述(可以是文字或者Widget)
+/// cancelText 取消文案（没有设置则不显示“取消”按钮）
+/// onCancelTap 取消按钮点击回调方法
 showGleamBottomSheet(
   BuildContext context, {
   List<Widget> actions,
@@ -67,6 +73,11 @@ showGleamBottomSheet(
   );
 }
 
+///操作项
+/// item 操作项(可以是文字或者Widget)
+/// height 操作项高度
+/// onTap 操作项点击回调方法
+/// hiddenDivider 是否隐藏操作项下方分割线
 class BottomSheetAction extends StatelessWidget {
   //string / widget
   final dynamic item;

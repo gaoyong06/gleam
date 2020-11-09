@@ -12,11 +12,181 @@
 
 希望gleam是一个简单、轻量、可靠的Flutter UI 组件库
 
-## UI 组件
+## 安装
+
+​	第一步：在项目的pubspec.yaml中在增加下面配置：gleam: ^1.0.0
+​	第二步：然后在项目根目录(pubspec.yaml 所在的目录)执行命令：flutter pub get
+
+## UI 组件介绍
 
 ##### BottomSheet 底部菜单弹窗
 
 ​	底部弹出的菜单
+
+调用showGleamBottomSheet函数后弹出的底部菜单弹窗，其中操作项使用**BottomSheetAction**组件
+
+###### 	参数说明
+
+| 参数名称      | 说明                                                         | 类型               | 默认值 |
+| ------------- | ------------------------------------------------------------ | ------------------ | ------ |
+| context       | 上下文                                                       | BuildContext       | -      |
+| actions       | 操作项列表                                                   | List<Widget>       | -      |
+| contentWidget | 内容区域Widget (如果设置contentWidget，则actions、description、cancelText、onCancelTap的设置不生效) | Widget             | -      |
+| description   | 顶部显示的描述(可以是文字或者Widget)                         | dynamic            | -      |
+| cancelText    | 取消文案（没有设置则不显示“取消”按钮）                       | String             | -      |
+| onCancelTap   | 取消按钮点击回调方法                                         | GestureTapCallback | -      |
+
+**BottomSheetAction**组件属性说明
+
+| 属性名称      | 说明                         | 类型               | 默认值 |
+| ------------- | ---------------------------- | ------------------ | ------ |
+| item          | 操作项(可以是文字或者Widget) | dynamic            | -      |
+| height        | 操作项高度                   | double             | 50     |
+| onTap         | 操作项点击回调方法           | GestureTapCallback | -      |
+| hiddenDivider | 是否隐藏操作项下方分割线     | bool               | false  |
+
+###### 	代码演示
+
+```dart
+//基础用法
+showGleamBottomSheet(context, actions: [
+  BottomSheetAction('选项一', onTap: () {
+    showToast('选项一');
+  }),
+  BottomSheetAction('选项二', hiddenDivider: true, onTap: () {
+    showToast('选项二');
+  }),
+]);
+
+//展示取消按钮
+showGleamBottomSheet(
+  context,
+  actions: [
+    BottomSheetAction('选项一', onTap: () {
+      showToast('选项一');
+    }),
+    BottomSheetAction(
+      '选项二',
+      hiddenDivider: true,
+      onTap: () {
+        showToast('选项二');
+      },
+    ),
+  ],
+  cancelText: '取消',
+  onCancelTap: () {
+    showToast('取消');
+  },
+);
+
+//展示描述信息
+showGleamBottomSheet(
+  context,
+  actions: [
+    BottomSheetAction('选项一', onTap: () {
+      showToast('选项一');
+    }),
+    BottomSheetAction(
+      '选项二',
+      hiddenDivider: true,
+      onTap: () {
+        showToast('选项二');
+      },
+    ),
+  ],
+  description: Container(
+    padding: EdgeInsets.only(top: 20.0, bottom: 20.0),
+    height: 60.0,
+    child: Text(
+      '这是描述信息',
+      style: Style.ts_999999_15,
+    ),
+  ),
+  cancelText: '取消',
+  onCancelTap: () {
+    showToast('取消');
+  },
+);
+
+//选项状态
+showGleamBottomSheet(
+  context,
+  actions: [
+    BottomSheetAction(
+      Text(
+        '着色选项',
+        style: Style.ts_FF0000_15,
+      ), onTap: () {
+        showToast('着色状态');
+      }),
+    BottomSheetAction(
+      Text(
+        '禁用选项',
+        style: Style.ts_999999_15,
+      ),
+      onTap: null,
+    ),
+    BottomSheetAction(
+      CupertinoActivityIndicator(),
+      hiddenDivider: true,
+      onTap: () {
+        showToast('loading...');
+      },
+    ),
+  ],
+  cancelText: '取消',
+  onCancelTap: () {
+    showToast('取消');
+  },
+);
+
+//自定义面板
+showGleamBottomSheet(
+  context,
+  contentWidget: Container(
+    height: 200.0,
+    child: Stack(
+      children: [
+        Positioned(
+          top: 0,
+          right: 0,
+          child: IconButton(
+            icon: Icon(Icons.close),
+            color: AppColors.clA1A1A1,
+            onPressed: () {
+              Navigator.of(context).pop();
+            },
+          ),
+        ),
+        Column(
+          children: [
+            SizedBox(
+              height: 16.0,
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Text(
+                  "标题",
+                  style: Style.ts_333333_15_bold,
+                )
+              ],
+            ),
+            Expanded(
+              child: Center(
+                child: Text('内容'),
+              ),
+            ),
+          ],
+        ),
+      ],
+    ),
+  ),
+              );
+```
+
+
+
 
 ##### Dialog 弹出框
 
@@ -71,7 +241,7 @@
 ​	文字，或者图标+
 
 ## 依赖
-    
+
 
 
 
