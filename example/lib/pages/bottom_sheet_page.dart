@@ -27,8 +27,14 @@ class BottomSheetPage extends StatelessWidget {
         children: ListTile.divideTiles(context: context, tiles: [
           //基础用法
           ListTile(
-            title: Text('基础用法'),
-            trailing: Icon(Icons.arrow_forward_ios_outlined),
+            title: Text(
+              '基础用法',
+              style: Style.ts_333333_15,
+            ),
+            trailing: Icon(
+              Icons.arrow_forward_ios_outlined,
+              size: 20,
+            ),
             onTap: () {
               showGleamBottomSheet(context, actions: [
                 BottomSheetAction('选项一', onTap: () {
@@ -43,8 +49,11 @@ class BottomSheetPage extends StatelessWidget {
 
           //展示取消按钮
           ListTile(
-            title: Text('展示取消按钮'),
-            trailing: Icon(Icons.arrow_forward_ios_outlined),
+            title: Text(
+              '展示取消按钮',
+              style: Style.ts_333333_15,
+            ),
+            trailing: Icon(Icons.arrow_forward_ios_outlined, size: 20),
             onTap: () {
               showGleamBottomSheet(
                 context,
@@ -70,8 +79,14 @@ class BottomSheetPage extends StatelessWidget {
 
           //展示描述信息
           ListTile(
-            title: Text('展示描述信息'),
-            trailing: Icon(Icons.arrow_forward_ios_outlined),
+            title: Text(
+              '展示描述信息',
+              style: Style.ts_333333_15,
+            ),
+            trailing: Icon(
+              Icons.arrow_forward_ios_outlined,
+              size: 20,
+            ),
             onTap: () {
               showGleamBottomSheet(
                 context,
@@ -105,8 +120,14 @@ class BottomSheetPage extends StatelessWidget {
 
           //选项状态
           ListTile(
-            title: Text('选项状态'),
-            trailing: Icon(Icons.arrow_forward_ios_outlined),
+            title: Text(
+              '选项状态',
+              style: Style.ts_333333_15,
+            ),
+            trailing: Icon(
+              Icons.arrow_forward_ios_outlined,
+              size: 20,
+            ),
             onTap: () {
               showGleamBottomSheet(
                 context,
@@ -143,8 +164,14 @@ class BottomSheetPage extends StatelessWidget {
 
           //自定义面板
           ListTile(
-            title: Text('自定义面板'),
-            trailing: Icon(Icons.arrow_forward_ios_outlined),
+            title: Text(
+              '自定义面板',
+              style: Style.ts_333333_15,
+            ),
+            trailing: Icon(
+              Icons.arrow_forward_ios_outlined,
+              size: 20,
+            ),
             onTap: () {
               showGleamBottomSheet(
                 context,
