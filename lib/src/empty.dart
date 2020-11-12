@@ -39,6 +39,7 @@ class Empty extends StatelessWidget {
             width: ScreenUtil().setWidth(200),
             height: ScreenUtil().setWidth(120),
             image: imgPath ?? R.assetsImagesBgEmpty,
+            fit: BoxFit.cover,
           ),
           SizedBox(height: ScreenUtil().setWidth(Dimens.gapDp20)),
           Text(emptyText ?? "暂无内容", style: Style.ts_999999_14),

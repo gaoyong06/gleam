@@ -11,7 +11,7 @@ import 'package:gleam/style/app_colors.dart';
 import 'package:gleam/style/style.dart';
 import 'package:oktoast/oktoast.dart';
 
-///BottomSheet底部菜单弹窗
+///BottomSheetPage底部菜单弹窗示例程序
 class BottomSheetPage extends StatelessWidget {
   const BottomSheetPage({Key key}) : super(key: key);
 

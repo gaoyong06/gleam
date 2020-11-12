@@ -7,7 +7,7 @@
 library gleam;
 
 export 'src/bottom_sheet.dart';
-export 'src/dialog.dart';
+export 'src/gleam_dialog.dart';
 export 'src/empty.dart';
 export 'src/filled_button.dart';
 export 'src/gleam_textfield.dart';

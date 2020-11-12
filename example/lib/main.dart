@@ -11,6 +11,7 @@ import 'package:gleam/gleam.dart';
 import 'package:gleam/style/style.dart';
 import 'package:gleam_example/pages/bottom_sheet_page.dart';
 import 'package:gleam_example/pages/empty_page.dart';
+import 'package:gleam_example/pages/gleam_dialog_page.dart';
 import 'package:oktoast/oktoast.dart';
 
 void main() {
@@ -106,7 +107,13 @@ class _MyHomePageState extends State<MyHomePage> {
           GleamOutlineButton(
             margin: EdgeInsets.only(top: 10.0),
             text: 'Dialog 弹出框',
-            onPressed: () {},
+            onPressed: () {
+              print("11111111111111111111111111");
+              Navigator.push(
+                context,
+                new MaterialPageRoute(builder: (context) => GleamDialogPage()),
+              );
+            },
           ),
           GleamOutlineButton(
             margin: EdgeInsets.only(top: 10.0),
