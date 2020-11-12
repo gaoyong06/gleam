@@ -10,7 +10,7 @@ import 'package:gleam/gleam.dart';
 import 'package:gleam/style/style.dart';
 import 'package:oktoast/oktoast.dart';
 
-///GleamDialogPage弹出模态框示例程序
+/// GleamDialogPage弹出模态框示例程序
 class GleamDialogPage extends StatefulWidget {
   GleamDialogPage({Key key}) : super(key: key);
 

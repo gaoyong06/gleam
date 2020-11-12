@@ -11,6 +11,7 @@ import 'package:gleam/gleam.dart';
 import 'package:gleam/style/style.dart';
 import 'package:gleam_example/r.dart';
 
+/// EmptyPage空状态示例程序
 class EmptyPage extends StatelessWidget {
   const EmptyPage({Key key}) : super(key: key);
 

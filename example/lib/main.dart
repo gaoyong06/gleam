@@ -11,7 +11,18 @@ import 'package:gleam/gleam.dart';
 import 'package:gleam/style/style.dart';
 import 'package:gleam_example/pages/bottom_sheet_page.dart';
 import 'package:gleam_example/pages/empty_page.dart';
+import 'package:gleam_example/pages/filled_button_page.dart';
 import 'package:gleam_example/pages/gleam_dialog_page.dart';
+import 'package:gleam_example/pages/gleam_icon_page.dart';
+import 'package:gleam_example/pages/gleam_image_page.dart';
+import 'package:gleam_example/pages/gleam_outline_button_page.dart';
+import 'package:gleam_example/pages/gleam_text_button_page.dart';
+import 'package:gleam_example/pages/gleam_text_field_page.dart';
+import 'package:gleam_example/pages/image_picker_page.dart';
+import 'package:gleam_example/pages/placeholder_page.dart';
+import 'package:gleam_example/pages/search_page.dart';
+import 'package:gleam_example/pages/share_sheet_page.dart';
+import 'package:gleam_example/pages/tag_page.dart';
 import 'package:oktoast/oktoast.dart';
 
 void main() {
@@ -106,9 +117,8 @@ class _MyHomePageState extends State<MyHomePage> {
           ),
           GleamOutlineButton(
             margin: EdgeInsets.only(top: 10.0),
-            text: 'Dialog 弹出框',
+            text: 'GleamDialog 弹出框',
             onPressed: () {
-              print("11111111111111111111111111");
               Navigator.push(
                 context,
                 new MaterialPageRoute(builder: (context) => GleamDialogPage()),
@@ -128,67 +138,115 @@ class _MyHomePageState extends State<MyHomePage> {
           GleamOutlineButton(
             margin: EdgeInsets.only(top: 10.0),
             text: 'FilledButton 填充按钮',
-            onPressed: () {},
+            onPressed: () {
+              Navigator.push(
+                context,
+                new MaterialPageRoute(builder: (context) => FilledButtonPage()),
+              );
+            },
           ),
           GleamOutlineButton(
             margin: EdgeInsets.only(top: 10.0),
             text: 'GleamOutlineButton 细边框按钮',
-            onPressed: () {},
+            onPressed: () {
+              Navigator.push(
+                context,
+                new MaterialPageRoute(
+                    builder: (context) => GleamOutlineButtonPage()),
+              );
+            },
           ),
           GleamOutlineButton(
             margin: EdgeInsets.only(top: 10.0),
             text: 'GleamTextButton 文字按钮',
-            onPressed: () {},
-          ),
-          GleamOutlineButton(
-            margin: EdgeInsets.only(top: 10.0),
-            text: 'GleamOutlineButton 细边框按钮',
-            onPressed: () {},
-          ),
-          GleamOutlineButton(
-            margin: EdgeInsets.only(top: 10.0),
-            text: 'GleamTextButton 文字按钮',
-            onPressed: () {},
+            onPressed: () {
+              Navigator.push(
+                context,
+                new MaterialPageRoute(
+                    builder: (context) => GleamTextButtonPage()),
+              );
+            },
           ),
           GleamOutlineButton(
             margin: EdgeInsets.only(top: 10.0),
             text: 'GleamTextField 文本输入框',
-            onPressed: () {},
+            onPressed: () {
+              Navigator.push(
+                context,
+                new MaterialPageRoute(
+                    builder: (context) => GleamTextFieldPage()),
+              );
+            },
           ),
           GleamOutlineButton(
             margin: EdgeInsets.only(top: 10.0),
             text: 'GleamIcon 图标',
-            onPressed: () {},
+            onPressed: () {
+              Navigator.push(
+                context,
+                new MaterialPageRoute(builder: (context) => GleamIconPage()),
+              );
+            },
           ),
           GleamOutlineButton(
             margin: EdgeInsets.only(top: 10.0),
             text: 'GleamImage 图片',
-            onPressed: () {},
+            onPressed: () {
+              Navigator.push(
+                context,
+                new MaterialPageRoute(builder: (context) => GleamImagePage()),
+              );
+            },
           ),
           GleamOutlineButton(
             margin: EdgeInsets.only(top: 10.0),
             text: 'ImagePicker 照片选择',
-            onPressed: () {},
+            onPressed: () {
+              Navigator.push(
+                context,
+                new MaterialPageRoute(builder: (context) => ImagePickerPage()),
+              );
+            },
           ),
           GleamOutlineButton(
             margin: EdgeInsets.only(top: 10.0),
             text: 'Placeholder 占位状态',
-            onPressed: () {},
+            onPressed: () {
+              Navigator.push(
+                context,
+                new MaterialPageRoute(builder: (context) => PlaceholderPage()),
+              );
+            },
           ),
           GleamOutlineButton(
             margin: EdgeInsets.only(top: 10.0),
             text: 'Search 搜索',
-            onPressed: () {},
+            onPressed: () {
+              Navigator.push(
+                context,
+                new MaterialPageRoute(builder: (context) => SearchPage()),
+              );
+            },
           ),
           GleamOutlineButton(
             margin: EdgeInsets.only(top: 10.0),
             text: 'ShareSheet 分享面板',
-            onPressed: () {},
+            onPressed: () {
+              Navigator.push(
+                context,
+                new MaterialPageRoute(builder: (context) => ShareSheetPage()),
+              );
+            },
           ),
           GleamOutlineButton(
             margin: EdgeInsets.only(top: 10.0),
             text: 'Tag 标签',
-            onPressed: () {},
+            onPressed: () {
+              Navigator.push(
+                context,
+                new MaterialPageRoute(builder: (context) => TagPage()),
+              );
+            },
           ),
           SizedBox(
             height: 40.0,
