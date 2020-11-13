@@ -11,22 +11,23 @@ import 'package:gleam/gleam.dart';
 import 'package:gleam/style/app_colors.dart';
 import 'package:gleam/style/style.dart';
 import 'package:oktoast/oktoast.dart';
+// import 'package:flutter/src/material/button_style.dart';
 
-/// FilledButtonPage填充按钮示例程序
-class FilledButtonPage extends StatefulWidget {
-  FilledButtonPage({Key key}) : super(key: key);
+/// GleamButtonPage填充按钮示例程序
+class GleamButtonPage extends StatefulWidget {
+  GleamButtonPage({Key key}) : super(key: key);
 
   @override
-  _FilledButtonPageState createState() => _FilledButtonPageState();
+  _GleamButtonPageState createState() => _GleamButtonPageState();
 }
 
-class _FilledButtonPageState extends State<FilledButtonPage> {
+class _GleamButtonPageState extends State<GleamButtonPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         title: Text(
-          "FilledButton 填充按钮",
+          "GleamButton 填充按钮",
           style: Style.ts_FFFFFF_18_bold,
         ),
       ),
@@ -38,12 +39,68 @@ class _FilledButtonPageState extends State<FilledButtonPage> {
             SizedBox(
               height: 40.0,
             ),
+
+            Text("按钮风格"),
+            SizedBox(
+              height: 16.0,
+            ),
+            GleamButton(
+              gleamButtonStyle: GleamButtonStyle.flatButton,
+              text: '内容填充按钮',
+              width: 114.0,
+              buttonType: ButtonType.primary,
+              buttonSize: ButtonSize.normal,
+              onPressed: () {
+                showToast('内容填充按钮');
+              },
+            ),
+            SizedBox(
+              height: 16.0,
+            ),
+            GleamButton(
+              gleamButtonStyle: GleamButtonStyle.outlineButton,
+              text: '细边框按钮',
+              width: 114.0,
+              textColor: AppColors.cl333333,
+              buttonType: ButtonType.primary,
+              buttonSize: ButtonSize.normal,
+              onPressed: () {
+                showToast('细边框按钮');
+              },
+            ),
+
+            SizedBox(
+              height: 16.0,
+            ),
+
+            GleamButton(
+              gleamButtonStyle: GleamButtonStyle.textButton,
+              text: '文字按钮',
+              width: 114.0,
+              textColor: AppColors.cl5791F3,
+              buttonSize: ButtonSize.normal,
+              onPressed: () {
+                showToast('文字按钮');
+              },
+            ),
+            SizedBox(
+              height: 16.0,
+            ),
+            // GleamButton(
+            //   text: '主要按钮',
+            //   buttonType: ButtonType.primary,
+            //   buttonSize: ButtonSize.normal,
+            //   onPressed: () {
+            //     showToast('主要按钮');
+            //   },
+            // ),
+
             Text("按钮类型"),
             SizedBox(
               height: 16.0,
             ),
             //主要按钮
-            FilledButton(
+            GleamButton(
               text: '主要按钮',
               buttonType: ButtonType.primary,
               buttonSize: ButtonSize.normal,
@@ -56,7 +113,7 @@ class _FilledButtonPageState extends State<FilledButtonPage> {
               height: 16.0,
             ),
             //信息按钮
-            FilledButton(
+            GleamButton(
               text: '信息按钮',
               buttonType: ButtonType.info,
               buttonSize: ButtonSize.normal,
@@ -69,7 +126,7 @@ class _FilledButtonPageState extends State<FilledButtonPage> {
               height: 16.0,
             ),
             //默认按钮
-            FilledButton(
+            GleamButton(
               text: '默认按钮',
               buttonType: ButtonType.defaulted,
               buttonSize: ButtonSize.normal,
@@ -82,7 +139,7 @@ class _FilledButtonPageState extends State<FilledButtonPage> {
               height: 16.0,
             ),
             //警告按钮
-            FilledButton(
+            GleamButton(
               text: '警告按钮',
               buttonType: ButtonType.warning,
               buttonSize: ButtonSize.normal,
@@ -95,7 +152,7 @@ class _FilledButtonPageState extends State<FilledButtonPage> {
               height: 16.0,
             ),
             //危险按钮
-            FilledButton(
+            GleamButton(
               text: '危险按钮',
               buttonType: ButtonType.danger,
               buttonSize: ButtonSize.normal,
@@ -112,7 +169,7 @@ class _FilledButtonPageState extends State<FilledButtonPage> {
             ),
 
             //加载状态(文字+loading图标)
-            FilledButton(
+            GleamButton(
               text: '加载中...',
               width: 112.0,
               height: 44.0,
@@ -128,7 +185,7 @@ class _FilledButtonPageState extends State<FilledButtonPage> {
             ),
 
             //加载状态(loading图标)
-            FilledButton(
+            GleamButton(
               width: 52.0,
               height: 44.0,
               buttonType: ButtonType.primary,
@@ -145,7 +202,7 @@ class _FilledButtonPageState extends State<FilledButtonPage> {
               height: 16.0,
             ),
 
-            FilledButton(
+            GleamButton(
               borderRadius: 0,
               buttonType: ButtonType.primary,
               buttonSize: ButtonSize.normal,
@@ -159,7 +216,7 @@ class _FilledButtonPageState extends State<FilledButtonPage> {
               height: 16.0,
             ),
 
-            FilledButton(
+            GleamButton(
               borderRadius: 22.0,
               width: 88.0,
               height: 44.0,
@@ -178,7 +235,7 @@ class _FilledButtonPageState extends State<FilledButtonPage> {
               height: 16.0,
             ),
 
-            FilledButton(
+            GleamButton(
               buttonType: ButtonType.primary,
               buttonSize: ButtonSize.large,
               text: "大号按钮",
@@ -190,7 +247,7 @@ class _FilledButtonPageState extends State<FilledButtonPage> {
               height: 16.0,
             ),
 
-            FilledButton(
+            GleamButton(
               buttonType: ButtonType.primary,
               buttonSize: ButtonSize.normal,
               text: "普通按钮",
@@ -202,7 +259,7 @@ class _FilledButtonPageState extends State<FilledButtonPage> {
               height: 16.0,
             ),
 
-            FilledButton(
+            GleamButton(
               buttonType: ButtonType.primary,
               buttonSize: ButtonSize.small,
               text: "小型按钮",
@@ -215,7 +272,7 @@ class _FilledButtonPageState extends State<FilledButtonPage> {
               height: 16.0,
             ),
 
-            FilledButton(
+            GleamButton(
               buttonType: ButtonType.primary,
               buttonSize: ButtonSize.mini,
               text: "迷你按钮",
@@ -230,7 +287,7 @@ class _FilledButtonPageState extends State<FilledButtonPage> {
             SizedBox(
               height: 16.0,
             ),
-            FilledButton(
+            GleamButton(
               showShadow: false,
               width: 148.0,
               height: 44.0,
@@ -243,7 +300,7 @@ class _FilledButtonPageState extends State<FilledButtonPage> {
             SizedBox(
               height: 16.0,
             ),
-            FilledButton(
+            GleamButton(
               showShadow: true,
               shadowColor: const Color(0xff07c160),
               width: 148.0,
@@ -260,7 +317,7 @@ class _FilledButtonPageState extends State<FilledButtonPage> {
             SizedBox(
               height: 16.0,
             ),
-            FilledButton(
+            GleamButton(
               showShadow: true,
               buttonSize: ButtonSize.normal,
               disableColor: AppColors.clD8D8D8,

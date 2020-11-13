@@ -26,23 +26,27 @@ class _GleamOutlineButtonPageState extends State<GleamOutlineButtonPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(),
-      body: ListView(
+      body: SingleChildScrollView(
         padding: EdgeInsets.symmetric(vertical: 0, horizontal: 16.0),
-        children: ListTile.divideTiles(context: context, tiles: [
-          //提出弹窗
-          ListTile(
-              title: Text(
-                '提示弹窗',
-                style: Style.ts_333333_15,
-              ),
-              trailing: Icon(
-                Icons.arrow_forward_ios_outlined,
-                size: 20,
-              ),
-              onTap: () {
-                showToast('确定');
-              }),
-        ]).toList(),
+        child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
+          SizedBox(
+            height: 40.0,
+          ),
+          Text("按钮类型"),
+          SizedBox(
+            height: 16.0,
+          ),
+          //主要按钮
+          GleamOutlineButton(
+            text: '主要按钮',
+            width: 88.0,
+            // buttonType: ButtonType.primary,
+            // buttonSize: ButtonSize.normal,
+            onPressed: () {
+              showToast('主要按钮');
+            },
+          ),
+        ]),
       ),
     );
   }

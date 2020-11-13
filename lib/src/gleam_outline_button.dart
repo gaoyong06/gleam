@@ -54,7 +54,7 @@ class GleamOutlineButton extends StatelessWidget {
     @required this.text,
     this.width,
     this.height,
-    this.fontSize = 15,
+    this.fontSize = 14,
     this.color = Colors.white,
     this.borderColor = const Color(0xff5791F3),
     this.borderRadius = 25,
@@ -69,7 +69,7 @@ class GleamOutlineButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: width ?? ScreenUtil().setWidth(335),
+      width: width ?? ScreenUtil().setWidth(88),
       height: height ?? ScreenUtil().setWidth(44),
       margin: margin,
       decoration: BoxDecoration(
@@ -77,6 +77,7 @@ class GleamOutlineButton extends StatelessWidget {
         borderRadius: BorderRadius.all(Radius.circular(borderRadius)),
       ),
       child: OutlineButton(
+        padding: EdgeInsets.symmetric(horizontal: 15.0),
         borderSide: BorderSide(color: borderColor, width: 1),
         shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.all(Radius.circular(borderRadius))),

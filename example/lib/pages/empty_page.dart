@@ -63,7 +63,7 @@ class EmptyPage extends StatelessWidget {
           Text('底部内容'),
           Empty(
             emptyText: "描述文字",
-            bottomWidget: FilledButton(
+            bottomWidget: GleamButton(
                 text: '按钮', width: 80.0, height: 40.0, onPressed: () {}),
           ),
           SizedBox(

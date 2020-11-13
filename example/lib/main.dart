@@ -11,11 +11,12 @@ import 'package:gleam/gleam.dart';
 import 'package:gleam/style/style.dart';
 import 'package:gleam_example/pages/bottom_sheet_page.dart';
 import 'package:gleam_example/pages/empty_page.dart';
-import 'package:gleam_example/pages/filled_button_page.dart';
+import 'package:gleam_example/pages/gleam_button_page.dart';
+// import 'package:gleam_example/pages/filled_button_page.dart';
 import 'package:gleam_example/pages/gleam_dialog_page.dart';
 import 'package:gleam_example/pages/gleam_icon_page.dart';
 import 'package:gleam_example/pages/gleam_image_page.dart';
-import 'package:gleam_example/pages/gleam_outline_button_page.dart';
+// import 'package:gleam_example/pages/gleam_outline_button_page.dart';
 import 'package:gleam_example/pages/gleam_text_button_page.dart';
 import 'package:gleam_example/pages/gleam_text_field_page.dart';
 import 'package:gleam_example/pages/image_picker_page.dart';
@@ -137,25 +138,25 @@ class _MyHomePageState extends State<MyHomePage> {
           ),
           GleamOutlineButton(
             margin: EdgeInsets.only(top: 10.0),
-            text: 'FilledButton 填充按钮',
+            text: 'GleamButton 按钮',
             onPressed: () {
               Navigator.push(
                 context,
-                new MaterialPageRoute(builder: (context) => FilledButtonPage()),
+                new MaterialPageRoute(builder: (context) => GleamButtonPage()),
               );
             },
           ),
-          GleamOutlineButton(
-            margin: EdgeInsets.only(top: 10.0),
-            text: 'GleamOutlineButton 细边框按钮',
-            onPressed: () {
-              Navigator.push(
-                context,
-                new MaterialPageRoute(
-                    builder: (context) => GleamOutlineButtonPage()),
-              );
-            },
-          ),
+          // GleamOutlineButton(
+          //   margin: EdgeInsets.only(top: 10.0),
+          //   text: 'GleamOutlineButton 细边框按钮',
+          //   onPressed: () {
+          //     Navigator.push(
+          //       context,
+          //       new MaterialPageRoute(
+          //           builder: (context) => GleamOutlineButtonPage()),
+          //     );
+          //   },
+          // ),
           GleamOutlineButton(
             margin: EdgeInsets.only(top: 10.0),
             text: 'GleamTextButton 文字按钮',
