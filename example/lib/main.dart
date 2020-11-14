@@ -17,7 +17,7 @@ import 'package:gleam_example/pages/gleam_dialog_page.dart';
 import 'package:gleam_example/pages/gleam_icon_page.dart';
 import 'package:gleam_example/pages/gleam_image_page.dart';
 // import 'package:gleam_example/pages/gleam_outline_button_page.dart';
-import 'package:gleam_example/pages/gleam_text_button_page.dart';
+// import 'package:gleam_example/pages/gleam_text_button_page.dart';
 import 'package:gleam_example/pages/gleam_text_field_page.dart';
 import 'package:gleam_example/pages/image_picker_page.dart';
 import 'package:gleam_example/pages/placeholder_page.dart';
@@ -106,7 +106,9 @@ class _MyHomePageState extends State<MyHomePage> {
           SizedBox(
             height: 30.0,
           ),
-          GleamOutlineButton(
+          GleamButton(
+            style: GleamButtonStyle.flatButton,
+            type: ButtonType.defaulted,
             margin: EdgeInsets.only(top: 10.0),
             text: 'BottomSheet 底部菜单弹窗',
             onPressed: () {
@@ -116,7 +118,9 @@ class _MyHomePageState extends State<MyHomePage> {
               );
             },
           ),
-          GleamOutlineButton(
+          GleamButton(
+            style: GleamButtonStyle.flatButton,
+            type: ButtonType.defaulted,
             margin: EdgeInsets.only(top: 10.0),
             text: 'GleamDialog 弹出框',
             onPressed: () {
@@ -126,7 +130,9 @@ class _MyHomePageState extends State<MyHomePage> {
               );
             },
           ),
-          GleamOutlineButton(
+          GleamButton(
+            style: GleamButtonStyle.flatButton,
+            type: ButtonType.defaulted,
             margin: EdgeInsets.only(top: 10.0),
             text: 'Empty 空状态',
             onPressed: () {
@@ -136,7 +142,9 @@ class _MyHomePageState extends State<MyHomePage> {
               );
             },
           ),
-          GleamOutlineButton(
+          GleamButton(
+            style: GleamButtonStyle.flatButton,
+            type: ButtonType.defaulted,
             margin: EdgeInsets.only(top: 10.0),
             text: 'GleamButton 按钮',
             onPressed: () {
@@ -146,7 +154,9 @@ class _MyHomePageState extends State<MyHomePage> {
               );
             },
           ),
-          GleamOutlineButton(
+          GleamButton(
+            style: GleamButtonStyle.flatButton,
+            type: ButtonType.defaulted,
             margin: EdgeInsets.only(top: 10.0),
             text: 'GleamTextField 文本输入框',
             onPressed: () {
@@ -157,7 +167,9 @@ class _MyHomePageState extends State<MyHomePage> {
               );
             },
           ),
-          GleamOutlineButton(
+          GleamButton(
+            style: GleamButtonStyle.flatButton,
+            type: ButtonType.defaulted,
             margin: EdgeInsets.only(top: 10.0),
             text: 'GleamIcon 图标',
             onPressed: () {
@@ -167,7 +179,9 @@ class _MyHomePageState extends State<MyHomePage> {
               );
             },
           ),
-          GleamOutlineButton(
+          GleamButton(
+            style: GleamButtonStyle.flatButton,
+            type: ButtonType.defaulted,
             margin: EdgeInsets.only(top: 10.0),
             text: 'GleamImage 图片',
             onPressed: () {
@@ -177,7 +191,9 @@ class _MyHomePageState extends State<MyHomePage> {
               );
             },
           ),
-          GleamOutlineButton(
+          GleamButton(
+            style: GleamButtonStyle.flatButton,
+            type: ButtonType.defaulted,
             margin: EdgeInsets.only(top: 10.0),
             text: 'ImagePicker 照片选择',
             onPressed: () {
@@ -187,7 +203,9 @@ class _MyHomePageState extends State<MyHomePage> {
               );
             },
           ),
-          GleamOutlineButton(
+          GleamButton(
+            style: GleamButtonStyle.flatButton,
+            type: ButtonType.defaulted,
             margin: EdgeInsets.only(top: 10.0),
             text: 'Placeholder 占位状态',
             onPressed: () {
@@ -197,7 +215,9 @@ class _MyHomePageState extends State<MyHomePage> {
               );
             },
           ),
-          GleamOutlineButton(
+          GleamButton(
+            style: GleamButtonStyle.flatButton,
+            type: ButtonType.defaulted,
             margin: EdgeInsets.only(top: 10.0),
             text: 'Search 搜索',
             onPressed: () {
@@ -207,7 +227,9 @@ class _MyHomePageState extends State<MyHomePage> {
               );
             },
           ),
-          GleamOutlineButton(
+          GleamButton(
+            style: GleamButtonStyle.flatButton,
+            type: ButtonType.defaulted,
             margin: EdgeInsets.only(top: 10.0),
             text: 'ShareSheet 分享面板',
             onPressed: () {
@@ -217,7 +239,9 @@ class _MyHomePageState extends State<MyHomePage> {
               );
             },
           ),
-          GleamOutlineButton(
+          GleamButton(
+            style: GleamButtonStyle.flatButton,
+            type: ButtonType.defaulted,
             margin: EdgeInsets.only(top: 10.0),
             text: 'Tag 标签',
             onPressed: () {

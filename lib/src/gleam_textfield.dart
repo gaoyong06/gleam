@@ -10,42 +10,62 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:gleam/style/style.dart';
 
+enum GleamTextFieldType {
+  text, //文本
+  tel, //手机号
+  digit, //数字(支持小数, 允许一个小数点)
+  number, //整数(数字是有符号的，允许正号或负号开始)
+  //
+  textarea, //多行文本 TODO: 暂时未启用
+  password, //密码
+}
+
 ///文本输入框
 class GleamTextField extends StatefulWidget {
-  const GleamTextField({
-    Key key,
-    @required this.title,
-    this.height = 58,
-    this.defControllerText,
-    this.placeholder = '请输入',
-    this.controller,
-    this.maxLength,
-    this.keyboardType,
-    this.inputFormatter,
-    this.contentPadding,
-    this.onSubmitted,
-    this.onChanged,
-    this.onTap,
-    this.showRightArrow = false,
-    this.rightArrowWidget,
-    this.textAlign = TextAlign.start,
-  }) : super(key: key);
-
+  final GleamTextFieldType type;
   final double height; // Tile 高度
-  final String defControllerText; //设置默认文本值,设置自定义 Controller后失效
-  final String title; //左侧title
-  final String placeholder; //textField占位符
+  final String defaultText; //设置默认文本值,设置自定义 Controller后失效
+  final TextStyle textStyle; //输入文本的样式
+  final String label; //输入框左侧文本
+  final TextStyle labelTextStyle; //输入框左侧文本样式
+  final String hintText; //textField占位符
+  final TextStyle hintStyle; //textField占位符文字样式
+  final Color cursorColor; //光标颜色
   final TextEditingController controller; //TextEditingController
   final int maxLength; //最大输入长度
-  final TextInputType keyboardType; //键盘类型
-  final List<TextInputFormatter> inputFormatter; //TextInputFormatter
   final EdgeInsetsGeometry contentPadding; //内边距
   final ValueChanged onSubmitted; //textField onSubmitted回调
   final ValueChanged onChanged; // textField onChanged回调
   final VoidCallback onTap; // textField 点击
-  final bool showRightArrow; // 显示箭头
-  final Widget rightArrowWidget; //右侧箭头widget
+  final Widget leftIcon; //左侧图标Widget
+  final Widget rightIcon; //右侧图标Widget
   final TextAlign textAlign; // textField 的textAlign
+  final bool readonly; //是否只读
+  final bool disabled; //是否禁用输入框
+
+  const GleamTextField({
+    Key key,
+    this.type = GleamTextFieldType.text,
+    this.label,
+    this.labelTextStyle,
+    this.height = 58,
+    this.defaultText,
+    this.textStyle,
+    this.hintText = '请输入',
+    this.hintStyle,
+    this.cursorColor,
+    this.controller,
+    this.maxLength,
+    this.contentPadding,
+    this.onSubmitted,
+    this.onChanged,
+    this.onTap,
+    this.leftIcon,
+    this.rightIcon,
+    this.textAlign = TextAlign.start,
+    this.readonly = false,
+    this.disabled = false,
+  }) : super(key: key);
 
   @override
   _GleamTextFieldState createState() => _GleamTextFieldState();
@@ -69,8 +89,8 @@ class _GleamTextFieldState extends State<GleamTextField> {
     if (widget.controller != null) {
       _controller = widget.controller;
     }
-    if (widget.defControllerText != null) {
-      _controller.text = widget.defControllerText;
+    if (widget.defaultText != null) {
+      _controller.text = widget.defaultText;
     }
 
     _controller.value = TextEditingValue(
@@ -85,18 +105,63 @@ class _GleamTextFieldState extends State<GleamTextField> {
     final EdgeInsets resolvedContentPadding =
         widget.contentPadding?.resolve(textDirection) ?? _defaultContentPadding;
 
-    //leading
-    Widget leading = Text(widget.title,
-        overflow: TextOverflow.ellipsis, style: Style.ts_999999_15);
+    TextInputType _keyboardType = TextInputType.text;
+    List<TextInputFormatter> _inputFormatters = [];
+    bool _obscureText = false;
+    switch (widget.type) {
+      case GleamTextFieldType.text:
+        _keyboardType = TextInputType.text;
+        break;
 
-    //trailing
+      case GleamTextFieldType.tel:
+        _keyboardType = TextInputType.phone;
+        _inputFormatters = [
+          FilteringTextInputFormatter.digitsOnly,
+          LengthLimitingTextInputFormatter(11)
+        ];
+        break;
+
+      case GleamTextFieldType.digit:
+        _keyboardType = TextInputType.numberWithOptions(decimal: true);
+        _inputFormatters = [
+          FilteringTextInputFormatter.allow(RegExp("[0-9.]")),
+        ];
+        break;
+
+      case GleamTextFieldType.number:
+        _keyboardType = TextInputType.numberWithOptions(signed: true);
+        _inputFormatters = [
+          FilteringTextInputFormatter.digitsOnly,
+        ];
+        break;
+
+      case GleamTextFieldType.password:
+        _keyboardType = TextInputType.text;
+        _obscureText = true;
+        break;
+
+      default:
+    }
+
+    // leading
+    Widget leading = Text(widget.label,
+        overflow: TextOverflow.ellipsis,
+        style: widget.labelTextStyle ?? Style.ts_999999_15);
+
+    // trailing
     List<Widget> trailing = List();
+
+    // left icon
+    if (widget.leftIcon != null) {
+      trailing.add(widget.leftIcon);
+    }
+
     // TextField
     trailing.add(Expanded(
       child: TextField(
         controller: _controller,
-        inputFormatters: widget.inputFormatter,
-        keyboardType: widget.keyboardType,
+        inputFormatters: _inputFormatters,
+        keyboardType: _keyboardType,
         maxLength: widget.maxLength,
         onTap: () {
           if (widget.onTap != null) {
@@ -108,12 +173,15 @@ class _GleamTextFieldState extends State<GleamTextField> {
         onSubmitted: widget.onSubmitted,
         onChanged: widget.onChanged,
         autofocus: false,
-        cursorColor: Colors.black,
+        obscureText: _obscureText,
+        cursorColor: widget.cursorColor,
+        readOnly: widget.readonly,
+        enabled: !widget.disabled,
         decoration: InputDecoration(
           contentPadding: EdgeInsets.fromLTRB(0, 0, 0, 0),
           fillColor: Colors.transparent,
-          hintText: widget.placeholder,
-          hintStyle: Style.ts_D8D8D8_15,
+          hintText: widget.hintText,
+          hintStyle: widget.hintStyle ?? Style.ts_D8D8D8_15,
           enabledBorder: InputBorder.none,
           focusedBorder: InputBorder.none,
           border: InputBorder.none,
@@ -121,13 +189,13 @@ class _GleamTextFieldState extends State<GleamTextField> {
           counterText: "",
         ),
         textAlign: widget.textAlign,
-        style: Style.ts_333333_15,
+        style: widget.textStyle ?? Style.ts_333333_15,
       ),
     ));
 
-    // arrow
-    if (widget.showRightArrow) {
-      trailing.add(widget.rightArrowWidget ?? Icon(Icons.arrow_right));
+    // right icon
+    if (widget.rightIcon != null) {
+      trailing.add(widget.rightIcon);
     }
 
     return SafeArea(
@@ -158,14 +226,6 @@ class _GleamTextFieldState extends State<GleamTextField> {
                     ),
                   ],
                 ),
-              ),
-            ),
-            Align(
-              alignment: Alignment.bottomCenter,
-              child: Container(
-                margin: EdgeInsets.only(left: 20.w),
-                height: 0.5.w,
-                color: Color(0xffD8D8D8),
               ),
             ),
           ],

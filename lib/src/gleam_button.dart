@@ -49,13 +49,13 @@ EdgeInsetsGeometry defaultPadding = EdgeInsets.symmetric(horizontal: 15.0);
 
 class GleamButton extends StatelessWidget {
   //按钮风格
-  final GleamButtonStyle gleamButtonStyle;
+  final GleamButtonStyle style;
 
   //按钮类型
-  final ButtonType buttonType;
+  final ButtonType type;
 
   //按钮尺寸
-  final ButtonSize buttonSize;
+  final ButtonSize size;
 
   //按钮宽度
   final double width;
@@ -118,9 +118,9 @@ class GleamButton extends StatelessWidget {
   final Decoration decoration;
 
   const GleamButton(
-      {this.gleamButtonStyle = GleamButtonStyle.flatButton,
-      this.buttonType,
-      this.buttonSize,
+      {this.style = GleamButtonStyle.flatButton,
+      this.type,
+      this.size,
       this.text,
       this.width,
       this.height,
@@ -153,13 +153,13 @@ class GleamButton extends StatelessWidget {
     Color tempSplashColor;
     EdgeInsetsGeometry tempPadding;
 
-    if (gleamButtonStyle == GleamButtonStyle.textButton) {
+    if (style == GleamButtonStyle.textButton) {
       tempFillColor = Colors.transparent;
       tempBorderColor = Colors.transparent;
       tempSplashColor = splashColor ?? Colors.transparent;
     }
 
-    switch (buttonType) {
+    switch (type) {
       case ButtonType.primary:
         tempFillColor = const Color(0xff07c160);
         tempBorderColor = tempFillColor;
@@ -196,7 +196,7 @@ class GleamButton extends StatelessWidget {
         tempTextColor = textColor ?? tempTextColor ?? defaultTextColor;
     }
 
-    switch (buttonSize) {
+    switch (size) {
       case ButtonSize.large:
         tempWidth = 328.0;
         tempHeight = 50.0;
@@ -289,9 +289,7 @@ class GleamButton extends StatelessWidget {
       height: height ?? tempHeight ?? ScreenUtil().setWidth(44),
       margin: margin,
       decoration: decoration,
-      child: gleamButtonStyle == GleamButtonStyle.flatButton
-          ? flatButton
-          : outlineButton,
+      child: style == GleamButtonStyle.flatButton ? flatButton : outlineButton,
     );
   }
 }

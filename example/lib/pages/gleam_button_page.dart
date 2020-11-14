@@ -11,7 +11,6 @@ import 'package:gleam/gleam.dart';
 import 'package:gleam/style/app_colors.dart';
 import 'package:gleam/style/style.dart';
 import 'package:oktoast/oktoast.dart';
-// import 'package:flutter/src/material/button_style.dart';
 
 /// GleamButtonPage填充按钮示例程序
 class GleamButtonPage extends StatefulWidget {
@@ -45,11 +44,11 @@ class _GleamButtonPageState extends State<GleamButtonPage> {
               height: 16.0,
             ),
             GleamButton(
-              gleamButtonStyle: GleamButtonStyle.flatButton,
+              style: GleamButtonStyle.flatButton,
               text: '内容填充按钮',
               width: 114.0,
-              buttonType: ButtonType.primary,
-              buttonSize: ButtonSize.normal,
+              type: ButtonType.primary,
+              size: ButtonSize.normal,
               onPressed: () {
                 showToast('内容填充按钮');
               },
@@ -58,12 +57,12 @@ class _GleamButtonPageState extends State<GleamButtonPage> {
               height: 16.0,
             ),
             GleamButton(
-              gleamButtonStyle: GleamButtonStyle.outlineButton,
+              style: GleamButtonStyle.outlineButton,
               text: '细边框按钮',
               width: 114.0,
               textColor: AppColors.cl333333,
-              buttonType: ButtonType.primary,
-              buttonSize: ButtonSize.normal,
+              type: ButtonType.primary,
+              size: ButtonSize.normal,
               onPressed: () {
                 showToast('细边框按钮');
               },
@@ -74,11 +73,11 @@ class _GleamButtonPageState extends State<GleamButtonPage> {
             ),
 
             GleamButton(
-              gleamButtonStyle: GleamButtonStyle.textButton,
+              style: GleamButtonStyle.textButton,
               text: '文字按钮',
               width: 114.0,
               textColor: AppColors.cl5791F3,
-              buttonSize: ButtonSize.normal,
+              size: ButtonSize.normal,
               onPressed: () {
                 showToast('文字按钮');
               },
@@ -94,8 +93,8 @@ class _GleamButtonPageState extends State<GleamButtonPage> {
             //主要按钮
             GleamButton(
               text: '主要按钮',
-              buttonType: ButtonType.primary,
-              buttonSize: ButtonSize.normal,
+              type: ButtonType.primary,
+              size: ButtonSize.normal,
               onPressed: () {
                 showToast('主要按钮');
               },
@@ -107,8 +106,8 @@ class _GleamButtonPageState extends State<GleamButtonPage> {
             //信息按钮
             GleamButton(
               text: '信息按钮',
-              buttonType: ButtonType.info,
-              buttonSize: ButtonSize.normal,
+              type: ButtonType.info,
+              size: ButtonSize.normal,
               onPressed: () {
                 showToast('信息按钮');
               },
@@ -120,8 +119,8 @@ class _GleamButtonPageState extends State<GleamButtonPage> {
             //默认按钮
             GleamButton(
               text: '默认按钮',
-              buttonType: ButtonType.defaulted,
-              buttonSize: ButtonSize.normal,
+              type: ButtonType.defaulted,
+              size: ButtonSize.normal,
               onPressed: () {
                 showToast('默认按钮');
               },
@@ -133,8 +132,8 @@ class _GleamButtonPageState extends State<GleamButtonPage> {
             //警告按钮
             GleamButton(
               text: '警告按钮',
-              buttonType: ButtonType.warning,
-              buttonSize: ButtonSize.normal,
+              type: ButtonType.warning,
+              size: ButtonSize.normal,
               onPressed: () {
                 showToast('警告按钮');
               },
@@ -146,8 +145,8 @@ class _GleamButtonPageState extends State<GleamButtonPage> {
             //危险按钮
             GleamButton(
               text: '危险按钮',
-              buttonType: ButtonType.danger,
-              buttonSize: ButtonSize.normal,
+              type: ButtonType.danger,
+              size: ButtonSize.normal,
               onPressed: () {
                 showToast('危险按钮');
               },
@@ -165,10 +164,10 @@ class _GleamButtonPageState extends State<GleamButtonPage> {
               text: '加载中...',
               width: 112.0,
               height: 44.0,
-              buttonType: ButtonType.primary,
+              type: ButtonType.primary,
               leftIcon: CupertinoActivityIndicator(),
               onPressed: () {
-                showToast('加载状态(文字+loading图标)');
+                showToast('加载状态(loading图标+文字)');
               },
             ),
 
@@ -180,7 +179,7 @@ class _GleamButtonPageState extends State<GleamButtonPage> {
             GleamButton(
               width: 52.0,
               height: 44.0,
-              buttonType: ButtonType.primary,
+              type: ButtonType.primary,
               leftIcon: CupertinoActivityIndicator(),
               onPressed: () {
                 showToast('加载状态(loading图标)');
@@ -196,8 +195,8 @@ class _GleamButtonPageState extends State<GleamButtonPage> {
 
             GleamButton(
               borderRadius: 0,
-              buttonType: ButtonType.primary,
-              buttonSize: ButtonSize.normal,
+              type: ButtonType.primary,
+              size: ButtonSize.normal,
               text: "方形按钮",
               onPressed: () {
                 showToast('方形按钮');
@@ -228,8 +227,8 @@ class _GleamButtonPageState extends State<GleamButtonPage> {
             ),
 
             GleamButton(
-              buttonType: ButtonType.primary,
-              buttonSize: ButtonSize.large,
+              type: ButtonType.primary,
+              size: ButtonSize.large,
               text: "大号按钮",
               onPressed: () {
                 showToast('大号按钮');
@@ -240,8 +239,8 @@ class _GleamButtonPageState extends State<GleamButtonPage> {
             ),
 
             GleamButton(
-              buttonType: ButtonType.primary,
-              buttonSize: ButtonSize.normal,
+              type: ButtonType.primary,
+              size: ButtonSize.normal,
               text: "普通按钮",
               onPressed: () {
                 showToast('普通按钮');
@@ -252,8 +251,8 @@ class _GleamButtonPageState extends State<GleamButtonPage> {
             ),
 
             GleamButton(
-              buttonType: ButtonType.primary,
-              buttonSize: ButtonSize.small,
+              type: ButtonType.primary,
+              size: ButtonSize.small,
               text: "小型按钮",
               onPressed: () {
                 showToast('小型按钮');
@@ -265,8 +264,8 @@ class _GleamButtonPageState extends State<GleamButtonPage> {
             ),
 
             GleamButton(
-              buttonType: ButtonType.primary,
-              buttonSize: ButtonSize.mini,
+              type: ButtonType.primary,
+              size: ButtonSize.mini,
               text: "迷你按钮",
               onPressed: () {
                 showToast('迷你按钮');
@@ -284,7 +283,7 @@ class _GleamButtonPageState extends State<GleamButtonPage> {
               width: 148.0,
               height: 44.0,
               text: "主要按钮(无阴影)",
-              buttonType: ButtonType.primary,
+              type: ButtonType.primary,
               onPressed: () {
                 showToast('主要按钮(无阴影)');
               },
@@ -311,7 +310,7 @@ class _GleamButtonPageState extends State<GleamButtonPage> {
             ),
             GleamButton(
               showShadow: true,
-              buttonSize: ButtonSize.normal,
+              size: ButtonSize.normal,
               disableColor: AppColors.clD8D8D8,
               disableTextColor: AppColors.cl999999,
               borderColor: AppColors.clD8D8D8,
@@ -327,7 +326,7 @@ class _GleamButtonPageState extends State<GleamButtonPage> {
             ),
             GleamButton(
               showShadow: true,
-              buttonSize: ButtonSize.normal,
+              size: ButtonSize.normal,
               fillColor: Color(0XFF7232DD),
               text: "单色按钮",
               onPressed: () {
@@ -338,9 +337,9 @@ class _GleamButtonPageState extends State<GleamButtonPage> {
               height: 16.0,
             ),
             GleamButton(
-              gleamButtonStyle: GleamButtonStyle.outlineButton,
+              style: GleamButtonStyle.outlineButton,
               showShadow: true,
-              buttonSize: ButtonSize.normal,
+              size: ButtonSize.normal,
               fillColor: Color(0XFF7232DD),
               text: "单色按钮",
               textColor: Color(0XFF7232DD),
@@ -354,7 +353,7 @@ class _GleamButtonPageState extends State<GleamButtonPage> {
             GleamButton(
               width: 100,
               showShadow: true,
-              buttonSize: ButtonSize.normal,
+              size: ButtonSize.normal,
               fillColor: Colors.transparent,
               decoration: BoxDecoration(
                 gradient: LinearGradient(
