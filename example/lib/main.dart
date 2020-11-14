@@ -146,28 +146,6 @@ class _MyHomePageState extends State<MyHomePage> {
               );
             },
           ),
-          // GleamOutlineButton(
-          //   margin: EdgeInsets.only(top: 10.0),
-          //   text: 'GleamOutlineButton 细边框按钮',
-          //   onPressed: () {
-          //     Navigator.push(
-          //       context,
-          //       new MaterialPageRoute(
-          //           builder: (context) => GleamOutlineButtonPage()),
-          //     );
-          //   },
-          // ),
-          GleamOutlineButton(
-            margin: EdgeInsets.only(top: 10.0),
-            text: 'GleamTextButton 文字按钮',
-            onPressed: () {
-              Navigator.push(
-                context,
-                new MaterialPageRoute(
-                    builder: (context) => GleamTextButtonPage()),
-              );
-            },
-          ),
           GleamOutlineButton(
             margin: EdgeInsets.only(top: 10.0),
             text: 'GleamTextField 文本输入框',

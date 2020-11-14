@@ -86,14 +86,6 @@ class _GleamButtonPageState extends State<GleamButtonPage> {
             SizedBox(
               height: 16.0,
             ),
-            // GleamButton(
-            //   text: '主要按钮',
-            //   buttonType: ButtonType.primary,
-            //   buttonSize: ButtonSize.normal,
-            //   onPressed: () {
-            //     showToast('主要按钮');
-            //   },
-            // ),
 
             Text("按钮类型"),
             SizedBox(
@@ -328,6 +320,56 @@ class _GleamButtonPageState extends State<GleamButtonPage> {
             ),
             SizedBox(
               height: 16.0,
+            ),
+            Text("自定义颜色"),
+            SizedBox(
+              height: 16.0,
+            ),
+            GleamButton(
+              showShadow: true,
+              buttonSize: ButtonSize.normal,
+              fillColor: Color(0XFF7232DD),
+              text: "单色按钮",
+              onPressed: () {
+                showToast('单色按钮');
+              },
+            ),
+            SizedBox(
+              height: 16.0,
+            ),
+            GleamButton(
+              gleamButtonStyle: GleamButtonStyle.outlineButton,
+              showShadow: true,
+              buttonSize: ButtonSize.normal,
+              fillColor: Color(0XFF7232DD),
+              text: "单色按钮",
+              textColor: Color(0XFF7232DD),
+              onPressed: () {
+                showToast('单色按钮');
+              },
+            ),
+            SizedBox(
+              height: 16.0,
+            ),
+            GleamButton(
+              width: 100,
+              showShadow: true,
+              buttonSize: ButtonSize.normal,
+              fillColor: Colors.transparent,
+              decoration: BoxDecoration(
+                gradient: LinearGradient(
+                  begin: Alignment(-1, 0),
+                  end: Alignment(1.0, 0),
+                  colors: <Color>[
+                    const Color(0xFFFF6034),
+                    const Color(0xFFEE0A24),
+                  ],
+                ),
+              ),
+              text: "渐变色按钮",
+              onPressed: () {
+                showToast('渐变色按钮');
+              },
             ),
             SizedBox(
               height: 40.0,

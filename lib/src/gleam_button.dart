@@ -99,6 +99,12 @@ class GleamButton extends StatelessWidget {
   //不可点击文字颜色
   final Color disableTextColor;
 
+  //点击时背景颜色
+  final Color highlightColor;
+
+  //点击时水波纹颜色
+  final Color splashColor;
+
   //文字左边图标
   final Widget leftIcon;
 
@@ -108,28 +114,33 @@ class GleamButton extends StatelessWidget {
   //阴影颜色
   final Color shadowColor;
 
-  const GleamButton({
-    this.gleamButtonStyle = GleamButtonStyle.flatButton,
-    this.buttonType,
-    this.buttonSize,
-    this.text,
-    this.width,
-    this.height,
-    this.padding,
-    this.fontSize,
-    this.textColor,
-    this.fontWeight = FontWeight.normal,
-    @required this.onPressed,
-    this.margin,
-    this.showShadow = true,
-    this.shadowColor = const Color(0x7D80AEFF),
-    this.borderRadius = 2,
-    this.borderColor,
-    this.fillColor,
-    this.disableColor = const Color(0xFFD8D8D8),
-    this.disableTextColor = Colors.white,
-    this.leftIcon,
-  });
+  //容器装饰
+  final Decoration decoration;
+
+  const GleamButton(
+      {this.gleamButtonStyle = GleamButtonStyle.flatButton,
+      this.buttonType,
+      this.buttonSize,
+      this.text,
+      this.width,
+      this.height,
+      this.padding,
+      this.fontSize,
+      this.textColor,
+      this.fontWeight = FontWeight.normal,
+      @required this.onPressed,
+      this.margin,
+      this.showShadow = true,
+      this.shadowColor = const Color(0x7D80AEFF),
+      this.borderRadius = 2,
+      this.borderColor,
+      this.fillColor,
+      this.disableColor = const Color(0xFFD8D8D8),
+      this.disableTextColor = Colors.white,
+      this.highlightColor = Colors.transparent,
+      this.splashColor,
+      this.leftIcon,
+      this.decoration});
 
   @override
   Widget build(BuildContext context) {
@@ -139,11 +150,13 @@ class GleamButton extends StatelessWidget {
     double tempHeight;
     double tempFontSize;
     Color tempTextColor;
+    Color tempSplashColor;
     EdgeInsetsGeometry tempPadding;
 
     if (gleamButtonStyle == GleamButtonStyle.textButton) {
       tempFillColor = Colors.transparent;
       tempBorderColor = Colors.transparent;
+      tempSplashColor = splashColor ?? Colors.transparent;
     }
 
     switch (buttonType) {
@@ -178,9 +191,9 @@ class GleamButton extends StatelessWidget {
         break;
 
       default:
-        tempFillColor = tempFillColor ?? defaultFillColor;
-        tempBorderColor = tempBorderColor ?? tempFillColor;
-        tempTextColor = tempTextColor ?? defaultTextColor;
+        tempFillColor = fillColor ?? defaultFillColor;
+        tempBorderColor = borderColor ?? tempFillColor ?? defaultBorderColor;
+        tempTextColor = textColor ?? tempTextColor ?? defaultTextColor;
     }
 
     switch (buttonSize) {
@@ -238,6 +251,8 @@ class GleamButton extends StatelessWidget {
       disabledTextColor: disableTextColor,
       color: fillColor ?? tempFillColor ?? defaultFillColor,
       disabledColor: disableColor,
+      highlightColor: highlightColor,
+      splashColor: splashColor,
     );
 
     Widget outlineButton = OutlineButton(
@@ -263,14 +278,17 @@ class GleamButton extends StatelessWidget {
       textColor: textColor ?? tempTextColor ?? defaultTextColor,
       disabledTextColor: disableTextColor,
       disabledBorderColor: disableColor,
-      highlightedBorderColor: borderColor,
-      color: Colors.red,
+      highlightedBorderColor:
+          borderColor ?? tempBorderColor ?? defaultBorderColor,
+      highlightColor: highlightColor,
+      splashColor: splashColor ?? tempSplashColor,
     );
 
     return Container(
       width: width ?? tempWidth ?? ScreenUtil().setWidth(88),
       height: height ?? tempHeight ?? ScreenUtil().setWidth(44),
       margin: margin,
+      decoration: decoration,
       child: gleamButtonStyle == GleamButtonStyle.flatButton
           ? flatButton
           : outlineButton,
