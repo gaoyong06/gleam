@@ -165,6 +165,11 @@ class Style {
     color: AppColors.clFFFFFF,
   );
 
+  static TextStyle ts_FFFFFF_12 = TextStyle(
+    fontSize: Dimens.fontPt12,
+    color: AppColors.clFFFFFF,
+  );
+
   static TextStyle ts_FFFFFF_13 = TextStyle(
     fontSize: Dimens.fontPt13,
     color: AppColors.clFFFFFF,

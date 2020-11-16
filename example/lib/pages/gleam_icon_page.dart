@@ -24,24 +24,114 @@ class _GleamIconPageState extends State<GleamIconPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(),
-      body: ListView(
+      appBar: AppBar(
+        title: Text(
+          "GleamIcon 图标",
+          style: Style.ts_FFFFFF_18_bold,
+        ),
+      ),
+      body: SingleChildScrollView(
         padding: EdgeInsets.symmetric(vertical: 0, horizontal: 16.0),
-        children: ListTile.divideTiles(context: context, tiles: [
-          //提出弹窗
-          ListTile(
-              title: Text(
-                '提示弹窗',
-                style: Style.ts_333333_15,
-              ),
-              trailing: Icon(
-                Icons.arrow_forward_ios_outlined,
-                size: 20,
-              ),
-              onTap: () {
-                showToast('确定');
-              }),
-        ]).toList(),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            SizedBox(
+              height: 40.0,
+            ),
+            Text("基础用法"),
+            SizedBox(
+              height: 16.0,
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.start,
+              children: [
+                GleamIcon(
+                  Icons.chat,
+                ),
+                SizedBox(
+                  width: 16.0,
+                ),
+                GleamIcon(Icons.person)
+              ],
+            ),
+            SizedBox(
+              height: 16.0,
+            ),
+            Text("徽标提示"),
+            SizedBox(
+              height: 16.0,
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.start,
+              children: [
+                GleamIcon(
+                  Icons.chat,
+                  dot: true,
+                ),
+                SizedBox(
+                  width: 16.0,
+                ),
+                GleamIcon(
+                  Icons.chat,
+                  badge: "9",
+                ),
+                SizedBox(
+                  width: 16.0,
+                ),
+                GleamIcon(
+                  Icons.chat,
+                  badge: "99+",
+                ),
+              ],
+            ),
+            SizedBox(
+              height: 16.0,
+            ),
+            Text("图标颜色"),
+            SizedBox(
+              height: 16.0,
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.start,
+              children: [
+                GleamIcon(
+                  Icons.chat,
+                  color: Color(0XFF1989FA),
+                ),
+                SizedBox(
+                  width: 16.0,
+                ),
+                GleamIcon(
+                  Icons.chat,
+                  color: Color(0XFF07C160),
+                ),
+              ],
+            ),
+            SizedBox(
+              height: 16.0,
+            ),
+            Text("图标大小"),
+            SizedBox(
+              height: 16.0,
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.start,
+              children: [
+                GleamIcon(
+                  Icons.chat,
+                  size: 40.0,
+                ),
+                SizedBox(
+                  width: 16.0,
+                ),
+                GleamIcon(
+                  Icons.chat,
+                  size: 48.0,
+                ),
+              ],
+            ),
+          ],
+        ),
       ),
     );
   }
