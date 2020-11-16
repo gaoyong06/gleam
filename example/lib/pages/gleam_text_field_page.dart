@@ -7,6 +7,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:gleam/gleam.dart';
+import 'package:gleam/style/app_colors.dart';
 import 'package:gleam/style/style.dart';
 
 /// GleamTextFieldPage文本输入框示例程序
@@ -108,12 +109,26 @@ class _GleamTextFieldPageState extends State<GleamTextFieldPage> {
             GleamTextField(
               label: "文本",
               hintText: "显示图标",
-              leftIcon: Icon(Icons.mood),
-              rightIcon: Icon(Icons.info_outline),
+              leftIcon: Icon(
+                Icons.mood,
+                size: 24.0,
+                color: AppColors.cl999999,
+              ),
+              rightIcon: Icon(
+                Icons.info_outline,
+                size: 24.0,
+                color: AppColors.cl999999,
+              ),
             ),
             Divider(height: 0.5, color: Color(0xFFebedf0)),
             GleamTextField(
+              leftIcon: Icon(
+                Icons.alarm,
+                size: 24.0,
+                color: AppColors.cl999999,
+              ),
               label: "文本",
+              hintText: "请输入文本",
               defaultText: "123",
             ),
             Divider(height: 0.5, color: Color(0xFFebedf0)),
@@ -147,16 +162,19 @@ class _GleamTextFieldPageState extends State<GleamTextFieldPage> {
               hintText: "输入框内容右对齐",
               textAlign: TextAlign.end,
             ),
+            // SizedBox(
+            //   height: 16.0,
+            // ),
+            // Text("显示字数统计"),
+            // SizedBox(
+            //   height: 16.0,
+            // ),
+            // GleamTextField(
+            //   label: "留言",
+            //   hintText: "请输入留言",
+            // ),
             SizedBox(
-              height: 16.0,
-            ),
-            Text("显示字数统计"),
-            SizedBox(
-              height: 16.0,
-            ),
-            GleamTextField(
-              label: "留言",
-              hintText: "请输入留言",
+              height: 40.0,
             ),
           ],
         ),

@@ -15,7 +15,6 @@ enum GleamTextFieldType {
   tel, //手机号
   digit, //数字(支持小数, 允许一个小数点)
   number, //整数(数字是有符号的，允许正号或负号开始)
-  //
   textarea, //多行文本 TODO: 暂时未启用
   password, //密码
 }
@@ -24,6 +23,7 @@ enum GleamTextFieldType {
 class GleamTextField extends StatefulWidget {
   final GleamTextFieldType type;
   final double height; // Tile 高度
+  final EdgeInsetsGeometry padding; //容器内边距
   final String defaultText; //设置默认文本值,设置自定义 Controller后失效
   final TextStyle textStyle; //输入文本的样式
   final String label; //输入框左侧文本
@@ -33,7 +33,7 @@ class GleamTextField extends StatefulWidget {
   final Color cursorColor; //光标颜色
   final TextEditingController controller; //TextEditingController
   final int maxLength; //最大输入长度
-  final EdgeInsetsGeometry contentPadding; //内边距
+  final EdgeInsetsGeometry contentPadding; //输入框内边距
   final ValueChanged onSubmitted; //textField onSubmitted回调
   final ValueChanged onChanged; // textField onChanged回调
   final VoidCallback onTap; // textField 点击
@@ -49,6 +49,7 @@ class GleamTextField extends StatefulWidget {
     this.label,
     this.labelTextStyle,
     this.height = 58,
+    this.padding = const EdgeInsets.symmetric(horizontal: 16.0),
     this.defaultText,
     this.textStyle,
     this.hintText = '请输入',
@@ -99,8 +100,7 @@ class _GleamTextFieldState extends State<GleamTextField> {
           affinity: TextAffinity.downstream, offset: _controller.text.length)),
     );
 
-    const EdgeInsets _defaultContentPadding =
-        EdgeInsets.symmetric(horizontal: 0.0);
+    const EdgeInsets _defaultContentPadding = EdgeInsets.fromLTRB(0, 0, 0, 0);
     final TextDirection textDirection = Directionality.of(context);
     final EdgeInsets resolvedContentPadding =
         widget.contentPadding?.resolve(textDirection) ?? _defaultContentPadding;
@@ -124,7 +124,10 @@ class _GleamTextFieldState extends State<GleamTextField> {
       case GleamTextFieldType.digit:
         _keyboardType = TextInputType.numberWithOptions(decimal: true);
         _inputFormatters = [
-          FilteringTextInputFormatter.allow(RegExp("[0-9.]")),
+          //下面的正则表达式可以重复输入.
+          FilteringTextInputFormatter.allow(RegExp(r'[0-9\.]')),
+          //下面的正则表达式第二次输入. 时原有内容会被清除
+          // FilteringTextInputFormatter.allow(RegExp(r'^[0-9]+(\.)?([0-9]+)?$')),
         ];
         break;
 
@@ -143,6 +146,12 @@ class _GleamTextFieldState extends State<GleamTextField> {
       default:
     }
 
+    // left icon
+    // if () {
+    //   trailing.add(widget.leftIcon);
+    // }
+    Widget leftIcon = widget.leftIcon != null ? widget.leftIcon : Container();
+
     // leading
     Widget leading = Text(widget.label,
         overflow: TextOverflow.ellipsis,
@@ -150,11 +159,6 @@ class _GleamTextFieldState extends State<GleamTextField> {
 
     // trailing
     List<Widget> trailing = List();
-
-    // left icon
-    if (widget.leftIcon != null) {
-      trailing.add(widget.leftIcon);
-    }
 
     // TextField
     trailing.add(Expanded(
@@ -178,7 +182,7 @@ class _GleamTextFieldState extends State<GleamTextField> {
         readOnly: widget.readonly,
         enabled: !widget.disabled,
         decoration: InputDecoration(
-          contentPadding: EdgeInsets.fromLTRB(0, 0, 0, 0),
+          contentPadding: widget.contentPadding,
           fillColor: Colors.transparent,
           hintText: widget.hintText,
           hintStyle: widget.hintStyle ?? Style.ts_D8D8D8_15,
@@ -211,15 +215,15 @@ class _GleamTextFieldState extends State<GleamTextField> {
           children: <Widget>[
             Center(
               child: Container(
-                padding: EdgeInsets.symmetric(horizontal: 20.w),
+                padding: widget.padding,
                 child: Row(
                   children: <Widget>[
-                    Expanded(
-                      flex: 14,
-                      child: leading,
+                    leftIcon,
+                    SizedBox(
+                      width: 4.0,
                     ),
+                    leading,
                     Expanded(
-                      flex: 53,
                       child: Row(
                         children: trailing,
                       ),
