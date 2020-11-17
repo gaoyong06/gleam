@@ -7,7 +7,10 @@
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:gleam/style/app_colors.dart';
+import 'package:gleam/style/dimens.dart';
+import 'package:gleam/style/style.dart';
+import 'package:string_validator/string_validator.dart';
 
 ///
 /// 简单的搜索空间
@@ -16,11 +19,11 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 ///
 ///
 class Search extends StatefulWidget {
+  //输入框控制器
+  final TextEditingController controller;
+
   //背景色
   final Color bgColor;
-
-  //文字颜色
-  final Color textColor;
 
   //边框颜色
   final Color borderColor;
@@ -28,16 +31,19 @@ class Search extends StatefulWidget {
   //文字
   final String text;
 
-  //文字大小
-  final double fontSize;
+  //文字样式
+  final TextStyle textStyle;
 
   //圆角弧度
   final double radius;
 
-  //左边图标
-  final Widget leftIcon;
+  //输入框内前缀图标
+  final Widget prefix;
 
-  //右边图标
+  //输入框内后缀Widget
+  final Widget suffix;
+
+  //输入框外右侧Widget
   final Widget rightIcon;
 
   //外边距
@@ -48,6 +54,9 @@ class Search extends StatefulWidget {
 
   //提示文字
   final String hintText;
+
+  //提示文字样式
+  final TextStyle hintStyle;
 
   //高度
   final double height;
@@ -71,18 +80,20 @@ class Search extends StatefulWidget {
   final FocusNode focusNode;
 
   Search({
-    this.bgColor = const Color(0xFFF4F5F7),
+    this.controller,
+    this.bgColor = AppColors.clF4F5F7,
     this.text = "",
-    this.textColor = Colors.black,
-    this.fontSize = 12,
+    this.textStyle,
     this.radius = 3,
-    this.leftIcon,
-    this.rightIcon = const Icon(Icons.close, size: 20),
+    this.prefix,
+    this.suffix,
+    this.rightIcon,
     this.borderColor = Colors.transparent,
     this.margin = const EdgeInsets.all(0),
     this.padding = const EdgeInsets.symmetric(horizontal: 10),
-    this.hintText,
-    this.height = 40,
+    this.hintText = "请输入搜索关键字",
+    this.hintStyle,
+    this.height = 44,
     this.onChanged,
     this.onSubmitted,
     this.textInputAction,
@@ -97,39 +108,65 @@ class Search extends StatefulWidget {
 
 class _SearchState extends State<Search> {
   TextEditingController _controller;
-  bool _showDelete = false;
+  bool _showSuffix = false;
 
   @override
   void initState() {
     super.initState();
-    _controller = TextEditingController(text: widget.text);
+    _controller = widget.controller ?? TextEditingController(text: widget.text);
   }
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      height: widget.height,
-      decoration: BoxDecoration(
-        color: widget.bgColor,
-        borderRadius: BorderRadius.all(Radius.circular(widget.radius)),
-        border: Border.all(color: widget.borderColor, width: 0.5),
+    _showSuffix = _controller.text.length == 0 ? false : true;
+
+    print("打印调试日志：");
+    print("_showSuffix : " + _showSuffix.toString());
+
+    //默认输入框前缀Widget
+    Widget _defaultPrefix = Icon(
+      Icons.search,
+      size: 20.0,
+      color: AppColors.clC8C9CC,
+    );
+
+    //默认输入框内后缀Widget
+    Widget _defaultSuffix = Offstage(
+      child: InkWell(
+        onTap: () {
+          _controller?.text = "";
+          setState(() {
+            _showSuffix = false;
+          });
+        },
+        child: Icon(
+          Icons.cancel,
+          size: 20.0,
+          color: AppColors.clC8C9CC,
+        ),
       ),
-      padding: widget.padding,
-      margin: widget.margin,
-      child: Row(
-        children: [
-          Padding(
-              padding:
-                  EdgeInsets.symmetric(horizontal: ScreenUtil().setWidth(4)),
-              child: widget.leftIcon ?? Icon(Icons.search)),
-          Expanded(
+      offstage: !_showSuffix,
+    );
+
+    return Row(
+      children: [
+        Expanded(
+          child: Container(
+            height: widget.height,
+            decoration: BoxDecoration(
+              color: widget.bgColor,
+              borderRadius: BorderRadius.all(Radius.circular(widget.radius)),
+              border: Border.all(color: widget.borderColor, width: 0.5),
+            ),
+            padding: widget.padding,
+            margin: widget.margin,
             child: CupertinoTextField(
               focusNode: widget.focusNode,
-              placeholder: widget.hintText ?? "搜索",
-              placeholderStyle: TextStyle(
-                fontSize: 14.0,
-                color: const Color(0xFF999999),
-              ),
+              style: widget.textStyle ??
+                  TextStyle(
+                      color: AppColors.cl323233, fontSize: Dimens.fontPt14),
+              placeholder: widget.hintText,
+              placeholderStyle: widget.hintStyle ?? Style.ts_C8C9CC_14,
               cursorColor: const Color(0xFF333333),
               cursorWidth: 1,
               decoration: BoxDecoration(
@@ -137,7 +174,8 @@ class _SearchState extends State<Search> {
               controller: _controller,
               onChanged: (str) {
                 setState(() {
-                  _showDelete = str?.isNotEmpty ?? false;
+                  _showSuffix = str?.isNotEmpty ?? false;
+                  print("_showSuffix " + _showSuffix.toString());
                 });
                 widget.onChanged?.call(str);
               },
@@ -145,23 +183,13 @@ class _SearchState extends State<Search> {
               onSubmitted: widget.onSubmitted,
               autofocus: widget.autoFocus ?? false,
               keyboardType: widget.keyboardType,
+              prefix: widget.prefix ?? _defaultPrefix,
+              suffix: widget.suffix ?? _defaultSuffix,
             ),
           ),
-          SizedBox(width: 10),
-          Offstage(
-            child: InkWell(
-              onTap: () {
-                _controller?.text = "";
-                setState(() {
-                  _showDelete = false;
-                });
-              },
-              child: widget.rightIcon,
-            ),
-            offstage: !_showDelete,
-          )
-        ],
-      ),
+        ),
+        widget.rightIcon ?? Container(),
+      ],
     );
   }
 

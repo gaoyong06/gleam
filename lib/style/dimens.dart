@@ -11,20 +11,20 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 class Dimens {
   //字体大小
   //大标题
-  static  double fontPt24 = ScreenUtil().setSp(24);
-  static  double fontPt20 = ScreenUtil().setSp(20);
-  static  double fontPt18 = ScreenUtil().setSp(18);
+  static double fontPt24 = ScreenUtil().setSp(24);
+  static double fontPt20 = ScreenUtil().setSp(20);
+  static double fontPt18 = ScreenUtil().setSp(18);
   //导航栏
-  static  double fontPt16 = ScreenUtil().setSp(16);
+  static double fontPt16 = ScreenUtil().setSp(16);
   //小标题,列表文字
-  static  double fontPt15 = ScreenUtil().setSp(15);
+  static double fontPt15 = ScreenUtil().setSp(15);
   //小标题
-  static  double fontPt14 = ScreenUtil().setSp(14);
-  static  double fontPt13 = ScreenUtil().setSp(13);
-  static  double fontPt12 = ScreenUtil().setSp(12);
-  static  double fontPt11 = ScreenUtil().setSp(11);
+  static double fontPt14 = ScreenUtil().setSp(14);
+  static double fontPt13 = ScreenUtil().setSp(13);
+  static double fontPt12 = ScreenUtil().setSp(12);
+  static double fontPt11 = ScreenUtil().setSp(11);
   //数字
-  static  double fontPt10 = ScreenUtil().setSp(10);
+  static double fontPt10 = ScreenUtil().setSp(10);
 
   //圆角大小
   //头像

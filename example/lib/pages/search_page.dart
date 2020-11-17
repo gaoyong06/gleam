@@ -4,12 +4,10 @@
  * @Last Modified by: gaoyong06@qq.com
  * @Last Modified time: 2020-11-06 14:08:23
  */
-import 'dart:io';
 
 import 'package:flutter/material.dart';
 import 'package:gleam/gleam.dart';
 import 'package:gleam/style/style.dart';
-import 'package:gleam_example/r.dart';
 import 'package:oktoast/oktoast.dart';
 
 /// SearchPage搜索示例程序
@@ -23,26 +21,89 @@ class SearchPage extends StatefulWidget {
 class _SearchPageState extends State<SearchPage> {
   @override
   Widget build(BuildContext context) {
+    TextEditingController textEditingController = TextEditingController();
     return Scaffold(
-      appBar: AppBar(),
-      body: ListView(
+      appBar: AppBar(
+        title: Text(
+          "Search 搜索",
+          style: Style.ts_FFFFFF_18_bold,
+        ),
+      ),
+      body: SingleChildScrollView(
         padding: EdgeInsets.symmetric(vertical: 0, horizontal: 16.0),
-        children: ListTile.divideTiles(context: context, tiles: [
-          //提出弹窗
-          ListTile(
-              title: Text(
-                '提示弹窗',
-                style: Style.ts_333333_15,
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            SizedBox(
+              height: 40.0,
+            ),
+            Text(
+              "基础用法",
+              style: Style.ts_66455A64_14,
+            ),
+            SizedBox(
+              height: 16.0,
+            ),
+            Search(),
+            SizedBox(
+              height: 16.0,
+            ),
+            Text(
+              "事件监听",
+              style: Style.ts_66455A64_14,
+            ),
+            SizedBox(
+              height: 16.0,
+            ),
+            Search(
+              controller: textEditingController,
+              rightIcon: SizedBox(
+                height: 44.0,
+                child: TextButton(
+                  onPressed: () {
+                    //TODO: 后面得关闭按钮没有隐藏
+                    textEditingController.text = "";
+                    showToast("取消");
+                  },
+                  child: Text(
+                    "取消",
+                    style: Style.ts_323233_14,
+                  ),
+                ),
               ),
-              trailing: Icon(
-                Icons.arrow_forward_ios_outlined,
-                size: 20,
-              ),
-              onTap: () {
-                showToast('确定');
-              }),
-        ]).toList(),
+
+              // InkWell(
+              //   onTap: () {
+              //     // _controller?.text = "";
+              //     // setState(() {
+              //     //   _showDelete = false;
+              //     // });
+              //     showToast("取消");
+              //   },
+              //   child: Text(
+              //     "取消",
+              //     style: Style.ts_323233_14,
+              //   ),
+              // ),
+              //   offstage: false,
+              // ),
+            ),
+          ],
+        ),
       ),
     );
   }
 }
+
+// Offstage(
+//           child: InkWell(
+//             onTap: () {
+//               _controller?.text = "";
+//               setState(() {
+//                 _showDelete = false;
+//               });
+//             },
+//             child: widget.rightIcon,
+//           ),
+//           offstage: !_showDelete,
+//         )
