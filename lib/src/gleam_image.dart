@@ -9,14 +9,18 @@ import 'dart:typed_data';
 import 'package:extended_image/extended_image.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:gleam/gleam.dart';
+import 'package:gleam/style/app_colors.dart';
 import 'package:wechat_assets_picker/wechat_assets_picker.dart';
 
-///
+/// GleamImage 图片
 /// 图片展示
-/// 支持 网络图片 本地图片 资源图片
-/// 支持 形状 圆角等配置
-/// 支持 占位图 失败图
+///   支持 网络图片 本地图片 资源图片
+///   支持 形状 圆角等配置
+///   支持 占位图 失败图
 ///
+/// 参考文档
+///   https://github.com/fluttercandies/extended_image/blob/master/README-ZH.md
 class GleamImage extends StatelessWidget {
   //图片对象,支持 网络+本地+资源图
   final dynamic image;
@@ -57,7 +61,7 @@ class GleamImage extends StatelessWidget {
     @required this.image,
     this.width,
     this.height,
-    this.fit = BoxFit.contain,
+    this.fit = BoxFit.fill,
     this.placeholderWidget,
     this.errorWidget = const Icon(Icons.error),
     this.shape = BoxShape.rectangle,
@@ -93,21 +97,19 @@ class GleamImage extends StatelessWidget {
     var width = this.width ?? this.height;
 
     ImageProvider imageProvider;
-    if (image is String && image.startsWith("http")) {
+    if (image is String &&
+        (image.startsWith("http") || image.startsWith("https"))) {
       imageProvider =
           ExtendedNetworkImageProvider(image, cache: true, scale: 1.0);
     } else if (image is AssetEntity) {
       imageProvider = AssetEntityImageProvider(image, isOriginal: isOriginal);
     } else if (image is File) {
-      print("#### FileImage #####");
       imageProvider = FileImage(image);
     } else if (image is Uint8List) {
       imageProvider = MemoryImage(image);
     } else {
-      print("#### AssetImage #####");
       imageProvider = AssetImage(image, bundle: null, package: 'gleam');
     }
-
     return ExtendedImage(
       fit: fit,
       shape: shape,
@@ -134,7 +136,15 @@ class GleamImage extends StatelessWidget {
               return _buildThumb(); //加载缩略图
             }
             return placeholderWidget ??
-                Center(child: CupertinoActivityIndicator());
+                Container(
+                  color: AppColors.clF7F8FA,
+                  child: GleamIcon(
+                    Icons.image,
+                    size: 32.0,
+                    color: AppColors.clDCDEE0,
+                  ),
+                );
+          // Center(child: CupertinoActivityIndicator());
           case LoadState.failed:
             return errorWidget;
           default:

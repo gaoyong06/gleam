@@ -6,6 +6,7 @@
  */
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:gleam/style/app_colors.dart';
 
 ///
 /// 按钮
@@ -131,7 +132,7 @@ class GleamButton extends StatelessWidget {
       @required this.onPressed,
       this.margin,
       this.showShadow = true,
-      this.shadowColor = const Color(0x7D80AEFF),
+      this.shadowColor = AppColors.cl7D80AEFF,
       this.borderRadius = 2,
       this.borderColor,
       this.fillColor,
@@ -161,31 +162,31 @@ class GleamButton extends StatelessWidget {
 
     switch (type) {
       case ButtonType.primary:
-        tempFillColor = const Color(0xff07c160);
+        tempFillColor = AppColors.cl07C160;
         tempBorderColor = tempFillColor;
         tempTextColor = defaultTextColor;
         break;
 
       case ButtonType.info:
-        tempFillColor = const Color(0xff1989fa);
+        tempFillColor = AppColors.cl1989FA;
         tempBorderColor = tempFillColor;
         tempTextColor = defaultTextColor;
         break;
 
       case ButtonType.defaulted:
-        tempFillColor = const Color(0xffffffff);
-        tempBorderColor = const Color(0xffebedf0);
-        tempTextColor = const Color(0xff323233);
+        tempFillColor = AppColors.clFFFFFF;
+        tempBorderColor = AppColors.clEDEDF0;
+        tempTextColor = AppColors.cl323233;
         break;
 
       case ButtonType.warning:
-        tempFillColor = const Color(0xffff976a);
+        tempFillColor = AppColors.clFF976A;
         tempBorderColor = tempFillColor;
         tempTextColor = defaultTextColor;
         break;
 
       case ButtonType.danger:
-        tempFillColor = const Color(0xffee0a24);
+        tempFillColor = AppColors.clEE0A24;
         tempBorderColor = tempFillColor;
         tempTextColor = defaultTextColor;
         break;

@@ -276,7 +276,7 @@ class GleamDialog {
         fontSize1: Dimens.fontPt15,
         onTap1: onTap1,
         text2: text2,
-        color2: AppColors.cl3CACFF,
+        color2: AppColors.cl1989FA,
         fontSize2: Dimens.fontPt15,
         onTap2: onTap2,
       )
@@ -308,7 +308,7 @@ class GleamDialog {
         child: Text(
           buttonText,
           style: TextStyle(
-            color: AppColors.cl3CACFF,
+            color: AppColors.cl1989FA,
             fontSize: Dimens.fontPt15,
           ),
         ),

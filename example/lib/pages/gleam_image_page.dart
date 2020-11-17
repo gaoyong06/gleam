@@ -4,13 +4,10 @@
  * @Last Modified by: gaoyong06@qq.com
  * @Last Modified time: 2020-11-06 14:08:23
  */
-import 'dart:io';
 
 import 'package:flutter/material.dart';
 import 'package:gleam/gleam.dart';
 import 'package:gleam/style/style.dart';
-import 'package:gleam_example/r.dart';
-import 'package:oktoast/oktoast.dart';
 
 /// GleamImagePage图片示例程序
 class GleamImagePage extends StatefulWidget {
@@ -24,25 +21,363 @@ class _GleamImagePageState extends State<GleamImagePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(),
-      body: ListView(
-        padding: EdgeInsets.symmetric(vertical: 0, horizontal: 16.0),
-        children: ListTile.divideTiles(context: context, tiles: [
-          //提出弹窗
-          ListTile(
-              title: Text(
-                '提示弹窗',
-                style: Style.ts_333333_15,
-              ),
-              trailing: Icon(
-                Icons.arrow_forward_ios_outlined,
-                size: 20,
-              ),
-              onTap: () {
-                showToast('确定');
-              }),
-        ]).toList(),
+      appBar: AppBar(
+        title: Text(
+          "GleamImage 图片",
+          style: Style.ts_FFFFFF_18_bold,
+        ),
       ),
+      body: SingleChildScrollView(
+        padding: EdgeInsets.symmetric(vertical: 0, horizontal: 16.0),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            SizedBox(
+              height: 40.0,
+            ),
+            Text(
+              "基础用法",
+              style: Style.ts_66455A64_14,
+            ),
+            SizedBox(
+              height: 16.0,
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.start,
+              children: [
+                GleamImage(
+                  image: 'https://img.yzcdn.cn/vant/cat.jpeg',
+                  width: 80.0,
+                  height: 80.0,
+                )
+              ],
+            ),
+            SizedBox(
+              height: 16.0,
+            ),
+            Text(
+              "填充模式",
+              style: Style.ts_66455A64_14,
+            ),
+            SizedBox(
+              height: 16.0,
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.start,
+              children: [
+                VerticalItemWidget(
+                  gleamImage: GleamImage(
+                    image: 'https://img.yzcdn.cn/vant/cat.jpeg',
+                    width: 80.0,
+                    height: 80.0,
+                    fit: BoxFit.contain,
+                  ),
+                  text: "contain",
+                ),
+                SizedBox(
+                  width: 16.0,
+                ),
+                VerticalItemWidget(
+                  gleamImage: GleamImage(
+                    image: 'https://img.yzcdn.cn/vant/cat.jpeg',
+                    width: 80.0,
+                    height: 80.0,
+                    fit: BoxFit.cover,
+                  ),
+                  text: "cover",
+                ),
+                SizedBox(
+                  width: 16.0,
+                ),
+                VerticalItemWidget(
+                  gleamImage: GleamImage(
+                    image: 'https://img.yzcdn.cn/vant/cat.jpeg',
+                    width: 80.0,
+                    height: 80.0,
+                    fit: BoxFit.fill,
+                  ),
+                  text: "fill",
+                ),
+              ],
+            ),
+            SizedBox(
+              height: 16.0,
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.start,
+              children: [
+                VerticalItemWidget(
+                  gleamImage: GleamImage(
+                    image: 'https://img.yzcdn.cn/vant/cat.jpeg',
+                    width: 80.0,
+                    height: 80.0,
+                    fit: BoxFit.none,
+                  ),
+                  text: "none",
+                ),
+                SizedBox(
+                  width: 16.0,
+                ),
+                VerticalItemWidget(
+                  gleamImage: GleamImage(
+                    image: 'https://img.yzcdn.cn/vant/cat.jpeg',
+                    width: 80.0,
+                    height: 80.0,
+                    fit: BoxFit.scaleDown,
+                  ),
+                  text: "scaleDown",
+                ),
+              ],
+            ),
+            SizedBox(
+              height: 16.0,
+            ),
+            Text(
+              "圆形图片",
+              style: Style.ts_66455A64_14,
+            ),
+            SizedBox(
+              height: 16.0,
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.start,
+              children: [
+                VerticalItemWidget(
+                  gleamImage: GleamImage(
+                    image: 'https://img.yzcdn.cn/vant/cat.jpeg',
+                    shape: BoxShape.circle,
+                    width: 80.0,
+                    height: 80.0,
+                    fit: BoxFit.contain,
+                  ),
+                  text: "contain",
+                ),
+                SizedBox(
+                  width: 16.0,
+                ),
+                VerticalItemWidget(
+                  gleamImage: GleamImage(
+                    image: 'https://img.yzcdn.cn/vant/cat.jpeg',
+                    shape: BoxShape.circle,
+                    width: 80.0,
+                    height: 80.0,
+                    fit: BoxFit.cover,
+                  ),
+                  text: "cover",
+                ),
+                SizedBox(
+                  width: 16.0,
+                ),
+                SizedBox(
+                  width: 16.0,
+                ),
+                VerticalItemWidget(
+                  gleamImage: GleamImage(
+                    image: 'https://img.yzcdn.cn/vant/cat.jpeg',
+                    shape: BoxShape.circle,
+                    width: 80.0,
+                    height: 80.0,
+                    fit: BoxFit.fill,
+                  ),
+                  text: "fill",
+                ),
+              ],
+            ),
+            SizedBox(
+              height: 16.0,
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.start,
+              children: [
+                VerticalItemWidget(
+                  gleamImage: GleamImage(
+                    image: 'https://img.yzcdn.cn/vant/cat.jpeg',
+                    shape: BoxShape.circle,
+                    width: 80.0,
+                    height: 80.0,
+                    fit: BoxFit.none,
+                  ),
+                  text: "none",
+                ),
+                SizedBox(
+                  width: 16.0,
+                ),
+                VerticalItemWidget(
+                  gleamImage: GleamImage(
+                    image: 'https://img.yzcdn.cn/vant/cat.jpeg',
+                    shape: BoxShape.circle,
+                    width: 80.0,
+                    height: 80.0,
+                    fit: BoxFit.scaleDown,
+                  ),
+                  text: "scaleDown",
+                ),
+              ],
+            ),
+            SizedBox(
+              height: 16.0,
+            ),
+            Text(
+              "加载中提示",
+              style: Style.ts_66455A64_14,
+            ),
+            SizedBox(
+              height: 16.0,
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.start,
+              children: [
+                VerticalItemWidget(
+                  gleamImage: GleamImage(
+                    image: 'http://weibo.com/',
+                    width: 80.0,
+                    height: 80.0,
+                    placeholderWidget: Container(
+                      color: Color(0XFFf7f8fa),
+                      child: GleamIcon(
+                        Icons.image,
+                        size: 32.0,
+                        color: Color(0XFFdcdee0),
+                      ),
+                    ),
+                    errorWidget: Container(
+                      color: Color(0XFFf7f8fa),
+                      child: GleamIcon(
+                        Icons.image,
+                        size: 32.0,
+                        color: Color(0XFFdcdee0),
+                      ),
+                    ),
+                  ),
+                  text: "默认提示",
+                ),
+                SizedBox(
+                  width: 16.0,
+                ),
+                VerticalItemWidget(
+                  gleamImage: GleamImage(
+                    image: 'http://weibo.com/',
+                    width: 80.0,
+                    height: 80.0,
+                    placeholderWidget: Container(
+                      color: Color(0XFFf7f8fa),
+                      child: GleamIcon(
+                        Icons.image,
+                        size: 32.0,
+                        color: Color(0XFFdcdee0),
+                      ),
+                    ),
+                    errorWidget: Container(
+                      color: Color(0XFFf7f8fa),
+                      child: GleamIcon(
+                        Icons.image,
+                        size: 32.0,
+                        color: Color(0XFFdcdee0),
+                      ),
+                    ),
+                  ),
+                  text: "自定义提示",
+                ),
+              ],
+            ),
+            SizedBox(
+              height: 16.0,
+            ),
+            Text(
+              "加载失败提示",
+              style: Style.ts_66455A64_14,
+            ),
+            SizedBox(
+              height: 16.0,
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.start,
+              children: [
+                VerticalItemWidget(
+                  gleamImage: GleamImage(
+                    image: 'http://weibo.com/',
+                    width: 80.0,
+                    height: 80.0,
+                    placeholderWidget: Container(
+                      color: Color(0XFFf7f8fa),
+                      child: GleamIcon(
+                        Icons.image,
+                        size: 32.0,
+                        color: Color(0XFFdcdee0),
+                      ),
+                    ),
+                    errorWidget: Container(
+                      color: Color(0XFFf7f8fa),
+                      child: GleamIcon(
+                        Icons.image,
+                        size: 32.0,
+                        color: Color(0XFFdcdee0),
+                      ),
+                    ),
+                  ),
+                  text: "默认提示",
+                ),
+                SizedBox(
+                  width: 16.0,
+                ),
+                VerticalItemWidget(
+                  gleamImage: GleamImage(
+                    image: 'http://weibo.com/',
+                    width: 80.0,
+                    height: 80.0,
+                    placeholderWidget: Container(
+                      color: Color(0XFFf7f8fa),
+                      child: GleamIcon(
+                        Icons.image,
+                        size: 32.0,
+                        color: Color(0XFFdcdee0),
+                      ),
+                    ),
+                    errorWidget: Container(
+                      color: Color(0XFFf7f8fa),
+                      child: GleamIcon(
+                        Icons.image,
+                        size: 32.0,
+                        color: Color(0XFFdcdee0),
+                      ),
+                    ),
+                  ),
+                  text: "自定义提示",
+                ),
+              ],
+            ),
+            SizedBox(
+              height: 40.0,
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+///自定义垂直子Widget
+class VerticalItemWidget extends StatelessWidget {
+  final GleamImage gleamImage;
+  final String text;
+
+  const VerticalItemWidget({Key key, this.gleamImage, this.text})
+      : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        gleamImage,
+        SizedBox(
+          height: 6.0,
+        ),
+        Text(
+          text ?? "",
+          style: Style.ts_646566_14,
+        )
+      ],
     );
   }
 }

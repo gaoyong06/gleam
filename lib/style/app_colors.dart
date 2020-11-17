@@ -14,9 +14,6 @@ class AppColors {
   // #5791F3 用于界面主色：按钮、icon、文字链接、重要提示等
   static const Color cl5791F3 = Color(0xFF5791F3);
 
-  // 阴影颜色
-  static const Color cl80AEFF = Color(0x7D80AEFF);
-
   // #00CB91 用于界面辅色、icon等
   static const Color cl00CB91 = Color(0xFF00CB91);
 
@@ -38,7 +35,6 @@ class AppColors {
 
   // 背景/分割线
   // #FFFFFF 背景色纯白
-  static const Color clFFFFFF = Color(0xFFFFFFFF);
 
   //纯黑色
   static const Color cl000000 = Color(0xFF000000);
@@ -56,31 +52,20 @@ class AppColors {
   //90%黑色透明
   static const Color cl19000000 = Color(0x19000000);
 
-  // #D8D8D8 分割线
+  static const Color cl07C160 = Color(0xFF07C160);
+  static const Color cl1989FA = Color(0xFF1989FA);
+  static const Color clFF976A = Color(0xFFFF976A);
+  static const Color clEE0A24 = Color(0xFFEE0A24);
 
-  //--------------------- 下面全部是测试的颜色，后续会删掉 ---------------------------
+  static const Color clFFFFFF = Color(0xFFFFFFFF);
+  static const Color clEDEDF0 = Color(0xFFEDEDF0);
+  static const Color clC8C9CC = Color(0xFFC8C9CC);
+  static const Color clDCDEE0 = Color(0xFFDCDEE0);
+  static const Color clF7F8FA = Color(0xFFF7F8FA);
 
-  //常规颜色
-  static const Color cl606266 = Color(0xFF606266);
+  static const Color cl646566 = Color(0xFF646566);
 
-  //副标题颜色 灰
-  static const Color cl888888 = Color(0xFF888888);
-
-  //黑色
-  static const Color cl303133 = Color(0xFF303133);
-
-  //白色
-  // static const Color clFFFFFF = Color(0xFFFFFFFF);
-
-  static const Color clEAEBEE = Color(0xFFEAEBEE);
-
-  static const Color clF23030 = Color(0xF23030);
-
-  //灰色
-  static const Color clA1A1A1 = Color(0xFFA1A1A1);
-
-  static const Color cl262626 = Color(0XFF262626);
-
-  //蓝色
-  static const Color cl3CACFF = Color(0xFF3CACFF);
+  static const Color cl66455A64 = Color(0x66455A64);
+  static const Color cl323233 = Color(0xFF323233);
+  static const Color cl7D80AEFF = Color(0x7D80AEFF);
 }

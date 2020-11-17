@@ -20,7 +20,7 @@ class Style {
   //文字按钮样式
   static TextStyle btnTextStyle = TextStyle(
     fontSize: Dimens.fontPt10,
-    color: AppColors.clF23030,
+    color: AppColors.clEE0A24,
     letterSpacing: Dimens.spaceDp_026,
   );
 
@@ -225,5 +225,15 @@ class Style {
   static TextStyle ts_FF0000_15 = TextStyle(
     fontSize: Dimens.fontPt15,
     color: AppColors.clFF0000,
+  );
+
+  static TextStyle ts_66455A64_14 = TextStyle(
+    fontSize: Dimens.fontPt14,
+    color: AppColors.cl66455A64,
+  );
+
+  static TextStyle ts_646566_14 = TextStyle(
+    fontSize: Dimens.fontPt14,
+    color: AppColors.cl646566,
   );
 }

@@ -19,7 +19,8 @@ dependencies:
   flutter_custom_dialog: ^1.0.20
   string_validator: ^0.1.4
   badges: ^1.1.4
-
+  cached_network_image: ^2.3.3
+  
 dev_dependencies:
   flutter_test:
     sdk: flutter

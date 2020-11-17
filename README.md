@@ -161,7 +161,7 @@ showGleamBottomSheet(
           right: 0,
           child: IconButton(
             icon: Icon(Icons.close),
-            color: AppColors.clA1A1A1,
+            color: AppColors.clC8C9CC,
             onPressed: () {
               Navigator.of(context).pop();
             },

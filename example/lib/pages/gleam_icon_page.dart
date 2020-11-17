@@ -4,13 +4,10 @@
  * @Last Modified by: gaoyong06@qq.com
  * @Last Modified time: 2020-11-06 14:08:23
  */
-import 'dart:io';
 
 import 'package:flutter/material.dart';
 import 'package:gleam/gleam.dart';
 import 'package:gleam/style/style.dart';
-import 'package:gleam_example/r.dart';
-import 'package:oktoast/oktoast.dart';
 
 /// GleamIconPage图标示例程序
 class GleamIconPage extends StatefulWidget {
