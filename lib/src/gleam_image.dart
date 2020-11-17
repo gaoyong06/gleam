@@ -63,7 +63,7 @@ class GleamImage extends StatelessWidget {
     this.height,
     this.fit = BoxFit.fill,
     this.placeholderWidget,
-    this.errorWidget = const Icon(Icons.error),
+    this.errorWidget,
     this.shape = BoxShape.rectangle,
     this.borderRadius,
     this.border,
@@ -89,8 +89,28 @@ class GleamImage extends StatelessWidget {
   }
 
   Widget buildGleamImage() {
+    //默认占位图
+    Widget _defaultPlaceholderWidget = Container(
+      color: AppColors.clF7F8FA,
+      child: GleamIcon(
+        Icons.image,
+        size: 32.0,
+        color: AppColors.clDCDEE0,
+      ),
+    );
+
+    //默认失败图
+    Widget _defaultErrorWidget = Container(
+      color: AppColors.clF7F8FA,
+      child: GleamIcon(
+        Icons.broken_image,
+        size: 32.0,
+        color: AppColors.clDCDEE0,
+      ),
+    );
+
     if (image == null) {
-      return errorWidget;
+      return errorWidget ?? _defaultErrorWidget;
     }
     //宽高一样，可以只传一个
     var height = this.height ?? this.width;
@@ -135,18 +155,9 @@ class GleamImage extends StatelessWidget {
             if (imageProvider is AssetEntityImageProvider) {
               return _buildThumb(); //加载缩略图
             }
-            return placeholderWidget ??
-                Container(
-                  color: AppColors.clF7F8FA,
-                  child: GleamIcon(
-                    Icons.image,
-                    size: 32.0,
-                    color: AppColors.clDCDEE0,
-                  ),
-                );
-          // Center(child: CupertinoActivityIndicator());
+            return placeholderWidget ?? _defaultPlaceholderWidget;
           case LoadState.failed:
-            return errorWidget;
+            return errorWidget ?? _defaultErrorWidget;
           default:
             return null;
         }

@@ -5,8 +5,10 @@
  * @Last Modified time: 2020-11-06 14:08:23
  */
 
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:gleam/gleam.dart';
+import 'package:gleam/style/app_colors.dart';
 import 'package:gleam/style/style.dart';
 
 /// GleamImagePage图片示例程序
@@ -232,20 +234,14 @@ class _GleamImagePageState extends State<GleamImagePage> {
                     image: 'http://weibo.com/',
                     width: 80.0,
                     height: 80.0,
-                    placeholderWidget: Container(
-                      color: Color(0XFFf7f8fa),
-                      child: GleamIcon(
-                        Icons.image,
-                        size: 32.0,
-                        color: Color(0XFFdcdee0),
-                      ),
-                    ),
+                    //下面的errorWidget设置和placeholderWidget设置相同
+                    //只是为了演示效果，否则placeholderWidget会一闪而过
                     errorWidget: Container(
-                      color: Color(0XFFf7f8fa),
+                      color: AppColors.clF7F8FA,
                       child: GleamIcon(
                         Icons.image,
                         size: 32.0,
-                        color: Color(0XFFdcdee0),
+                        color: AppColors.clDCDEE0,
                       ),
                     ),
                   ),
@@ -260,20 +256,14 @@ class _GleamImagePageState extends State<GleamImagePage> {
                     width: 80.0,
                     height: 80.0,
                     placeholderWidget: Container(
-                      color: Color(0XFFf7f8fa),
-                      child: GleamIcon(
-                        Icons.image,
-                        size: 32.0,
-                        color: Color(0XFFdcdee0),
-                      ),
+                      color: AppColors.clF7F8FA,
+                      child: Center(child: CupertinoActivityIndicator()),
                     ),
+                    //下面的errorWidget设置和placeholderWidget设置相同
+                    //只是为了演示效果，否则placeholderWidget会一闪而过
                     errorWidget: Container(
-                      color: Color(0XFFf7f8fa),
-                      child: GleamIcon(
-                        Icons.image,
-                        size: 32.0,
-                        color: Color(0XFFdcdee0),
-                      ),
+                      color: AppColors.clF7F8FA,
+                      child: Center(child: CupertinoActivityIndicator()),
                     ),
                   ),
                   text: "自定义提示",
@@ -298,22 +288,6 @@ class _GleamImagePageState extends State<GleamImagePage> {
                     image: 'http://weibo.com/',
                     width: 80.0,
                     height: 80.0,
-                    placeholderWidget: Container(
-                      color: Color(0XFFf7f8fa),
-                      child: GleamIcon(
-                        Icons.image,
-                        size: 32.0,
-                        color: Color(0XFFdcdee0),
-                      ),
-                    ),
-                    errorWidget: Container(
-                      color: Color(0XFFf7f8fa),
-                      child: GleamIcon(
-                        Icons.image,
-                        size: 32.0,
-                        color: Color(0XFFdcdee0),
-                      ),
-                    ),
                   ),
                   text: "默认提示",
                 ),
@@ -325,21 +299,13 @@ class _GleamImagePageState extends State<GleamImagePage> {
                     image: 'http://weibo.com/',
                     width: 80.0,
                     height: 80.0,
-                    placeholderWidget: Container(
-                      color: Color(0XFFf7f8fa),
-                      child: GleamIcon(
-                        Icons.image,
-                        size: 32.0,
-                        color: Color(0XFFdcdee0),
-                      ),
-                    ),
                     errorWidget: Container(
-                      color: Color(0XFFf7f8fa),
-                      child: GleamIcon(
-                        Icons.image,
-                        size: 32.0,
-                        color: Color(0XFFdcdee0),
-                      ),
+                      color: AppColors.clF7F8FA,
+                      child: Center(
+                          child: Text(
+                        "加载失败",
+                        style: Style.ts_969799_14,
+                      )),
                     ),
                   ),
                   text: "自定义提示",

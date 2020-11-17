@@ -236,4 +236,9 @@ class Style {
     fontSize: Dimens.fontPt14,
     color: AppColors.cl646566,
   );
+
+  static TextStyle ts_969799_14 = TextStyle(
+    fontSize: Dimens.fontPt14,
+    color: AppColors.cl969799,
+  );
 }
