@@ -44,7 +44,7 @@ class Search extends StatefulWidget {
   final Widget suffix;
 
   //输入框外右侧Widget
-  final Widget rightIcon;
+  final Widget rightWidget;
 
   //外边距
   final EdgeInsetsGeometry margin;
@@ -64,6 +64,9 @@ class Search extends StatefulWidget {
   //回调输入内容
   final ValueChanged<String> onChanged;
 
+  //文字对齐方式
+  final TextAlign textAlign;
+
   //键盘上完成动作等
   final TextInputAction textInputAction;
 
@@ -79,6 +82,9 @@ class Search extends StatefulWidget {
   //焦点
   final FocusNode focusNode;
 
+  //是否禁用搜索框
+  final bool disabled;
+
   Search({
     this.controller,
     this.bgColor = AppColors.clF4F5F7,
@@ -87,7 +93,7 @@ class Search extends StatefulWidget {
     this.radius = 3,
     this.prefix,
     this.suffix,
-    this.rightIcon,
+    this.rightWidget,
     this.borderColor = Colors.transparent,
     this.margin = const EdgeInsets.all(0),
     this.padding = const EdgeInsets.symmetric(horizontal: 10),
@@ -96,10 +102,12 @@ class Search extends StatefulWidget {
     this.height = 44,
     this.onChanged,
     this.onSubmitted,
+    this.textAlign = TextAlign.start,
     this.textInputAction,
     this.autoFocus = false,
     this.keyboardType,
     this.focusNode,
+    this.disabled = false,
   });
 
   @override
@@ -161,6 +169,7 @@ class _SearchState extends State<Search> {
             padding: widget.padding,
             margin: widget.margin,
             child: CupertinoTextField(
+              enabled: !widget.disabled,
               focusNode: widget.focusNode,
               style: widget.textStyle ??
                   TextStyle(
@@ -179,6 +188,7 @@ class _SearchState extends State<Search> {
                 });
                 widget.onChanged?.call(str);
               },
+              textAlign: widget.textAlign,
               textInputAction: widget.textInputAction,
               onSubmitted: widget.onSubmitted,
               autofocus: widget.autoFocus ?? false,
@@ -188,7 +198,10 @@ class _SearchState extends State<Search> {
             ),
           ),
         ),
-        widget.rightIcon ?? Container(),
+        SizedBox(
+          height: widget.height,
+          child: widget.rightWidget ?? Container(),
+        ),
       ],
     );
   }

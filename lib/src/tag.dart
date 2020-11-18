@@ -12,6 +12,7 @@ import 'package:flutter/material.dart';
 ///
 ///
 ///文字水平
+///Chip，
 class Tag extends StatelessWidget {
   //是否为空心样式
   final bool plain;

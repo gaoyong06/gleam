@@ -5,8 +5,11 @@
  * @Last Modified time: 2020-11-06 14:08:23
  */
 
+import 'dart:ui';
+
 import 'package:flutter/material.dart';
 import 'package:gleam/gleam.dart';
+import 'package:gleam/style/app_colors.dart';
 import 'package:gleam/style/style.dart';
 import 'package:oktoast/oktoast.dart';
 
@@ -57,36 +60,101 @@ class _SearchPageState extends State<SearchPage> {
             ),
             Search(
               controller: textEditingController,
-              rightIcon: SizedBox(
-                height: 44.0,
-                child: TextButton(
-                  onPressed: () {
-                    //TODO: 后面得关闭按钮没有隐藏
-                    textEditingController.text = "";
-                    showToast("取消");
-                  },
-                  child: Text(
-                    "取消",
-                    style: Style.ts_323233_14,
-                  ),
+              rightWidget: TextButton(
+                onPressed: () {
+                  //TODO: 后面得关闭按钮没有隐藏
+                  textEditingController.text = "";
+                  showToast("取消");
+                },
+                child: Text(
+                  "取消",
+                  style: Style.ts_323233_14,
                 ),
               ),
-
-              // InkWell(
-              //   onTap: () {
-              //     // _controller?.text = "";
-              //     // setState(() {
-              //     //   _showDelete = false;
-              //     // });
-              //     showToast("取消");
-              //   },
-              //   child: Text(
-              //     "取消",
-              //     style: Style.ts_323233_14,
-              //   ),
-              // ),
-              //   offstage: false,
-              // ),
+            ),
+            SizedBox(
+              height: 16.0,
+            ),
+            Text(
+              "搜索框内容对齐",
+              style: Style.ts_66455A64_14,
+            ),
+            SizedBox(
+              height: 16.0,
+            ),
+            Search(
+              textAlign: TextAlign.center,
+            ),
+            SizedBox(
+              height: 16.0,
+            ),
+            Text(
+              "禁用搜索框",
+              style: Style.ts_66455A64_14,
+            ),
+            SizedBox(
+              height: 16.0,
+            ),
+            Search(
+              disabled: true,
+            ),
+            SizedBox(
+              height: 16.0,
+            ),
+            Text(
+              "自定义背景色",
+              style: Style.ts_66455A64_14,
+            ),
+            SizedBox(
+              height: 16.0,
+            ),
+            Search(
+              height: 54.0,
+              bgColor: Color(0XFF4FC08D),
+              padding: EdgeInsets.symmetric(vertical: 10.0, horizontal: 12.0),
+              radius: 27.0,
+            ),
+            SizedBox(
+              height: 16.0,
+            ),
+            Text(
+              "自定义按钮",
+              style: Style.ts_66455A64_14,
+            ),
+            SizedBox(
+              height: 16.0,
+            ),
+            Search(
+              prefix: Container(
+                child: Row(
+                  children: [
+                    //TODO:  感觉文字上下有Padding
+                    Text(
+                      '地址',
+                      style: Style.ts_323233_14,
+                    ),
+                    SizedBox(
+                      width: 5.0,
+                    ),
+                    Icon(
+                      Icons.search,
+                      size: 20.0,
+                      color: AppColors.clC8C9CC,
+                    )
+                  ],
+                ),
+              ),
+              rightWidget: TextButton(
+                  onPressed: () {
+                    showToast("搜索");
+                  },
+                  child: Text(
+                    "搜索",
+                    style: Style.ts_323233_14,
+                  )),
+            ),
+            SizedBox(
+              height: 40.0,
             ),
           ],
         ),
@@ -94,16 +162,3 @@ class _SearchPageState extends State<SearchPage> {
     );
   }
 }
-
-// Offstage(
-//           child: InkWell(
-//             onTap: () {
-//               _controller?.text = "";
-//               setState(() {
-//                 _showDelete = false;
-//               });
-//             },
-//             child: widget.rightIcon,
-//           ),
-//           offstage: !_showDelete,
-//         )
