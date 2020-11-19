@@ -4,12 +4,11 @@
  * @Last Modified by: gaoyong06@qq.com
  * @Last Modified time: 2020-11-06 14:08:23
  */
-import 'dart:io';
 
 import 'package:flutter/material.dart';
 import 'package:gleam/gleam.dart';
+import 'package:gleam/style/app_colors.dart';
 import 'package:gleam/style/style.dart';
-import 'package:gleam_example/r.dart';
 import 'package:oktoast/oktoast.dart';
 
 /// TagPage标签示例程序
@@ -24,23 +23,231 @@ class _TagPageState extends State<TagPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(),
+      appBar: AppBar(
+        title: Text(
+          "Tag",
+          style: Style.ts_FFFFFF_18_bold,
+        ),
+      ),
       body: ListView(
         padding: EdgeInsets.symmetric(vertical: 0, horizontal: 16.0),
         children: ListTile.divideTiles(context: context, tiles: [
-          //提出弹窗
+          //基础用法
           ListTile(
-              title: Text(
-                '提示弹窗',
-                style: Style.ts_333333_15,
+            title: Text(
+              'primary类型',
+              style: Style.ts_333333_15,
+            ),
+            trailing: Tag(
+              type: TagType.primary,
+              plain: true,
+              round: true,
+              text: "标签",
+            ),
+          ),
+          ListTile(
+            title: Text(
+              'info类型',
+              style: Style.ts_333333_15,
+            ),
+            trailing: Tag(
+              plain: true,
+              round: true,
+              text: "标签",
+              type: TagType.info,
+            ),
+          ),
+          ListTile(
+            title: Text(
+              'defaulted类型',
+              style: Style.ts_333333_15,
+            ),
+            trailing: Tag(
+              plain: true,
+              round: true,
+              text: "标签",
+              type: TagType.defaulted,
+            ),
+          ),
+          ListTile(
+            title: Text(
+              'warning类型',
+              style: Style.ts_333333_15,
+            ),
+            trailing: Tag(
+              plain: true,
+              round: true,
+              text: "标签",
+              type: TagType.warning,
+            ),
+          ),
+          ListTile(
+            title: Text(
+              'danger类型',
+              style: Style.ts_333333_15,
+            ),
+            trailing: Tag(
+              plain: true,
+              round: true,
+              text: "标签",
+              type: TagType.danger,
+            ),
+          ),
+          //样式风格
+          ListTile(
+            title: Text(
+              '空心样式',
+              style: Style.ts_333333_15,
+            ),
+            trailing: Tag(
+              plain: false,
+              round: true,
+              text: "标签",
+              textStyle: Style.ts_1989FA_12,
+              type: TagType.info,
+            ),
+          ),
+
+          ListTile(
+            title: Text(
+              '圆角样式',
+              style: Style.ts_333333_15,
+            ),
+            trailing: Tag(
+              plain: true,
+              round: true,
+              text: "标签",
+              type: TagType.info,
+              radius: 10,
+            ),
+          ),
+
+          ListTile(
+            title: Text(
+              '标记样式',
+              style: Style.ts_333333_15,
+            ),
+            trailing: Tag(
+              plain: true,
+              text: "标签",
+              type: TagType.info,
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.only(
+                  topRight: Radius.circular(10.0),
+                  bottomRight: Radius.circular(10.0),
+                ),
+                side: BorderSide(
+                  color: Colors.transparent,
+                ),
               ),
-              trailing: Icon(
-                Icons.arrow_forward_ios_outlined,
-                size: 20,
+            ),
+          ),
+
+          ListTile(
+            title: Text(
+              '可关闭标签',
+              style: Style.ts_333333_15,
+            ),
+            trailing: Tag(
+                plain: true,
+                round: true,
+                text: "标签",
+                type: TagType.info,
+                deleteIcon:
+                    Icon(Icons.close, color: AppColors.clFFFFFF, size: 12.0),
+                onDeleted: () {
+                  showToast("删除");
+                }),
+          ),
+
+          //标签大小
+          ListTile(
+            title: Text(
+              '小号标签',
+              style: Style.ts_333333_15,
+            ),
+            trailing: Tag(
+              plain: true,
+              round: true,
+              text: "标签",
+              type: TagType.info,
+            ),
+          ),
+          ListTile(
+            title: Text(
+              '中号标签',
+              style: Style.ts_333333_15,
+            ),
+            trailing: Tag(
+              padding: EdgeInsets.symmetric(vertical: 2.0, horizontal: 6.0),
+              plain: true,
+              round: true,
+              text: "标签",
+              type: TagType.info,
+            ),
+          ),
+          ListTile(
+            title: Text(
+              '大号标签',
+              style: Style.ts_333333_15,
+            ),
+            trailing: Tag(
+              padding: EdgeInsets.symmetric(vertical: 4.0, horizontal: 8.0),
+              plain: true,
+              round: true,
+              text: "标签",
+              type: TagType.info,
+            ),
+          ),
+
+          //自定义颜色
+          ListTile(
+            title: Text(
+              '背景颜色',
+              style: Style.ts_333333_15,
+            ),
+            trailing: Tag(
+              plain: true,
+              round: true,
+              text: "标签",
+              backgroundColor: Color(0xFF7232DD),
+            ),
+          ),
+
+          ListTile(
+            title: Text(
+              '文字颜色',
+              style: Style.ts_333333_15,
+            ),
+            trailing: Tag(
+              plain: true,
+              round: true,
+              text: "标签",
+              backgroundColor: Color(0XFFFFE1E1),
+              textStyle: TextStyle(
+                fontSize: 12.0,
+                color: Color(0XFFAD0000),
               ),
-              onTap: () {
-                showToast('确定');
-              }),
+            ),
+          ),
+
+          ListTile(
+            title: Text(
+              '空心颜色',
+              style: Style.ts_333333_15,
+            ),
+            trailing: Tag(
+              plain: false,
+              round: true,
+              text: "标签",
+              backgroundColor: Color(0XFF7232DD),
+              borderColor: Color(0XFF7232DD),
+              textStyle: TextStyle(
+                fontSize: 12.0,
+                color: Color(0XFF7232DD),
+              ),
+            ),
+          ),
         ]).toList(),
       ),
     );

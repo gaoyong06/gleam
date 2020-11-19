@@ -5,29 +5,59 @@
  * @Last Modified time: 2020-11-04 13:36:23
  */
 import 'package:flutter/material.dart';
+import 'package:gleam/style/app_colors.dart';
+import 'package:gleam/style/style.dart';
 
 ///
 /// 标签
-/// 简单支持 纯文字 及图标+文字
+///  纯文字 ,图标+文字, 图标+文字+删掉图标
 ///
+/// 相关文档
+///   https://material.io/components/chips
 ///
-///文字水平
-///Chip，
+/// RawChip
+/// Chip
+/// ActionChip
+/// ChoiceChip
+/// FilterChip
+/// InputChip
+
+/// 标签类型
+enum TagType {
+  primary, //主要标签(默认)
+  info, //信息标签
+  defaulted, //默认标签
+  warning, //警告标签
+  danger //危险标签
+}
+
+/// 标签尺寸
+enum TagSize {
+  large, //大号标签
+  medium, //中号标签
+  small, //小号标签(默认)
+}
+
+const double _kDefaultLabelPaddingVerticalHalf = 8.0;
+
 class Tag extends StatelessWidget {
+  //标签类型
+  final TagType type;
+
+  //标签尺寸
+  final TagSize size;
+
   //是否为空心样式
   final bool plain;
 
   //背景色
-  final Color bgColor;
-
-  //文字颜色
-  final Color textColor;
+  final Color backgroundColor;
 
   //文字
   final String text;
 
-  //文字大小
-  final double fontSize;
+  //文字样式
+  final TextStyle textStyle;
 
   //是否为圆角样式
   final bool round;
@@ -36,7 +66,13 @@ class Tag extends StatelessWidget {
   final double radius;
 
   //左边图标
-  final Widget leftIcon;
+  final Widget avatar;
+
+  //右侧关闭图标
+  final Widget deleteIcon;
+
+  //关闭图标回调方法(onDeleted为null时, 右侧关闭图标deleteIcon不显示)
+  final Function() onDeleted;
 
   //边框颜色
   final Color borderColor;
@@ -44,45 +80,105 @@ class Tag extends StatelessWidget {
   //内部padding
   final EdgeInsetsGeometry padding;
 
+  //形状
+  final ShapeBorder shape;
+
   Tag({
     Key key,
+    this.type = TagType.primary,
+    this.size = TagSize.small,
     this.plain = false,
-    this.bgColor = const Color(0xFFF4F5F7),
-    this.textColor = const Color(0xFF999999),
+    this.backgroundColor,
     this.text = "",
-    this.fontSize = 11,
+    this.textStyle,
     this.round = false,
     this.radius = 2,
-    this.leftIcon,
-    this.borderColor = Colors.transparent,
-    this.padding = const EdgeInsets.symmetric(horizontal: 6, vertical: 2),
+    this.avatar,
+    this.deleteIcon,
+    this.onDeleted,
+    this.borderColor,
+    this.padding,
+    this.shape,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    if (text?.isEmpty ?? true) return Container();
-    var _text = Text(
-      text,
-      style: TextStyle(color: textColor, fontSize: fontSize),
-      maxLines: 1,
-      overflow: TextOverflow.ellipsis,
-    );
-    var _child = leftIcon == null
-        ? _text
-        : Row(
-            children: [leftIcon, SizedBox(width: 3), _text],
-          );
-    return Container(
-      constraints: BoxConstraints(minWidth: 20),
-      decoration: BoxDecoration(
-        color: plain ? bgColor : null,
-        borderRadius: round
-            ? BorderRadius.all(Radius.circular(radius))
-            : BorderRadius.all(Radius.circular(0)),
-        border: Border.all(color: borderColor, width: 0.5),
+    Color _backgroundColor;
+    Color _borderColor;
+    switch (type) {
+      case TagType.primary:
+        _backgroundColor = backgroundColor ?? AppColors.cl07C160;
+        _borderColor = _backgroundColor;
+        break;
+
+      case TagType.info:
+        _backgroundColor = backgroundColor ?? AppColors.cl1989FA;
+        _borderColor = _backgroundColor;
+        break;
+
+      case TagType.defaulted:
+        _backgroundColor = backgroundColor ?? AppColors.clC8C9CC;
+        _borderColor = _backgroundColor;
+        break;
+
+      case TagType.warning:
+        _backgroundColor = backgroundColor ?? AppColors.clFF976A;
+        _borderColor = _backgroundColor;
+        break;
+
+      case TagType.danger:
+        _backgroundColor = backgroundColor ?? AppColors.clEE0A24;
+        _borderColor = _backgroundColor;
+        break;
+      default:
+        _backgroundColor = backgroundColor ?? AppColors.clF4F5F7;
+        _borderColor = Colors.transparent;
+    }
+
+    EdgeInsetsGeometry _padding;
+    switch (size) {
+      case TagSize.large:
+        _padding =
+            padding ?? EdgeInsets.symmetric(vertical: 4.0, horizontal: 8.0);
+        break;
+
+      case TagSize.medium:
+        _padding =
+            padding ?? EdgeInsets.symmetric(vertical: 2.0, horizontal: 6.0);
+        break;
+
+      case TagSize.small:
+        _padding = padding ?? EdgeInsets.fromLTRB(4.0, 0.0, 4.0, 1.0);
+        break;
+
+      default:
+        _padding = padding ?? EdgeInsets.fromLTRB(4.0, 0.0, 4.0, 1.0);
+    }
+
+    double _labelPaddingVerticalHalf;
+    _labelPaddingVerticalHalf = (padding?.vertical ?? _padding.vertical) / 2 -
+        _kDefaultLabelPaddingVerticalHalf;
+
+    return Chip(
+      padding: _padding,
+      avatar: avatar,
+      deleteIcon: deleteIcon,
+      onDeleted: onDeleted,
+      label: Text(
+        text,
+        style: textStyle ?? Style.ts_FFFFFF_12,
       ),
-      padding: padding,
-      child: Center(child: _child),
+      labelPadding: EdgeInsets.fromLTRB(
+          0, _labelPaddingVerticalHalf, 0, _labelPaddingVerticalHalf),
+      backgroundColor: plain ? _backgroundColor : Colors.transparent,
+      materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
+      shape: shape ??
+          RoundedRectangleBorder(
+            side: BorderSide(color: borderColor ?? _borderColor, width: 0.5),
+            borderRadius: round
+                ? BorderRadius.all(Radius.circular(radius))
+                : BorderRadius.all(Radius.circular(0)),
+          ),
     );
   }
 }
