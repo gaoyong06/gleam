@@ -253,9 +253,9 @@ showGleamBottomSheet(
 
 
 ## 团队成员
-  [@gaoyong](https://github.com/gaoyong06)
-  [@liuxiaobina](https://github.com/liuxiaobina)
-  [@lee980](https://github.com/lee980)
+  - [@gaoyong](https://github.com/gaoyong06)
+  - [@liuxiaobina](https://github.com/liuxiaobina)
+  - [@lee980](https://github.com/lee980)
 
   
 
