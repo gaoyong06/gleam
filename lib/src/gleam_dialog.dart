@@ -8,7 +8,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_custom_dialog/flutter_custom_dialog.dart';
 import 'package:flutter_screenutil/screenutil.dart';
-import 'package:gleam/gleam.dart';
+import 'package:gleam/src/utils.dart';
 import 'package:gleam/style/app_colors.dart';
 import 'package:gleam/style/dimens.dart';
 import 'package:gleam/style/style.dart';
@@ -166,16 +166,7 @@ class GleamDialog {
 
     //描述
     Widget descriptionWidget;
-    if (description is String) {
-      descriptionWidget = Text(
-        description,
-        style: Style.ts_999999_15,
-      );
-    } else if (description is Widget) {
-      descriptionWidget = description;
-    } else {
-      descriptionWidget = Container();
-    }
+    descriptionWidget = dynamicText(description);
 
     yyDialog = YYDialog().build(context)
       ..width = screenWidth * 0.8
