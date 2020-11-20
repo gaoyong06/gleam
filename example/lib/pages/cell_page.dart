@@ -7,10 +7,8 @@
 
 import 'package:flutter/material.dart';
 import 'package:gleam/gleam.dart';
-import 'package:gleam/style/app_colors.dart';
 import 'package:gleam/style/style.dart';
 import 'package:gleam_example/widgets/cell_group_title.dart';
-import 'package:oktoast/oktoast.dart';
 
 /// TagPage标签示例程序
 class CellPage extends StatefulWidget {
@@ -21,13 +19,6 @@ class CellPage extends StatefulWidget {
 }
 
 class _CellPageState extends State<CellPage> {
-  // Widget _title(String title) {
-  //   return Container(
-  //     padding: EdgeInsets.fromLTRB(16.0, 20.0, 16.0, 16.0),
-  //     child: dynamicText(title, Style.ts_66455A64_14),
-  //   );
-  // }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -42,9 +33,6 @@ class _CellPageState extends State<CellPage> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            // SizedBox(
-            //   height: 40.0,
-            // ),
             CellGroupTitle(title: "基础用法"),
             CellGroup(
               padding: EdgeInsets.symmetric(vertical: 0, horizontal: 16.0),
@@ -91,25 +79,12 @@ class _CellPageState extends State<CellPage> {
               backgroundColor: Color(0XFFFFFFFF),
               children: [
                 Cell(
-                  title: Row(
-                    children: [
-                      Icon(
-                        Icons.location_on_outlined,
-                        size: 18,
-                        color: Color(0XFF323233),
-                      ),
-                      SizedBox(
-                        width: 4.0,
-                      ),
-                      Text(
-                        '单元格',
-                        style: TextStyle(
-                          fontSize: 14.0,
-                          color: Color(0XFF323233),
-                        ),
-                      )
-                    ],
+                  icon: Icon(
+                    Icons.location_on_outlined,
+                    size: 18,
+                    color: Color(0XFF323233),
                   ),
+                  title: '单元格',
                   value: '内容',
                 ),
               ],
@@ -122,6 +97,27 @@ class _CellPageState extends State<CellPage> {
               backgroundColor: Color(0XFFFFFFFF),
               children: [
                 Cell(
+                  value: '内容',
+                ),
+              ],
+            ),
+
+            CellGroupTitle(title: "展示箭头"),
+            CellGroup(
+              padding: EdgeInsets.symmetric(vertical: 0, horizontal: 16.0),
+              border: false,
+              backgroundColor: Color(0XFFFFFFFF),
+              children: [
+                Cell(
+                  title: '单元格',
+                  value: '内容',
+                ),
+                Cell(
+                  title: '单元格',
+                  value: '内容',
+                ),
+                Cell(
+                  title: '单元格',
                   value: '内容',
                 ),
               ],

@@ -1,7 +1,7 @@
 /*
  * @Author: gaoyong06@qq.com 
  * @Date: 2020-11-19 15:43:34 
- * @Last Modified by: mikey.zhaopeng
+ * @Last Modified by: gaoyong06@qq.com
  * @Last Modified time: 2020-11-19 17:21:25
  */
 
@@ -111,24 +111,61 @@ class Cell extends StatelessWidget {
     // this.padding = const EdgeInsets.symmetric(vertical: 10.0, horizontal: 16.0),
     this.padding = const EdgeInsets.all(0),
     this.divider,
-    // this.padding,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    print("title : $title");
-    print("value : $value");
-    print("label : $label");
-
-    Widget _title = dynamicText(title, titleStyle);
-    Widget _value = dynamicText(value, valueStyle);
-    Widget _label = dynamicText(label, labelStyle);
+    Widget _title;
+    Widget _value;
+    Widget _label;
 
     //如果只设置value, 在value展示在title的位置且使用title的样式
-    if (value != null && title == null && label == null) {
-      _title = _label;
+    if (title == null && value != null && label == null) {
+      _title = dynamicText(value, titleStyle);
       _value = null;
       _label = null;
+    } else {
+      _title = dynamicText(title, titleStyle);
+      _value = dynamicText(value, valueStyle);
+      _label = dynamicText(label, labelStyle);
+    }
+
+    _title = Row(
+      children: [
+        Offstage(
+          offstage: icon != null ? false : true,
+          child: icon,
+        ),
+        Text(
+          '单元格',
+          style: TextStyle(
+            fontSize: 14.0,
+            color: Color(0XFF323233),
+          ),
+        )
+      ],
+    );
+
+    if (icon != null) {
+      _title = Row(
+        children: [
+          Icon(
+            Icons.location_on_outlined,
+            size: 18,
+            color: Color(0XFF323233),
+          ),
+          SizedBox(
+            width: 4.0,
+          ),
+          Text(
+            '单元格',
+            style: TextStyle(
+              fontSize: 14.0,
+              color: Color(0XFF323233),
+            ),
+          )
+        ],
+      );
     }
 
     Decoration _decoration = BoxDecoration(
