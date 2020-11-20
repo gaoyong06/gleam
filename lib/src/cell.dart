@@ -6,6 +6,8 @@
  */
 
 import 'package:flutter/material.dart';
+import 'package:gleam/src/utils.dart';
+import 'package:string_validator/string_validator.dart';
 
 /// Cell单元格
 ///
@@ -25,13 +27,22 @@ enum CellArrowDirection {
 
 class Cell extends StatelessWidget {
   //左侧标题
-  final String title;
+  final dynamic title;
+
+  //左侧标题样式(左侧标题是文字时生效)
+  final TextStyle titleStyle;
 
   //右侧内容
-  final String value;
+  final dynamic value;
+
+  //右侧内容样式(右侧内容是文字时生效)
+  final TextStyle valueStyle;
 
   //标题下方的描述信息
-  final String label;
+  final dynamic label;
+
+  //标题下方的描述信息样式(标题下方的描述信息是文字时生效)
+  final TextStyle labelStyle;
 
   //单元格大小
   final CellSize size;
@@ -63,31 +74,84 @@ class Cell extends StatelessWidget {
   //是否使内容垂直居中
   final bool center;
 
-  //右侧箭头方向
+  //右侧箭头方向8
   final CellArrowDirection arrowDirection;
 
-  const Cell(
-      {Key key,
-      this.title,
-      this.value,
-      this.label,
-      this.size = CellSize.small,
-      this.icon,
-      this.url,
-      this.to,
-      this.border = true,
-      this.replace = false,
-      this.clickable = false,
-      this.isLink = false,
-      this.required = false,
-      this.center = false,
-      this.arrowDirection = CellArrowDirection.right})
-      : super(key: key);
+  //内边距
+  final EdgeInsetsGeometry padding;
+
+  //单元格底部分割线
+  final BorderSide divider;
+
+  const Cell({
+    Key key,
+    this.title,
+    this.titleStyle = const TextStyle(color: Color(0XFF323233), fontSize: 14.0),
+    this.value,
+    this.valueStyle = const TextStyle(
+      color: Color(0XFF969799),
+      fontSize: 14.0,
+    ),
+    this.label,
+    this.labelStyle = const TextStyle(
+      color: Color(0XFF969799),
+      fontSize: 12.0,
+    ),
+    this.size = CellSize.small,
+    this.icon,
+    this.url,
+    this.to,
+    this.border = true,
+    this.replace = false,
+    this.clickable = false,
+    this.isLink = false,
+    this.required = false,
+    this.center = false,
+    this.arrowDirection = CellArrowDirection.right,
+    // this.padding = const EdgeInsets.symmetric(vertical: 10.0, horizontal: 16.0),
+    this.padding = const EdgeInsets.all(0),
+    this.divider,
+    // this.padding,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return ListTile(
-      title: Text(''),
+    print("title : $title");
+    print("value : $value");
+    print("label : $label");
+
+    Widget _title = dynamicText(title, titleStyle);
+    Widget _value = dynamicText(value, valueStyle);
+    Widget _label = dynamicText(label, labelStyle);
+
+    //如果只设置value, 在value展示在title的位置且使用title的样式
+    if (value != null && title == null && label == null) {
+      _title = _label;
+      _value = null;
+      _label = null;
+    }
+
+    Decoration _decoration = BoxDecoration(
+      border: Border(
+        bottom: divider ??
+            Divider.createBorderSide(context,
+                color: Color(0XFFEBEDF0), width: 1.0),
+      ),
+    );
+
+    Widget _tile = ListTile(
+      contentPadding: padding,
+      title: _title,
+      trailing: _value,
+      subtitle: _label,
+      tileColor: Colors.white,
+      // isThreeLine: isNull(label) ? false : true,
+    );
+
+    return DecoratedBox(
+      position: DecorationPosition.foreground,
+      decoration: _decoration,
+      child: _tile,
     );
   }
 }

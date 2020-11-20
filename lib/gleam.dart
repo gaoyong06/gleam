@@ -18,3 +18,6 @@ export 'src/placeholder.dart';
 export 'src/search.dart';
 export 'src/share_sheet.dart';
 export 'src/tag.dart';
+export 'src/cell.dart';
+export 'src/cell_group.dart';
+export 'src/utils.dart';

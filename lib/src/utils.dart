@@ -7,7 +7,7 @@
 
 import 'package:flutter/material.dart';
 
-/**
+/*
  * @description: 将动态的text转成Text Widget
  * @param text 文字或Widget
  * @param style 文字样式
@@ -23,7 +23,7 @@ Widget dynamicText(dynamic text, [TextStyle style]) {
   } else if (text is Widget) {
     textWidget = text;
   } else {
-    textWidget = Container();
+    textWidget = null;
   }
 
   return textWidget;

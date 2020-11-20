@@ -10,6 +10,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:gleam/gleam.dart';
 import 'package:gleam/style/style.dart';
 import 'package:gleam_example/pages/bottom_sheet_page.dart';
+import 'package:gleam_example/pages/cell_page.dart';
 import 'package:gleam_example/pages/empty_page.dart';
 import 'package:gleam_example/pages/gleam_button_page.dart';
 // import 'package:gleam_example/pages/filled_button_page.dart';
@@ -248,6 +249,18 @@ class _MyHomePageState extends State<MyHomePage> {
               Navigator.push(
                 context,
                 new MaterialPageRoute(builder: (context) => TagPage()),
+              );
+            },
+          ),
+          GleamButton(
+            style: GleamButtonStyle.flatButton,
+            type: ButtonType.defaulted,
+            margin: EdgeInsets.only(top: 10.0),
+            text: 'Cell 单元格',
+            onPressed: () {
+              Navigator.push(
+                context,
+                new MaterialPageRoute(builder: (context) => CellPage()),
               );
             },
           ),
