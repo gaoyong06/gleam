@@ -4,7 +4,6 @@
  * @Last Modified by: gaoyong06@qq.com
  * @Last Modified time: 2020-11-20 14:08:23
  */
-
 import 'package:flutter/material.dart';
 import 'package:gleam/gleam.dart';
 import 'package:gleam/style/style.dart';
@@ -110,15 +109,84 @@ class _CellPageState extends State<CellPage> {
               children: [
                 Cell(
                   title: '单元格',
-                  value: '内容',
+                  isLink: true,
                 ),
                 Cell(
                   title: '单元格',
                   value: '内容',
+                  isLink: true,
                 ),
                 Cell(
                   title: '单元格',
                   value: '内容',
+                  isLink: true,
+                  arrowDirection: CellArrowDirection.down,
+                ),
+              ],
+            ),
+
+            CellGroupTitle(title: "分组标题"),
+            CellGroup(
+              title: '分组1',
+              padding: EdgeInsets.symmetric(vertical: 0, horizontal: 16.0),
+              border: false,
+              backgroundColor: Color(0XFFFFFFFF),
+              children: [
+                Cell(
+                  title: '单元格',
+                  value: '内容',
+                ),
+              ],
+            ),
+            CellGroup(
+              title: '分组2',
+              padding: EdgeInsets.symmetric(vertical: 0, horizontal: 16.0),
+              border: false,
+              backgroundColor: Color(0XFFFFFFFF),
+              children: [
+                Cell(
+                  title: '单元格',
+                  value: '内容',
+                ),
+              ],
+            ),
+            CellGroupTitle(title: "自定义左侧(右侧)Widget"),
+            CellGroup(
+              padding: EdgeInsets.symmetric(vertical: 0, horizontal: 16.0),
+              border: false,
+              backgroundColor: Color(0XFFFFFFFF),
+              children: [
+                Cell(
+                  title: Row(
+                    children: [
+                      Icon(Icons.ac_unit),
+                      Text('单元格'),
+                      Tag(
+                        text: '标签',
+                        type: TagType.danger,
+                        plain: true,
+                      )
+                    ],
+                  ),
+                  value: '内容',
+                  isLink: true,
+                ),
+                Cell(
+                  title: '单元格',
+                  value: Icon(Icons.search),
+                ),
+              ],
+            ),
+            CellGroupTitle(title: "垂直居中"),
+            CellGroup(
+              padding: EdgeInsets.symmetric(vertical: 0, horizontal: 16.0),
+              border: false,
+              backgroundColor: Color(0XFFFFFFFF),
+              children: [
+                Cell(
+                  title: '单元格',
+                  value: '内容',
+                  label: '描述信息',
                 ),
               ],
             ),

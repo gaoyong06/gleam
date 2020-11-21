@@ -74,7 +74,7 @@ class Cell extends StatelessWidget {
   //是否使内容垂直居中
   final bool center;
 
-  //右侧箭头方向8
+  //右侧箭头方向
   final CellArrowDirection arrowDirection;
 
   //内边距
@@ -108,10 +108,38 @@ class Cell extends StatelessWidget {
     this.required = false,
     this.center = false,
     this.arrowDirection = CellArrowDirection.right,
-    // this.padding = const EdgeInsets.symmetric(vertical: 10.0, horizontal: 16.0),
     this.padding = const EdgeInsets.all(0),
     this.divider,
   }) : super(key: key);
+
+  //右侧箭头
+  Widget _arrowIcon([CellArrowDirection cellArrowDirection]) {
+    IconData _iconData = Icons.chevron_right;
+    switch (cellArrowDirection) {
+      case CellArrowDirection.up:
+        _iconData = Icons.expand_less;
+        break;
+
+      case CellArrowDirection.down:
+        _iconData = Icons.expand_more;
+        break;
+
+      case CellArrowDirection.left:
+        _iconData = Icons.chevron_left;
+        break;
+
+      case CellArrowDirection.right:
+        _iconData = Icons.chevron_right;
+        break;
+      default:
+    }
+
+    Widget _arrow = Icon(
+      _iconData,
+      color: Color(0XFF969799),
+    );
+    return _arrow;
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -136,35 +164,25 @@ class Cell extends StatelessWidget {
           offstage: icon != null ? false : true,
           child: icon,
         ),
-        Text(
-          '单元格',
-          style: TextStyle(
-            fontSize: 14.0,
-            color: Color(0XFF323233),
-          ),
-        )
+        _title
       ],
     );
 
-    if (icon != null) {
-      _title = Row(
-        children: [
-          Icon(
-            Icons.location_on_outlined,
-            size: 18,
-            color: Color(0XFF323233),
-          ),
-          SizedBox(
-            width: 4.0,
-          ),
-          Text(
-            '单元格',
-            style: TextStyle(
-              fontSize: 14.0,
-              color: Color(0XFF323233),
-            ),
-          )
-        ],
+    if (_value != null || isLink) {
+      Widget _arrow = _arrowIcon(arrowDirection);
+      List<Widget> _children = [];
+      if (_value != null) {
+        _children.add(_value);
+      }
+      _children.add(
+        Offstage(
+          offstage: isLink ? false : true,
+          child: _arrow,
+        ),
+      );
+      _value = Row(
+        mainAxisSize: MainAxisSize.min,
+        children: _children,
       );
     }
 

@@ -19,7 +19,7 @@ class CellGroupTitle extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.fromLTRB(16.0, 20.0, 16.0, 16.0),
+      padding: EdgeInsets.fromLTRB(16.0, 16.0, 16.0, 16.0),
       child: dynamicText(title, Style.ts_66455A64_14),
     );
   }
