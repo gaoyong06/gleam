@@ -125,6 +125,23 @@ class _CellPageState extends State<CellPage> {
               ],
             ),
 
+            CellGroupTitle(title: "页面跳转"),
+            CellGroup(
+              padding: EdgeInsets.symmetric(vertical: 0, horizontal: 16.0),
+              border: false,
+              backgroundColor: Color(0XFFFFFFFF),
+              children: [
+                Cell(
+                  title: '单元格',
+                  isLink: true,
+                ),
+                Cell(
+                  title: '单元格',
+                  isLink: true,
+                ),
+              ],
+            ),
+
             CellGroupTitle(title: "分组标题"),
             CellGroup(
               title: '分组1',
@@ -159,13 +176,26 @@ class _CellPageState extends State<CellPage> {
                 Cell(
                   title: Row(
                     children: [
-                      Icon(Icons.ac_unit),
-                      Text('单元格'),
+                      Icon(
+                        Icons.ac_unit,
+                        color: Color(0XFF323233),
+                        size: 18.0,
+                      ),
+                      SizedBox(
+                        width: 3.0,
+                      ),
+                      Text(
+                        '单元格',
+                        style:
+                            TextStyle(color: Color(0XFF323233), fontSize: 14.0),
+                      ),
+                      SizedBox(
+                        width: 3.0,
+                      ),
                       Tag(
                         text: '标签',
                         type: TagType.danger,
-                        plain: true,
-                      )
+                      ),
                     ],
                   ),
                   value: '内容',
@@ -173,7 +203,10 @@ class _CellPageState extends State<CellPage> {
                 ),
                 Cell(
                   title: '单元格',
-                  value: Icon(Icons.search),
+                  value: Icon(
+                    Icons.search,
+                    color: Color(0XFF969799),
+                  ),
                 ),
               ],
             ),

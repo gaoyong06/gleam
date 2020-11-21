@@ -7,7 +7,6 @@
 
 import 'package:flutter/material.dart';
 import 'package:gleam/src/utils.dart';
-import 'package:gleam/style/style.dart';
 
 /// 单元格分组
 ///
@@ -56,25 +55,30 @@ class CellGroup extends StatelessWidget {
     );
     Widget _cellList = Container(
       padding: padding,
-      decoration: BoxDecoration(
-          color: backgroundColor ?? Colors.transparent,
-          border: border
-              ? Border(
-                  top: _borderSide,
-                  bottom: _borderSide,
-                )
-              : null),
+      // 设置decoration后,会没有水波纹
+      // decoration: BoxDecoration(
+      //     color: backgroundColor ?? Colors.transparent,
+      //     border: border
+      //         ? Border(
+      //             top: _borderSide,
+      //             bottom: _borderSide,
+      //           )
+      //         : null),
       child: Column(
         children: children,
       ),
     );
 
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        _title,
-        _cellList,
-      ],
-    );
+    Widget cellGroup = _cellList;
+    if (title != null) {
+      cellGroup = Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          _title,
+          _cellList,
+        ],
+      );
+    }
+    return cellGroup;
   }
 }

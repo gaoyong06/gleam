@@ -7,7 +7,6 @@
 
 import 'package:flutter/material.dart';
 import 'package:gleam/src/utils.dart';
-import 'package:string_validator/string_validator.dart';
 
 /// Cell单元格
 ///
@@ -194,13 +193,19 @@ class Cell extends StatelessWidget {
       ),
     );
 
-    Widget _tile = ListTile(
+    ListTile _tile = ListTile(
       contentPadding: padding,
       title: _title,
       trailing: _value,
       subtitle: _label,
-      tileColor: Colors.white,
-      // isThreeLine: isNull(label) ? false : true,
+
+      //设置tileColor后,会没有水波纹
+      // tileColor: Colors.white
+      enabled: isLink,
+      dense: true,
+      onTap: () {
+        print("点击");
+      },
     );
 
     return DecoratedBox(
