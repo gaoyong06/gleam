@@ -50,16 +50,16 @@ class Cell extends StatelessWidget {
   final Widget icon;
 
   //点击后跳转的链接地址
-  final String url;
+  // final String url;
 
   //点击后跳转的目标路由对象
-  final String to;
+  // final String to;
 
   //是否显示内边框
   final bool border;
 
   //是否在跳转时替换当前页面历史
-  final bool replace;
+  // final bool replace;
 
   //是否开启点击反馈
   final bool clickable;
@@ -82,6 +82,9 @@ class Cell extends StatelessWidget {
   //单元格底部分割线
   final BorderSide divider;
 
+  //点击回调函数
+  final Function() onPressed;
+
   const Cell({
     Key key,
     this.title,
@@ -98,10 +101,10 @@ class Cell extends StatelessWidget {
     ),
     this.size = CellSize.small,
     this.icon,
-    this.url,
-    this.to,
+    // this.url,
+    // this.to,
     this.border = true,
-    this.replace = false,
+    // this.replace = false,
     this.clickable = false,
     this.isLink = false,
     this.required = false,
@@ -109,6 +112,7 @@ class Cell extends StatelessWidget {
     this.arrowDirection = CellArrowDirection.right,
     this.padding = const EdgeInsets.all(0),
     this.divider,
+    this.onPressed,
   }) : super(key: key);
 
   //右侧箭头
@@ -198,14 +202,12 @@ class Cell extends StatelessWidget {
       title: _title,
       trailing: _value,
       subtitle: _label,
-
       //设置tileColor后,会没有水波纹
-      // tileColor: Colors.white
+      // tileColor: Color(0XFFF7F8FA),
+      // selectedTileColor: Colors.red,
       enabled: isLink,
       dense: true,
-      onTap: () {
-        print("点击");
-      },
+      onTap: onPressed,
     );
 
     return DecoratedBox(

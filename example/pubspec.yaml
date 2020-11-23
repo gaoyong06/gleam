@@ -26,6 +26,7 @@ dependencies:
 
   oktoast: ^2.3.2
   flutter_screenutil: ^3.2.0
+  url_launcher: ^5.7.10
   gleam:
     path: ../
 
