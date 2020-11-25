@@ -21,3 +21,4 @@ export 'src/tag.dart';
 export 'src/cell.dart';
 export 'src/cell_group.dart';
 export 'src/utils.dart';
+export 'src/gleam_check_box.dart';

@@ -13,6 +13,7 @@ import 'package:gleam_example/pages/bottom_sheet_page.dart';
 import 'package:gleam_example/pages/cell_page.dart';
 import 'package:gleam_example/pages/empty_page.dart';
 import 'package:gleam_example/pages/gleam_button_page.dart';
+import 'package:gleam_example/pages/gleam_check_box_page.dart';
 import 'package:gleam_example/pages/gleam_dialog_page.dart';
 import 'package:gleam_example/pages/gleam_icon_page.dart';
 import 'package:gleam_example/pages/gleam_image_page.dart';
@@ -22,6 +23,7 @@ import 'package:gleam_example/pages/share_sheet_page.dart';
 import 'package:gleam_example/pages/tag_page.dart';
 import 'package:oktoast/oktoast.dart';
 import 'package:url_launcher/url_launcher.dart';
+
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
@@ -226,7 +228,10 @@ class _MyHomePageState extends State<MyHomePage> {
           _gleamButton(
             'Checkbox 复选框#',
             () {
-              showToast("未完成");
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => GleamCheckBoxPage()),
+              );
             },
           ),
           _gleamButton(
