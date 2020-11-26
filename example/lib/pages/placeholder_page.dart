@@ -4,12 +4,9 @@
  * @Last Modified by: gaoyong06@qq.com
  * @Last Modified time: 2020-11-06 14:08:23
  */
-import 'dart:io';
 
 import 'package:flutter/material.dart';
-import 'package:gleam/gleam.dart';
 import 'package:gleam/style/style.dart';
-import 'package:gleam_example/r.dart';
 import 'package:oktoast/oktoast.dart';
 
 /// PlaceholderPage占位状态示例程序
@@ -32,7 +29,7 @@ class _PlaceholderPageState extends State<PlaceholderPage> {
           ListTile(
               title: Text(
                 '提示弹窗',
-                style: Style.ts_333333_15,
+                style: Style.normal15Color333333,
               ),
               trailing: Icon(
                 Icons.arrow_forward_ios_outlined,

@@ -35,7 +35,7 @@ class GleamIcon extends StatelessWidget {
     return Badge(
       badgeContent: Text(
         badge ?? "",
-        style: badgeStyle ?? Style.ts_FFFFFF_12,
+        style: badgeStyle ?? Style.normal12ColorFFFFFF,
       ),
       showBadge: _showBadge,
       toAnimate: false,

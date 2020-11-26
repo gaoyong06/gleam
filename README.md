@@ -108,7 +108,7 @@ showGleamBottomSheet(
     height: 60.0,
     child: Text(
       '这是描述信息',
-      style: Style.ts_999999_15,
+      style: Style.normal15Color999999,
     ),
   ),
   cancelText: '取消',
@@ -124,14 +124,14 @@ showGleamBottomSheet(
     BottomSheetAction(
       Text(
         '着色选项',
-        style: Style.ts_FF0000_15,
+        style: Style.normal15ColorFF0000,
       ), onTap: () {
         showToast('着色状态');
       }),
     BottomSheetAction(
       Text(
         '禁用选项',
-        style: Style.ts_999999_15,
+        style: Style.normal15Color999999,
       ),
       onTap: null,
     ),
@@ -177,7 +177,7 @@ showGleamBottomSheet(
               children: [
                 Text(
                   "标题",
-                  style: Style.ts_333333_15_bold,
+                  style: Style.bold15Color333333,
                 )
               ],
             ),
@@ -251,6 +251,14 @@ showGleamBottomSheet(
 
 ## 依赖
 
+## 打包
+  export https_proxy=http://127.0.0.1:7890 http_proxy=http://127.0.0.1:7890 all_proxy=socks5://127.0.0.1:7890
+
+  set http_proxy=http://127.0.0.1:7890
+  set https_proxy=http://127.0.0.1:7890
+  
+  flutter packages pub publish --dry-run
+  flutter packages pub publish --server=https://pub.dartlang.org
 
 ## 团队成员
   - [@gaoyong](https://github.com/gaoyong06)

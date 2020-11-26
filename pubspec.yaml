@@ -1,8 +1,7 @@
 name: gleam
-description: A new Flutter package project.
-version: 0.0.1
-author:
-homepage:
+description: 一个简单、轻量、可靠的Flutter UI 组件库
+version: 1.0.0
+homepage: https://github.com/gaoyong06/gleam
 
 environment:
   sdk: ">=2.7.0 <3.0.0"

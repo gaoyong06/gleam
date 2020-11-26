@@ -27,7 +27,7 @@ class _GleamButtonPageState extends State<GleamButtonPage> {
       appBar: AppBar(
         title: Text(
           "GleamButton 填充按钮",
-          style: Style.ts_FFFFFF_18_bold,
+          style: Style.bold18ColorFFFFFF,
         ),
       ),
       body: SingleChildScrollView(

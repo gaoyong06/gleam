@@ -94,7 +94,7 @@ class BottomSheetAction extends StatelessWidget {
     if (item is String) {
       action = Text(
         item,
-        style: Style.ts_333333_15,
+        style: Style.normal15Color333333,
       );
     } else if (item is Widget) {
       action = item;

@@ -17,11 +17,11 @@ import 'package:gleam_example/pages/gleam_dialog_page.dart';
 import 'package:gleam_example/pages/gleam_icon_page.dart';
 import 'package:gleam_example/pages/gleam_image_page.dart';
 import 'package:gleam_example/pages/gleam_text_field_page.dart';
+import 'package:gleam_example/pages/layout_page.dart';
 import 'package:gleam_example/pages/search_page.dart';
 import 'package:gleam_example/pages/share_sheet_page.dart';
 import 'package:gleam_example/pages/tag_page.dart';
 import 'package:oktoast/oktoast.dart';
-import 'package:url_launcher/url_launcher.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
@@ -69,7 +69,7 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget _title(String text) {
     return Container(
       padding: EdgeInsets.fromLTRB(16.0, 24.0, 0, 8),
-      child: Text(text ?? '', style: Style.ts_66455A64_14),
+      child: Text(text ?? '', style: Style.normal14Color66455A64),
     );
   }
 
@@ -119,7 +119,7 @@ class _MyHomePageState extends State<MyHomePage> {
       appBar: AppBar(
         title: Text(
           widget.title,
-          style: Style.ts_FFFFFF_18_bold,
+          style: Style.bold18ColorFFFFFF,
         ),
       ),
       body: ListView(
@@ -150,7 +150,7 @@ class _MyHomePageState extends State<MyHomePage> {
           ),
           Text(
             '一个简单、轻量、可靠的Flutter UI 组件库',
-            style: Style.ts_66455A64_14,
+            style: Style.normal14Color66455A64,
           ),
           SizedBox(
             height: 16.0,
@@ -195,7 +195,10 @@ class _MyHomePageState extends State<MyHomePage> {
           _gleamButton(
             'Layout 布局#',
             () {
-              showToast("未完成");
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => LayoutPage()),
+              );
             },
           ),
           _gleamButton(
@@ -552,14 +555,14 @@ class _MyHomePageState extends State<MyHomePage> {
             children: [
               Text(
                 'Made With ❤️ by gaoyong',
-                style: Style.ts_455A64_12,
+                style: Style.normal12Color455A64,
               ),
               SizedBox(
                 height: 4.0,
               ),
               Text(
                 'Version 1.0.0',
-                style: Style.ts_455A64_12,
+                style: Style.normal12Color455A64,
               ),
               SizedBox(
                 height: 4.0,

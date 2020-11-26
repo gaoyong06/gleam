@@ -26,7 +26,7 @@ class _GleamImagePageState extends State<GleamImagePage> {
       appBar: AppBar(
         title: Text(
           "GleamImage 图片",
-          style: Style.ts_FFFFFF_18_bold,
+          style: Style.bold18ColorFFFFFF,
         ),
       ),
       body: SingleChildScrollView(
@@ -39,7 +39,7 @@ class _GleamImagePageState extends State<GleamImagePage> {
             ),
             Text(
               "基础用法",
-              style: Style.ts_66455A64_14,
+              style: Style.normal14Color66455A64,
             ),
             SizedBox(
               height: 16.0,
@@ -59,7 +59,7 @@ class _GleamImagePageState extends State<GleamImagePage> {
             ),
             Text(
               "填充模式",
-              style: Style.ts_66455A64_14,
+              style: Style.normal14Color66455A64,
             ),
             SizedBox(
               height: 16.0,
@@ -136,7 +136,7 @@ class _GleamImagePageState extends State<GleamImagePage> {
             ),
             Text(
               "圆形图片",
-              style: Style.ts_66455A64_14,
+              style: Style.normal14Color66455A64,
             ),
             SizedBox(
               height: 16.0,
@@ -221,7 +221,7 @@ class _GleamImagePageState extends State<GleamImagePage> {
             ),
             Text(
               "加载中提示",
-              style: Style.ts_66455A64_14,
+              style: Style.normal14Color66455A64,
             ),
             SizedBox(
               height: 16.0,
@@ -275,7 +275,7 @@ class _GleamImagePageState extends State<GleamImagePage> {
             ),
             Text(
               "加载失败提示",
-              style: Style.ts_66455A64_14,
+              style: Style.normal14Color66455A64,
             ),
             SizedBox(
               height: 16.0,
@@ -304,7 +304,7 @@ class _GleamImagePageState extends State<GleamImagePage> {
                       child: Center(
                           child: Text(
                         "加载失败",
-                        style: Style.ts_969799_14,
+                        style: Style.normal14Color969799,
                       )),
                     ),
                   ),
@@ -341,7 +341,7 @@ class VerticalItemWidget extends StatelessWidget {
         ),
         Text(
           text ?? "",
-          style: Style.ts_646566_14,
+          style: Style.normal14Color646566,
         )
       ],
     );

@@ -25,7 +25,7 @@ class _CellPageState extends State<CellPage> {
       appBar: AppBar(
         title: Text(
           "Cell 单元格",
-          style: Style.ts_FFFFFF_18_bold,
+          style: Style.bold18ColorFFFFFF,
         ),
       ),
       body: SingleChildScrollView(

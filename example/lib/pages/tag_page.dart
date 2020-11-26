@@ -26,7 +26,7 @@ class _TagPageState extends State<TagPage> {
       appBar: AppBar(
         title: Text(
           "Tag",
-          style: Style.ts_FFFFFF_18_bold,
+          style: Style.bold18ColorFFFFFF,
         ),
       ),
       body: ListView(
@@ -36,7 +36,7 @@ class _TagPageState extends State<TagPage> {
           ListTile(
             title: Text(
               'primary类型',
-              style: Style.ts_333333_15,
+              style: Style.normal15Color333333,
             ),
             trailing: Tag(
               type: TagType.primary,
@@ -48,7 +48,7 @@ class _TagPageState extends State<TagPage> {
           ListTile(
             title: Text(
               'info类型',
-              style: Style.ts_333333_15,
+              style: Style.normal15Color333333,
             ),
             trailing: Tag(
               plain: true,
@@ -60,7 +60,7 @@ class _TagPageState extends State<TagPage> {
           ListTile(
             title: Text(
               'defaulted类型',
-              style: Style.ts_333333_15,
+              style: Style.normal15Color333333,
             ),
             trailing: Tag(
               plain: true,
@@ -72,7 +72,7 @@ class _TagPageState extends State<TagPage> {
           ListTile(
             title: Text(
               'warning类型',
-              style: Style.ts_333333_15,
+              style: Style.normal15Color333333,
             ),
             trailing: Tag(
               plain: true,
@@ -84,7 +84,7 @@ class _TagPageState extends State<TagPage> {
           ListTile(
             title: Text(
               'danger类型',
-              style: Style.ts_333333_15,
+              style: Style.normal15Color333333,
             ),
             trailing: Tag(
               plain: true,
@@ -97,13 +97,13 @@ class _TagPageState extends State<TagPage> {
           ListTile(
             title: Text(
               '空心样式',
-              style: Style.ts_333333_15,
+              style: Style.normal15Color333333,
             ),
             trailing: Tag(
               plain: false,
               round: true,
               text: "标签",
-              textStyle: Style.ts_1989FA_12,
+              textStyle: Style.normal12Color1989FA,
               type: TagType.info,
             ),
           ),
@@ -111,7 +111,7 @@ class _TagPageState extends State<TagPage> {
           ListTile(
             title: Text(
               '圆角样式',
-              style: Style.ts_333333_15,
+              style: Style.normal15Color333333,
             ),
             trailing: Tag(
               plain: true,
@@ -125,7 +125,7 @@ class _TagPageState extends State<TagPage> {
           ListTile(
             title: Text(
               '标记样式',
-              style: Style.ts_333333_15,
+              style: Style.normal15Color333333,
             ),
             trailing: Tag(
               plain: true,
@@ -146,7 +146,7 @@ class _TagPageState extends State<TagPage> {
           ListTile(
             title: Text(
               '可关闭标签',
-              style: Style.ts_333333_15,
+              style: Style.normal15Color333333,
             ),
             trailing: Tag(
                 plain: true,
@@ -164,7 +164,7 @@ class _TagPageState extends State<TagPage> {
           ListTile(
             title: Text(
               '小号标签',
-              style: Style.ts_333333_15,
+              style: Style.normal15Color333333,
             ),
             trailing: Tag(
               plain: true,
@@ -176,7 +176,7 @@ class _TagPageState extends State<TagPage> {
           ListTile(
             title: Text(
               '中号标签',
-              style: Style.ts_333333_15,
+              style: Style.normal15Color333333,
             ),
             trailing: Tag(
               padding: EdgeInsets.symmetric(vertical: 2.0, horizontal: 6.0),
@@ -189,7 +189,7 @@ class _TagPageState extends State<TagPage> {
           ListTile(
             title: Text(
               '大号标签',
-              style: Style.ts_333333_15,
+              style: Style.normal15Color333333,
             ),
             trailing: Tag(
               padding: EdgeInsets.symmetric(vertical: 4.0, horizontal: 8.0),
@@ -204,7 +204,7 @@ class _TagPageState extends State<TagPage> {
           ListTile(
             title: Text(
               '背景颜色',
-              style: Style.ts_333333_15,
+              style: Style.normal15Color333333,
             ),
             trailing: Tag(
               plain: true,
@@ -217,7 +217,7 @@ class _TagPageState extends State<TagPage> {
           ListTile(
             title: Text(
               '文字颜色',
-              style: Style.ts_333333_15,
+              style: Style.normal15Color333333,
             ),
             trailing: Tag(
               plain: true,
@@ -234,7 +234,7 @@ class _TagPageState extends State<TagPage> {
           ListTile(
             title: Text(
               '空心颜色',
-              style: Style.ts_333333_15,
+              style: Style.normal15Color333333,
             ),
             trailing: Tag(
               plain: false,

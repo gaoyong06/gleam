@@ -48,7 +48,6 @@ class CellGroup extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    BorderSide _borderSide = BorderSide(width: 0.5, color: Colors.blue);
     Widget _title = Container(
       padding: titlePadding,
       child: dynamicText(title, titleStyle),

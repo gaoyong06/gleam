@@ -42,7 +42,7 @@ class Empty extends StatelessWidget {
             fit: BoxFit.cover,
           ),
           SizedBox(height: ScreenUtil().setWidth(Dimens.gapDp20)),
-          Text(emptyText ?? "暂无内容", style: Style.ts_999999_14),
+          Text(emptyText ?? "暂无内容", style: Style.normal14Color999999),
           SizedBox(height: ScreenUtil().setWidth(Dimens.gapDp20)),
           bottomWidget ?? Container()
         ],

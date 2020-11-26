@@ -21,7 +21,7 @@ class BottomSheetPage extends StatelessWidget {
       appBar: AppBar(
           title: Text(
         'BottomSheet底部菜单弹窗',
-        style: Style.ts_FFFFFF_18_bold,
+        style: Style.bold18ColorFFFFFF,
       )),
       body: ListView(
         padding: EdgeInsets.symmetric(vertical: 0, horizontal: 16.0),
@@ -30,7 +30,7 @@ class BottomSheetPage extends StatelessWidget {
           ListTile(
             title: Text(
               '基础用法',
-              style: Style.ts_333333_15,
+              style: Style.normal15Color333333,
             ),
             trailing: Icon(
               Icons.arrow_forward_ios_outlined,
@@ -52,7 +52,7 @@ class BottomSheetPage extends StatelessWidget {
           ListTile(
             title: Text(
               '展示取消按钮',
-              style: Style.ts_333333_15,
+              style: Style.normal15Color333333,
             ),
             trailing: Icon(Icons.arrow_forward_ios_outlined, size: 20),
             onTap: () {
@@ -82,7 +82,7 @@ class BottomSheetPage extends StatelessWidget {
           ListTile(
             title: Text(
               '展示描述信息',
-              style: Style.ts_333333_15,
+              style: Style.normal15Color333333,
             ),
             trailing: Icon(
               Icons.arrow_forward_ios_outlined,
@@ -108,7 +108,7 @@ class BottomSheetPage extends StatelessWidget {
                   height: 60.0,
                   child: Text(
                     '这是描述信息',
-                    style: Style.ts_999999_15,
+                    style: Style.normal15Color999999,
                   ),
                 ),
                 cancelText: '取消',
@@ -123,7 +123,7 @@ class BottomSheetPage extends StatelessWidget {
           ListTile(
             title: Text(
               '选项状态',
-              style: Style.ts_333333_15,
+              style: Style.normal15Color333333,
             ),
             trailing: Icon(
               Icons.arrow_forward_ios_outlined,
@@ -136,14 +136,14 @@ class BottomSheetPage extends StatelessWidget {
                   BottomSheetAction(
                       Text(
                         '着色选项',
-                        style: Style.ts_FF0000_15,
+                        style: Style.normal15ColorFF0000,
                       ), onTap: () {
                     showToast('着色状态');
                   }),
                   BottomSheetAction(
                     Text(
                       '禁用选项',
-                      style: Style.ts_999999_15,
+                      style: Style.normal15Color999999,
                     ),
                     onTap: null,
                   ),
@@ -167,7 +167,7 @@ class BottomSheetPage extends StatelessWidget {
           ListTile(
             title: Text(
               '自定义面板',
-              style: Style.ts_333333_15,
+              style: Style.normal15Color333333,
             ),
             trailing: Icon(
               Icons.arrow_forward_ios_outlined,
@@ -201,7 +201,7 @@ class BottomSheetPage extends StatelessWidget {
                             children: [
                               Text(
                                 "标题",
-                                style: Style.ts_333333_15_bold,
+                                style: Style.bold15Color333333,
                               )
                             ],
                           ),

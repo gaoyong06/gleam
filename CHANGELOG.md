@@ -1,12 +1,12 @@
 <!--
- * @Author: your name
- * @Date: 2020-11-04 10:59:10
- * @LastEditTime: 2020-11-23 11:07:27
- * @LastEditors: Please set LastEditors
- * @Description: In User Settings Edit
- * @FilePath: /gleam/CHANGELOG.md
+/*
+ * @Author: gaoyong06@qq.com
+ * @Date: 2020-11-06 14:08:23 
+ * @Last Modified by: gaoyong06@qq.com
+ * @Last Modified time: 2020-11-06 14:08:23
+ */
 -->
-## [0.0.1] - TODO: Add release date.
+## [1.0.0] - TODO: Add release date.
 
 基础组件：8
 表单组件：15

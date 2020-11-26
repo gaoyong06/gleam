@@ -155,7 +155,7 @@ class _GleamTextFieldState extends State<GleamTextField> {
     // leading
     Widget leading = Text(widget.label,
         overflow: TextOverflow.ellipsis,
-        style: widget.labelTextStyle ?? Style.ts_999999_15);
+        style: widget.labelTextStyle ?? Style.normal15Color999999);
 
     // trailing
     List<Widget> trailing = List();
@@ -185,7 +185,7 @@ class _GleamTextFieldState extends State<GleamTextField> {
           contentPadding: widget.contentPadding,
           fillColor: Colors.transparent,
           hintText: widget.hintText,
-          hintStyle: widget.hintStyle ?? Style.ts_D8D8D8_15,
+          hintStyle: widget.hintStyle ?? Style.normal15ColorD8D8D8,
           enabledBorder: InputBorder.none,
           focusedBorder: InputBorder.none,
           border: InputBorder.none,
@@ -193,7 +193,7 @@ class _GleamTextFieldState extends State<GleamTextField> {
           counterText: "",
         ),
         textAlign: widget.textAlign,
-        style: widget.textStyle ?? Style.ts_333333_15,
+        style: widget.textStyle ?? Style.normal15Color333333,
       ),
     ));
 

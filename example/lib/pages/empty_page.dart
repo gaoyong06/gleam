@@ -21,7 +21,7 @@ class EmptyPage extends StatelessWidget {
       appBar: AppBar(
         title: Text(
           "Empty 空状态",
-          style: Style.ts_FFFFFF_18_bold,
+          style: Style.bold18ColorFFFFFF,
         ),
       ),
       body: ListView(

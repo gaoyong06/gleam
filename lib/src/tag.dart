@@ -166,7 +166,7 @@ class Tag extends StatelessWidget {
       onDeleted: onDeleted,
       label: Text(
         text,
-        style: textStyle ?? Style.ts_FFFFFF_12,
+        style: textStyle ?? Style.normal12ColorFFFFFF,
       ),
       labelPadding: EdgeInsets.fromLTRB(
           0, _labelPaddingVerticalHalf, 0, _labelPaddingVerticalHalf),

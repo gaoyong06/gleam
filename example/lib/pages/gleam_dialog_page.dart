@@ -25,7 +25,7 @@ class _GleamDialogPageState extends State<GleamDialogPage> {
       appBar: AppBar(
           title: Text(
         'GleamDialog弹出框',
-        style: Style.ts_FFFFFF_18_bold,
+        style: Style.bold18ColorFFFFFF,
       )),
       body: ListView(
         padding: EdgeInsets.symmetric(vertical: 0, horizontal: 16.0),
@@ -34,7 +34,7 @@ class _GleamDialogPageState extends State<GleamDialogPage> {
           ListTile(
               title: Text(
                 '提示弹窗',
-                style: Style.ts_333333_15,
+                style: Style.normal15Color333333,
               ),
               trailing: Icon(
                 Icons.arrow_forward_ios_outlined,
@@ -43,7 +43,7 @@ class _GleamDialogPageState extends State<GleamDialogPage> {
               onTap: () {
                 GleamDialog.alert(context,
                     title: "标题",
-                    titleStyle: Style.ts_333333_15_bold,
+                    titleStyle: Style.bold15Color333333,
                     description: "眼里长着阳光，笑里全是坦荡",
                     text1: "确定", onTap1: () {
                   showToast('确定');
@@ -52,7 +52,7 @@ class _GleamDialogPageState extends State<GleamDialogPage> {
           ListTile(
               title: Text(
                 '提示弹窗 (无标题)',
-                style: Style.ts_333333_15,
+                style: Style.normal15Color333333,
               ),
               trailing: Icon(
                 Icons.arrow_forward_ios_outlined,
@@ -70,7 +70,7 @@ class _GleamDialogPageState extends State<GleamDialogPage> {
           ListTile(
               title: Text(
                 '确认弹窗',
-                style: Style.ts_333333_15,
+                style: Style.normal15Color333333,
               ),
               trailing: Icon(
                 Icons.arrow_forward_ios_outlined,
@@ -97,7 +97,7 @@ class _GleamDialogPageState extends State<GleamDialogPage> {
           ListTile(
               title: Text(
                 '提示弹窗（圆角按钮）',
-                style: Style.ts_333333_15,
+                style: Style.normal15Color333333,
               ),
               trailing: Icon(
                 Icons.arrow_forward_ios_outlined,
@@ -108,11 +108,11 @@ class _GleamDialogPageState extends State<GleamDialogPage> {
                     isRound: true,
                     color: Colors.blueAccent,
                     title: "标题",
-                    titleStyle: Style.ts_333333_15_bold,
+                    titleStyle: Style.bold15Color333333,
                     description: "眼里长着阳光，笑里全是坦荡",
                     height: 38.0,
                     text1: "确定",
-                    textStyle1: Style.ts_FFFFFF_13, onTap1: () {
+                    textStyle1: Style.normal13ColorFFFFFF, onTap1: () {
                   showToast('确定');
                 });
               }),
@@ -120,7 +120,7 @@ class _GleamDialogPageState extends State<GleamDialogPage> {
           ListTile(
               title: Text(
                 '自定义弹窗内部组件内容',
-                style: Style.ts_333333_15,
+                style: Style.normal15Color333333,
               ),
               trailing: Icon(
                 Icons.arrow_forward_ios_outlined,
@@ -129,7 +129,7 @@ class _GleamDialogPageState extends State<GleamDialogPage> {
               onTap: () {
                 GleamDialog.alert(context,
                     title: "",
-                    titleStyle: Style.ts_333333_15_bold,
+                    titleStyle: Style.bold15Color333333,
                     description: GleamImage(
                       image:
                           "https://ww1.sinaimg.cn/bmiddle/aaa535b8gy1gkl7fsq8xjj215o1jhqe4.jpg",

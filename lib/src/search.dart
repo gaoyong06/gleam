@@ -10,7 +10,6 @@ import 'package:flutter/material.dart';
 import 'package:gleam/style/app_colors.dart';
 import 'package:gleam/style/dimens.dart';
 import 'package:gleam/style/style.dart';
-import 'package:string_validator/string_validator.dart';
 
 ///
 /// 简单的搜索空间
@@ -175,7 +174,7 @@ class _SearchState extends State<Search> {
                   TextStyle(
                       color: AppColors.cl323233, fontSize: Dimens.fontPt14),
               placeholder: widget.hintText,
-              placeholderStyle: widget.hintStyle ?? Style.ts_C8C9CC_14,
+              placeholderStyle: widget.hintStyle ?? Style.normal14ColorC8C9CC,
               cursorColor: const Color(0xFF333333),
               cursorWidth: 1,
               decoration: BoxDecoration(

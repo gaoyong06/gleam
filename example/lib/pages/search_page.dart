@@ -29,7 +29,7 @@ class _SearchPageState extends State<SearchPage> {
       appBar: AppBar(
         title: Text(
           "Search 搜索",
-          style: Style.ts_FFFFFF_18_bold,
+          style: Style.bold18ColorFFFFFF,
         ),
       ),
       body: SingleChildScrollView(
@@ -42,7 +42,7 @@ class _SearchPageState extends State<SearchPage> {
             ),
             Text(
               "基础用法",
-              style: Style.ts_66455A64_14,
+              style: Style.normal14Color66455A64,
             ),
             SizedBox(
               height: 16.0,
@@ -53,7 +53,7 @@ class _SearchPageState extends State<SearchPage> {
             ),
             Text(
               "事件监听",
-              style: Style.ts_66455A64_14,
+              style: Style.normal14Color66455A64,
             ),
             SizedBox(
               height: 16.0,
@@ -68,7 +68,7 @@ class _SearchPageState extends State<SearchPage> {
                 },
                 child: Text(
                   "取消",
-                  style: Style.ts_323233_14,
+                  style: Style.normal14Color323233,
                 ),
               ),
             ),
@@ -77,7 +77,7 @@ class _SearchPageState extends State<SearchPage> {
             ),
             Text(
               "搜索框内容对齐",
-              style: Style.ts_66455A64_14,
+              style: Style.normal14Color66455A64,
             ),
             SizedBox(
               height: 16.0,
@@ -90,7 +90,7 @@ class _SearchPageState extends State<SearchPage> {
             ),
             Text(
               "禁用搜索框",
-              style: Style.ts_66455A64_14,
+              style: Style.normal14Color66455A64,
             ),
             SizedBox(
               height: 16.0,
@@ -103,7 +103,7 @@ class _SearchPageState extends State<SearchPage> {
             ),
             Text(
               "自定义背景色",
-              style: Style.ts_66455A64_14,
+              style: Style.normal14Color66455A64,
             ),
             SizedBox(
               height: 16.0,
@@ -119,7 +119,7 @@ class _SearchPageState extends State<SearchPage> {
             ),
             Text(
               "自定义按钮",
-              style: Style.ts_66455A64_14,
+              style: Style.normal14Color66455A64,
             ),
             SizedBox(
               height: 16.0,
@@ -131,7 +131,7 @@ class _SearchPageState extends State<SearchPage> {
                     //TODO:  感觉文字上下有Padding
                     Text(
                       '地址',
-                      style: Style.ts_323233_14,
+                      style: Style.normal14Color323233,
                     ),
                     SizedBox(
                       width: 5.0,
@@ -150,7 +150,7 @@ class _SearchPageState extends State<SearchPage> {
                   },
                   child: Text(
                     "搜索",
-                    style: Style.ts_323233_14,
+                    style: Style.normal14Color323233,
                   )),
             ),
             SizedBox(

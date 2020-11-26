@@ -25,7 +25,7 @@ class _GleamTextFieldPageState extends State<GleamTextFieldPage> {
       appBar: AppBar(
         title: Text(
           "GleamTextField 文本输入框",
-          style: Style.ts_FFFFFF_18_bold,
+          style: Style.bold18ColorFFFFFF,
         ),
       ),
       body: SingleChildScrollView(

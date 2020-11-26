@@ -24,7 +24,7 @@ class _GleamIconPageState extends State<GleamIconPage> {
       appBar: AppBar(
         title: Text(
           "GleamIcon 图标",
-          style: Style.ts_FFFFFF_18_bold,
+          style: Style.bold18ColorFFFFFF,
         ),
       ),
       body: SingleChildScrollView(
