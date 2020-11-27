@@ -6,6 +6,7 @@
  */
 import 'package:flutter/material.dart';
 import 'package:gleam/gleam.dart';
+import 'package:gleam/style/app_colors.dart';
 import 'package:gleam/style/style.dart';
 import 'package:gleam_example/widgets/group_title.dart';
 
@@ -21,7 +22,7 @@ class _CellPageState extends State<CellPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0XFFF7F8FA),
+      backgroundColor: AppColors.clF7F8FA,
       appBar: AppBar(
         title: Text(
           "Cell 单元格",
@@ -46,7 +47,7 @@ class _CellPageState extends State<CellPage> {
                   title: '单元格',
                   value: '内容',
                   label: '描述信息',
-                  divider: null,
+                  showDivider: false,
                 ),
               ],
             ),
@@ -66,7 +67,7 @@ class _CellPageState extends State<CellPage> {
                   title: '单元格',
                   value: '内容',
                   label: '描述信息',
-                  divider: null,
+                  showDivider: false,
                 ),
               ],
             ),
@@ -85,6 +86,7 @@ class _CellPageState extends State<CellPage> {
                   ),
                   title: '单元格',
                   value: '内容',
+                  showDivider: false,
                 ),
               ],
             ),
@@ -97,6 +99,7 @@ class _CellPageState extends State<CellPage> {
               children: [
                 Cell(
                   value: '内容',
+                  showDivider: false,
                 ),
               ],
             ),
@@ -121,6 +124,7 @@ class _CellPageState extends State<CellPage> {
                   value: '内容',
                   isLink: true,
                   arrowDirection: CellArrowDirection.down,
+                  showDivider: false,
                 ),
               ],
             ),
@@ -138,6 +142,7 @@ class _CellPageState extends State<CellPage> {
                 Cell(
                   title: '单元格',
                   isLink: true,
+                  showDivider: false,
                 ),
               ],
             ),
@@ -152,6 +157,7 @@ class _CellPageState extends State<CellPage> {
                 Cell(
                   title: '单元格',
                   value: '内容',
+                  showDivider: false,
                 ),
               ],
             ),
@@ -164,6 +170,7 @@ class _CellPageState extends State<CellPage> {
                 Cell(
                   title: '单元格',
                   value: '内容',
+                  showDivider: false,
                 ),
               ],
             ),
@@ -207,6 +214,7 @@ class _CellPageState extends State<CellPage> {
                     Icons.search,
                     color: Color(0XFF969799),
                   ),
+                  showDivider: false,
                 ),
               ],
             ),
@@ -220,9 +228,13 @@ class _CellPageState extends State<CellPage> {
                   title: '单元格',
                   value: '内容',
                   label: '描述信息',
+                  showDivider: false,
                 ),
               ],
             ),
+            SizedBox(
+              height: 40.0,
+            )
           ],
         ),
       ),

@@ -55,14 +55,15 @@ class CellGroup extends StatelessWidget {
     Widget _cellList = Container(
       padding: padding,
       // 设置decoration后,会没有水波纹
-      // decoration: BoxDecoration(
-      //     color: backgroundColor ?? Colors.transparent,
-      //     border: border
-      //         ? Border(
-      //             top: _borderSide,
-      //             bottom: _borderSide,
-      //           )
-      //         : null),
+      decoration: BoxDecoration(
+        color: backgroundColor ?? Colors.transparent,
+        // border: border
+        // ? Border(
+        //     top: _borderSide,
+        //     bottom: _borderSide,
+        //   )
+        // : null
+      ),
       child: Column(
         children: children,
       ),

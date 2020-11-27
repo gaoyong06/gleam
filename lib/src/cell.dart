@@ -7,6 +7,9 @@
 
 import 'package:flutter/material.dart';
 import 'package:gleam/src/utils.dart';
+//TODO: 右侧内容和title对齐
+//TODO: 点击水波纹
+//TODO: 点击跳转
 
 /// Cell单元格
 ///
@@ -49,18 +52,6 @@ class Cell extends StatelessWidget {
   //左侧图标
   final Widget icon;
 
-  //点击后跳转的链接地址
-  // final String url;
-
-  //点击后跳转的目标路由对象
-  // final String to;
-
-  //是否显示内边框
-  final bool border;
-
-  //是否在跳转时替换当前页面历史
-  // final bool replace;
-
   //是否开启点击反馈
   final bool clickable;
 
@@ -82,6 +73,9 @@ class Cell extends StatelessWidget {
   //单元格底部分割线
   final BorderSide divider;
 
+  //是否显示单元格底部分割线
+  final bool showDivider;
+
   //点击回调函数
   final Function() onPressed;
 
@@ -101,10 +95,6 @@ class Cell extends StatelessWidget {
     ),
     this.size = CellSize.small,
     this.icon,
-    // this.url,
-    // this.to,
-    this.border = true,
-    // this.replace = false,
     this.clickable = false,
     this.isLink = false,
     this.required = false,
@@ -112,6 +102,7 @@ class Cell extends StatelessWidget {
     this.arrowDirection = CellArrowDirection.right,
     this.padding = const EdgeInsets.all(0),
     this.divider,
+    this.showDivider = true,
     this.onPressed,
   }) : super(key: key);
 
@@ -191,9 +182,11 @@ class Cell extends StatelessWidget {
 
     Decoration _decoration = BoxDecoration(
       border: Border(
-        bottom: divider ??
-            Divider.createBorderSide(context,
-                color: Color(0XFFEBEDF0), width: 1.0),
+        bottom: showDivider
+            ? divider ??
+                Divider.createBorderSide(context,
+                    color: Color(0XFFEBEDF0), width: 1.0)
+            : BorderSide.none,
       ),
     );
 

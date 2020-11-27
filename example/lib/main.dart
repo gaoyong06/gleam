@@ -8,6 +8,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:gleam/gleam.dart';
+import 'package:gleam/style/app_colors.dart';
 import 'package:gleam/style/style.dart';
 import 'package:gleam_example/pages/bottom_sheet_page.dart';
 import 'package:gleam_example/pages/cell_page.dart';
@@ -23,7 +24,6 @@ import 'package:gleam_example/pages/search_page.dart';
 import 'package:gleam_example/pages/share_sheet_page.dart';
 import 'package:gleam_example/pages/tag_page.dart';
 import 'package:oktoast/oktoast.dart';
-
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
@@ -106,7 +106,7 @@ class _MyHomePageState extends State<MyHomePage> {
       margin: EdgeInsets.only(top: 10.0),
       content: _content,
       borderRadius: 99.0,
-      fillColor: Color(0XFFF7F8FA),
+      fillColor: AppColors.clF7F8FA,
       onPressed: onPressed,
     );
   }
