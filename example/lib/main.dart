@@ -226,7 +226,7 @@ class _MyHomePageState extends State<MyHomePage> {
             },
           ),
           _gleamButton(
-            'Checkbox 复选框#',
+            'GleamCheckbox 复选框',
             () {
               Navigator.push(
                 context,
