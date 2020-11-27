@@ -11,6 +11,7 @@ import 'package:flutter/material.dart';
 import 'package:gleam/gleam.dart';
 import 'package:gleam/style/app_colors.dart';
 import 'package:gleam/style/style.dart';
+import 'package:gleam_example/widgets/group_title.dart';
 import 'package:oktoast/oktoast.dart';
 
 /// SearchPage搜索示例程序
@@ -37,26 +38,14 @@ class _SearchPageState extends State<SearchPage> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            SizedBox(
-              height: 40.0,
-            ),
-            Text(
-              "基础用法",
-              style: Style.normal14Color66455A64,
-            ),
-            SizedBox(
-              height: 16.0,
+            GroupTitle(
+              title: "基础用法",
+              padding: EdgeInsets.symmetric(vertical: 16, horizontal: 0),
             ),
             Search(),
-            SizedBox(
-              height: 16.0,
-            ),
-            Text(
-              "事件监听",
-              style: Style.normal14Color66455A64,
-            ),
-            SizedBox(
-              height: 16.0,
+            GroupTitle(
+              title: "事件监听",
+              padding: EdgeInsets.symmetric(vertical: 16, horizontal: 0),
             ),
             Search(
               controller: textEditingController,
@@ -72,41 +61,23 @@ class _SearchPageState extends State<SearchPage> {
                 ),
               ),
             ),
-            SizedBox(
-              height: 16.0,
-            ),
-            Text(
-              "搜索框内容对齐",
-              style: Style.normal14Color66455A64,
-            ),
-            SizedBox(
-              height: 16.0,
+            GroupTitle(
+              title: "搜索框内容对齐",
+              padding: EdgeInsets.symmetric(vertical: 16, horizontal: 0),
             ),
             Search(
               textAlign: TextAlign.center,
             ),
-            SizedBox(
-              height: 16.0,
-            ),
-            Text(
-              "禁用搜索框",
-              style: Style.normal14Color66455A64,
-            ),
-            SizedBox(
-              height: 16.0,
+            GroupTitle(
+              title: "禁用搜索框",
+              padding: EdgeInsets.symmetric(vertical: 16, horizontal: 0),
             ),
             Search(
               disabled: true,
             ),
-            SizedBox(
-              height: 16.0,
-            ),
-            Text(
-              "自定义背景色",
-              style: Style.normal14Color66455A64,
-            ),
-            SizedBox(
-              height: 16.0,
+            GroupTitle(
+              title: "自定义背景色",
+              padding: EdgeInsets.symmetric(vertical: 16, horizontal: 0),
             ),
             Search(
               height: 54.0,
@@ -114,15 +85,9 @@ class _SearchPageState extends State<SearchPage> {
               padding: EdgeInsets.symmetric(vertical: 10.0, horizontal: 12.0),
               radius: 27.0,
             ),
-            SizedBox(
-              height: 16.0,
-            ),
-            Text(
-              "自定义按钮",
-              style: Style.normal14Color66455A64,
-            ),
-            SizedBox(
-              height: 16.0,
+            GroupTitle(
+              title: "自定义按钮",
+              padding: EdgeInsets.symmetric(vertical: 16, horizontal: 0),
             ),
             Search(
               prefix: Container(

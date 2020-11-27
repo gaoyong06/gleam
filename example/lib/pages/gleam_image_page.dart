@@ -10,6 +10,7 @@ import 'package:flutter/material.dart';
 import 'package:gleam/gleam.dart';
 import 'package:gleam/style/app_colors.dart';
 import 'package:gleam/style/style.dart';
+import 'package:gleam_example/widgets/group_title.dart';
 
 /// GleamImagePage图片示例程序
 class GleamImagePage extends StatefulWidget {
@@ -34,15 +35,9 @@ class _GleamImagePageState extends State<GleamImagePage> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            SizedBox(
-              height: 40.0,
-            ),
-            Text(
-              "基础用法",
-              style: Style.normal14Color66455A64,
-            ),
-            SizedBox(
-              height: 16.0,
+            GroupTitle(
+              title: "基础用法",
+              padding: EdgeInsets.symmetric(vertical: 16, horizontal: 0),
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.start,
@@ -54,15 +49,9 @@ class _GleamImagePageState extends State<GleamImagePage> {
                 )
               ],
             ),
-            SizedBox(
-              height: 16.0,
-            ),
-            Text(
-              "填充模式",
-              style: Style.normal14Color66455A64,
-            ),
-            SizedBox(
-              height: 16.0,
+            GroupTitle(
+              title: "填充模式",
+              padding: EdgeInsets.symmetric(vertical: 16, horizontal: 0),
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.start,
@@ -131,15 +120,9 @@ class _GleamImagePageState extends State<GleamImagePage> {
                 ),
               ],
             ),
-            SizedBox(
-              height: 16.0,
-            ),
-            Text(
-              "圆形图片",
-              style: Style.normal14Color66455A64,
-            ),
-            SizedBox(
-              height: 16.0,
+            GroupTitle(
+              title: "圆形图片",
+              padding: EdgeInsets.symmetric(vertical: 16, horizontal: 0),
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.start,
@@ -216,15 +199,9 @@ class _GleamImagePageState extends State<GleamImagePage> {
                 ),
               ],
             ),
-            SizedBox(
-              height: 16.0,
-            ),
-            Text(
-              "加载中提示",
-              style: Style.normal14Color66455A64,
-            ),
-            SizedBox(
-              height: 16.0,
+            GroupTitle(
+              title: "加载中提示",
+              padding: EdgeInsets.symmetric(vertical: 16, horizontal: 0),
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.start,
@@ -270,15 +247,9 @@ class _GleamImagePageState extends State<GleamImagePage> {
                 ),
               ],
             ),
-            SizedBox(
-              height: 16.0,
-            ),
-            Text(
-              "加载失败提示",
-              style: Style.normal14Color66455A64,
-            ),
-            SizedBox(
-              height: 16.0,
+            GroupTitle(
+              title: "加载失败提示",
+              padding: EdgeInsets.symmetric(vertical: 16, horizontal: 0),
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.start,

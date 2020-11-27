@@ -8,6 +8,7 @@
 import 'package:flutter/material.dart';
 import 'package:gleam/gleam.dart';
 import 'package:gleam/style/style.dart';
+import 'package:gleam_example/widgets/group_title.dart';
 
 /// GleamIconPage图标示例程序
 class GleamIconPage extends StatefulWidget {
@@ -32,12 +33,9 @@ class _GleamIconPageState extends State<GleamIconPage> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            SizedBox(
-              height: 40.0,
-            ),
-            Text("基础用法"),
-            SizedBox(
-              height: 16.0,
+            GroupTitle(
+              title: "基础用法",
+              padding: EdgeInsets.symmetric(vertical: 16, horizontal: 0),
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.start,
@@ -51,12 +49,9 @@ class _GleamIconPageState extends State<GleamIconPage> {
                 GleamIcon(Icons.person)
               ],
             ),
-            SizedBox(
-              height: 16.0,
-            ),
-            Text("徽标提示"),
-            SizedBox(
-              height: 16.0,
+            GroupTitle(
+              title: "徽标提示",
+              padding: EdgeInsets.symmetric(vertical: 16, horizontal: 0),
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.start,
@@ -81,12 +76,9 @@ class _GleamIconPageState extends State<GleamIconPage> {
                 ),
               ],
             ),
-            SizedBox(
-              height: 16.0,
-            ),
-            Text("图标颜色"),
-            SizedBox(
-              height: 16.0,
+            GroupTitle(
+              title: "图标颜色",
+              padding: EdgeInsets.symmetric(vertical: 16, horizontal: 0),
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.start,
@@ -104,12 +96,9 @@ class _GleamIconPageState extends State<GleamIconPage> {
                 ),
               ],
             ),
-            SizedBox(
-              height: 16.0,
-            ),
-            Text("图标大小"),
-            SizedBox(
-              height: 16.0,
+            GroupTitle(
+              title: "图标大小",
+              padding: EdgeInsets.symmetric(vertical: 16, horizontal: 0),
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.start,
