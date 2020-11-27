@@ -20,283 +20,237 @@ class Style {
   //文字按钮样式
 
   static TextStyle bold24Color333333 = TextStyle(
-    // static TextStyle ts_333333_24_bold = TextStyle(
     fontSize: Dimens.fontPt24,
     color: AppColors.cl333333,
     fontWeight: FontWeight.w600,
   );
 
-  // static TextStyle ts_333333_18 = TextStyle(
   static TextStyle normal18Color333333 = TextStyle(
     fontSize: Dimens.fontPt18,
     color: AppColors.cl333333,
   );
 
-  // static TextStyle ts_333333_18_bold = TextStyle(
   static TextStyle bold18Color333333 = TextStyle(
     fontSize: Dimens.fontPt18,
     color: AppColors.cl333333,
     fontWeight: FontWeight.w600,
   );
 
-  // static TextStyle ts_333333_15 = TextStyle(
   static TextStyle normal15Color333333 = TextStyle(
     fontSize: Dimens.fontPt15,
     color: AppColors.cl333333,
   );
 
-  // static TextStyle ts_333333_15_bold = TextStyle(
   static TextStyle bold15Color333333 = TextStyle(
     fontSize: Dimens.fontPt15,
     color: AppColors.cl333333,
     fontWeight: FontWeight.w600,
   );
 
-  // static TextStyle ts_333333_16 = TextStyle(
   static TextStyle normal16Color333333 = TextStyle(
     fontSize: Dimens.fontPt16,
     color: AppColors.cl333333,
   );
 
-  // static TextStyle ts_333333_13 = TextStyle(
   static TextStyle normal13Color333333 = TextStyle(
     fontSize: Dimens.fontPt13,
     color: AppColors.cl333333,
   );
 
-  //static TextStyle ts_333333_13_bold = TextStyle(
   static TextStyle bold13Color333333 = TextStyle(
     fontSize: Dimens.fontPt13,
     color: AppColors.cl333333,
     fontWeight: FontWeight.w600,
   );
 
-  //static TextStyle ts_333333_14 = TextStyle(
   static TextStyle normal14Color333333 = TextStyle(
     fontSize: Dimens.fontPt14,
     color: AppColors.cl333333,
   );
 
-  // static TextStyle ts_333333_14_bold = TextStyle(
   static TextStyle bold14Color333333 = TextStyle(
     fontSize: Dimens.fontPt14,
     color: AppColors.cl333333,
     fontWeight: FontWeight.w600,
   );
 
-  //static TextStyle ts_333333_12 = TextStyle(
   static TextStyle normal12Color333333 = TextStyle(
     fontSize: Dimens.fontPt12,
     color: AppColors.cl333333,
   );
 
-  //static TextStyle ts_333333_11 = TextStyle(
   static TextStyle normal11Color333333 = TextStyle(
     fontSize: Dimens.fontPt11,
     color: AppColors.cl333333,
   );
 
-  //static TextStyle ts_666666_11 = TextStyle(
   static TextStyle normal11Color666666 = TextStyle(
     fontSize: Dimens.fontPt11,
     color: AppColors.cl666666,
   );
 
-  //static TextStyle ts_D8D8D8_15 = TextStyle(
   static TextStyle normal15ColorD8D8D8 = TextStyle(
     fontSize: Dimens.fontPt15,
     color: AppColors.clD8D8D8,
   );
 
-  //static TextStyle ts_D8D8D8_12 = TextStyle(
   static TextStyle normal12ColorD8D8D8 = TextStyle(
     fontSize: Dimens.fontPt12,
     color: AppColors.clD8D8D8,
   );
 
-  //static TextStyle ts_D8D8D8_11 = TextStyle(
   static TextStyle normal11ColorD8D8D8 = TextStyle(
     fontSize: Dimens.fontPt11,
     color: AppColors.clD8D8D8,
   );
 
-  //static TextStyle ts_999999_18 = TextStyle(
   static TextStyle normal18Color999999 = TextStyle(
     fontSize: Dimens.fontPt18,
     color: AppColors.cl999999,
   );
 
-  //static TextStyle ts_999999_15 = TextStyle(
   static TextStyle normal15Color999999 = TextStyle(
     fontSize: Dimens.fontPt15,
     color: AppColors.cl999999,
   );
 
-  //static TextStyle ts_999999_15_bold = TextStyle(
   static TextStyle bold15Color999999 = TextStyle(
       fontSize: Dimens.fontPt15,
       color: AppColors.cl999999,
       fontWeight: FontWeight.w600);
 
-  // static TextStyle ts_999999_14 = TextStyle(
   static TextStyle normal14Color999999 = TextStyle(
     fontSize: Dimens.fontPt14,
     color: AppColors.cl999999,
   );
 
-  //static TextStyle ts_999999_13 = TextStyle(
   static TextStyle normal13Color999999 = TextStyle(
     fontSize: Dimens.fontPt13,
     color: AppColors.cl999999,
   );
 
-  //static TextStyle ts_999999_12 = TextStyle(
   static TextStyle normal12Color999999 = TextStyle(
     fontSize: Dimens.fontPt12,
     color: AppColors.cl999999,
   );
 
-  // static TextStyle ts_999999_11 = TextStyle(
   static TextStyle normal11Color999999 = TextStyle(
     fontSize: Dimens.fontPt11,
     color: AppColors.cl999999,
   );
 
-  //static TextStyle ts_999999_10 = TextStyle(
   static TextStyle normal10Color999999 = TextStyle(
     fontSize: Dimens.fontPt10,
     color: AppColors.cl999999,
   );
 
-  //static TextStyle ts_FFFFFF_24_bold = TextStyle(
   static TextStyle bold24ColorFFFFFF = TextStyle(
     fontSize: Dimens.fontPt24,
     color: AppColors.clFFFFFF,
     fontWeight: FontWeight.w600,
   );
 
-  //static TextStyle ts_FFFFFF_18_bold = TextStyle(
   static TextStyle bold18ColorFFFFFF = TextStyle(
     fontSize: Dimens.fontPt18,
     color: AppColors.clFFFFFF,
     fontWeight: FontWeight.w600,
   );
 
-  //static TextStyle ts_FFFFFF_10 = TextStyle(
   static TextStyle normal10ColorFFFFFF = TextStyle(
     fontSize: Dimens.fontPt10,
     color: AppColors.clFFFFFF,
   );
 
-  //static TextStyle ts_FFFFFF_12 = TextStyle(
   static TextStyle normal12ColorFFFFFF = TextStyle(
     fontSize: Dimens.fontPt12,
     color: AppColors.clFFFFFF,
   );
 
-  //static TextStyle ts_FFFFFF_13 = TextStyle(
   static TextStyle normal13ColorFFFFFF = TextStyle(
     fontSize: Dimens.fontPt13,
     color: AppColors.clFFFFFF,
   );
 
-  //static TextStyle ts_000000_11 = TextStyle(
   static TextStyle normal11Color000000 = TextStyle(
     fontSize: Dimens.fontPt11,
     color: AppColors.cl000000,
   );
 
-  // static TextStyle ts_5791F3_16 = TextStyle(
   static TextStyle normal16Color5791F3 = TextStyle(
     fontSize: Dimens.fontPt16,
     color: AppColors.cl5791F3,
   );
 
-  //static TextStyle ts_5791F3_15 = TextStyle(
   static TextStyle normal15Color5791F3 = TextStyle(
     fontSize: Dimens.fontPt15,
     color: AppColors.cl5791F3,
   );
 
-  //static TextStyle ts_5791F3_15_bold = TextStyle(
   static TextStyle bold15Color5791F3 = TextStyle(
     fontSize: Dimens.fontPt15,
     color: AppColors.cl5791F3,
     fontWeight: FontWeight.w500,
   );
 
-  //static TextStyle ts_5791F3_13 = TextStyle(
   static TextStyle normal13Color5791F3 = TextStyle(
     fontSize: Dimens.fontPt13,
     color: AppColors.cl5791F3,
   );
 
-  //static TextStyle ts_5791F3_12_bold = TextStyle(
   static TextStyle bold12Color5791F3 = TextStyle(
     fontSize: Dimens.fontPt12,
     color: AppColors.cl5791F3,
     fontWeight: FontWeight.w500,
   );
 
-  //static TextStyle ts_5791F3_11 = TextStyle(
   static TextStyle normal11Color5791F3 = TextStyle(
     fontSize: Dimens.fontPt11,
     color: AppColors.cl5791F3,
   );
 
-  //static TextStyle ts_666666_15 = TextStyle(
   static TextStyle normal15Color666666 = TextStyle(
     fontSize: Dimens.fontPt15,
     color: AppColors.cl666666,
   );
 
-  //static TextStyle ts_666666_13 = TextStyle(
   static TextStyle normal13Color666666 = TextStyle(
     fontSize: Dimens.fontPt13,
     color: AppColors.cl666666,
   );
 
-  //static TextStyle ts_FF0000_15 = TextStyle(
   static TextStyle normal15ColorFF0000 = TextStyle(
     fontSize: Dimens.fontPt15,
     color: AppColors.clFF0000,
   );
 
-  //static TextStyle ts_455A64_12 = TextStyle(
   static TextStyle normal12Color455A64 = TextStyle(
     fontSize: Dimens.fontPt12,
     color: AppColors.cl455A64,
   );
 
-  //static TextStyle ts_66455A64_14 = TextStyle(
   static TextStyle normal14Color66455A64 = TextStyle(
     fontSize: Dimens.fontPt14,
     color: AppColors.cl66455A64,
   );
 
-  //static TextStyle ts_646566_14 = TextStyle(
   static TextStyle normal14Color646566 = TextStyle(
     fontSize: Dimens.fontPt14,
     color: AppColors.cl646566,
   );
 
-  //static TextStyle ts_969799_14 = TextStyle(
   static TextStyle normal14Color969799 = TextStyle(
     fontSize: Dimens.fontPt14,
     color: AppColors.cl969799,
   );
 
-  //static TextStyle ts_C8C9CC_14 =
   static TextStyle normal14ColorC8C9CC =
       TextStyle(fontSize: Dimens.fontPt14, color: AppColors.clC8C9CC);
 
-  //static TextStyle ts_323233_14
   static TextStyle normal14Color323233 = TextStyle(
     fontSize: Dimens.fontPt14,
     color: AppColors.cl323233,
   );
 
-  //static TextStyle ts_1989FA_12
   static TextStyle normal12Color1989FA = TextStyle(
     fontSize: Dimens.fontPt12,
     color: AppColors.cl1989FA,

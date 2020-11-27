@@ -10,16 +10,20 @@ import 'package:gleam/gleam.dart';
 import 'package:gleam/style/style.dart';
 
 //分组标题
-class CellGroupTitle extends StatelessWidget {
+class GroupTitle extends StatelessWidget {
   //标题
   final String title;
 
-  const CellGroupTitle({Key key, @required this.title}) : super(key: key);
+  //内间距
+  final EdgeInsetsGeometry padding;
+
+  const GroupTitle({Key key, @required this.title, this.padding})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.fromLTRB(16.0, 16.0, 16.0, 16.0),
+      padding: padding ?? EdgeInsets.fromLTRB(16.0, 16.0, 16.0, 16.0),
       child: dynamicText(title, Style.normal14Color66455A64),
     );
   }

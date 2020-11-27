@@ -7,7 +7,7 @@
 import 'package:flutter/material.dart';
 import 'package:gleam/gleam.dart';
 import 'package:gleam/style/style.dart';
-import 'package:gleam_example/widgets/cell_group_title.dart';
+import 'package:gleam_example/widgets/group_title.dart';
 
 /// TagPage标签示例程序
 class CellPage extends StatefulWidget {
@@ -32,7 +32,7 @@ class _CellPageState extends State<CellPage> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            CellGroupTitle(title: "基础用法"),
+            GroupTitle(title: "基础用法"),
             CellGroup(
               padding: EdgeInsets.symmetric(vertical: 0, horizontal: 16.0),
               border: false,
@@ -52,7 +52,7 @@ class _CellPageState extends State<CellPage> {
             ),
 
             //TODO:
-            CellGroupTitle(title: "单元格大小"),
+            GroupTitle(title: "单元格大小"),
             CellGroup(
               padding: EdgeInsets.symmetric(vertical: 0, horizontal: 16.0),
               border: false,
@@ -71,7 +71,7 @@ class _CellPageState extends State<CellPage> {
               ],
             ),
 
-            CellGroupTitle(title: "展示图标"),
+            GroupTitle(title: "展示图标"),
             CellGroup(
               padding: EdgeInsets.symmetric(vertical: 0, horizontal: 16.0),
               border: false,
@@ -89,7 +89,7 @@ class _CellPageState extends State<CellPage> {
               ],
             ),
 
-            CellGroupTitle(title: "只设置value"),
+            GroupTitle(title: "只设置value"),
             CellGroup(
               padding: EdgeInsets.symmetric(vertical: 0, horizontal: 16.0),
               border: false,
@@ -101,7 +101,7 @@ class _CellPageState extends State<CellPage> {
               ],
             ),
 
-            CellGroupTitle(title: "展示箭头"),
+            GroupTitle(title: "展示箭头"),
             CellGroup(
               padding: EdgeInsets.symmetric(vertical: 0, horizontal: 16.0),
               border: false,
@@ -125,7 +125,7 @@ class _CellPageState extends State<CellPage> {
               ],
             ),
 
-            CellGroupTitle(title: "页面跳转"),
+            GroupTitle(title: "页面跳转"),
             CellGroup(
               padding: EdgeInsets.symmetric(vertical: 0, horizontal: 16.0),
               border: false,
@@ -142,7 +142,7 @@ class _CellPageState extends State<CellPage> {
               ],
             ),
 
-            CellGroupTitle(title: "分组标题"),
+            GroupTitle(title: "分组标题"),
             CellGroup(
               title: '分组1',
               padding: EdgeInsets.symmetric(vertical: 0, horizontal: 16.0),
@@ -167,7 +167,7 @@ class _CellPageState extends State<CellPage> {
                 ),
               ],
             ),
-            CellGroupTitle(title: "自定义左侧(右侧)Widget"),
+            GroupTitle(title: "自定义左侧(右侧)Widget"),
             CellGroup(
               padding: EdgeInsets.symmetric(vertical: 0, horizontal: 16.0),
               border: false,
@@ -210,7 +210,7 @@ class _CellPageState extends State<CellPage> {
                 ),
               ],
             ),
-            CellGroupTitle(title: "垂直居中"),
+            GroupTitle(title: "垂直居中"),
             CellGroup(
               padding: EdgeInsets.symmetric(vertical: 0, horizontal: 16.0),
               border: false,

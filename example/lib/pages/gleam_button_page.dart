@@ -10,6 +10,7 @@ import 'package:flutter/material.dart';
 import 'package:gleam/gleam.dart';
 import 'package:gleam/style/app_colors.dart';
 import 'package:gleam/style/style.dart';
+import 'package:gleam_example/widgets/group_title.dart';
 import 'package:oktoast/oktoast.dart';
 
 /// GleamButtonPage填充按钮示例程序
@@ -26,7 +27,7 @@ class _GleamButtonPageState extends State<GleamButtonPage> {
     return Scaffold(
       appBar: AppBar(
         title: Text(
-          "GleamButton 填充按钮",
+          "GleamButton 按钮",
           style: Style.bold18ColorFFFFFF,
         ),
       ),
@@ -35,197 +36,187 @@ class _GleamButtonPageState extends State<GleamButtonPage> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            SizedBox(
-              height: 40.0,
+            GroupTitle(
+              title: "按钮风格",
+              padding: EdgeInsets.symmetric(horizontal: 0, vertical: 16.0),
             ),
+            Row(
+              children: [
+                GleamButton(
+                  style: GleamButtonStyle.flatButton,
+                  text: '填充按钮',
+                  type: ButtonType.primary,
+                  size: ButtonSize.normal,
+                  onPressed: () {
+                    showToast('内容填充按钮');
+                  },
+                ),
+                SizedBox(
+                  width: 16.0,
+                ),
+                GleamButton(
+                  style: GleamButtonStyle.outlineButton,
+                  text: '细边框按钮',
+                  width: 114.0,
+                  textColor: AppColors.cl333333,
+                  type: ButtonType.primary,
+                  size: ButtonSize.normal,
+                  onPressed: () {
+                    showToast('细边框按钮');
+                  },
+                ),
+                SizedBox(
+                  width: 16.0,
+                ),
+                GleamButton(
+                  style: GleamButtonStyle.textButton,
+                  text: '文字按钮',
+                  textColor: AppColors.cl5791F3,
+                  size: ButtonSize.normal,
+                  onPressed: () {
+                    showToast('文字按钮');
+                  },
+                ),
+              ],
+            ),
+            GroupTitle(
+              title: "按钮类型",
+              padding: EdgeInsets.symmetric(horizontal: 0, vertical: 16.0),
+            ),
+            Row(
+              children: [
+                //主要按钮
+                GleamButton(
+                  text: '主要按钮',
+                  type: ButtonType.primary,
+                  size: ButtonSize.normal,
+                  onPressed: () {
+                    showToast('主要按钮');
+                  },
+                ),
+                SizedBox(
+                  width: 16.0,
+                ),
+                //信息按钮
+                GleamButton(
+                  text: '信息按钮',
+                  type: ButtonType.info,
+                  size: ButtonSize.normal,
+                  onPressed: () {
+                    showToast('信息按钮');
+                  },
+                ),
+                SizedBox(
+                  width: 16.0,
+                ),
 
-            Text("按钮风格"),
-            SizedBox(
-              height: 16.0,
-            ),
-            GleamButton(
-              style: GleamButtonStyle.flatButton,
-              text: '内容填充按钮',
-              width: 114.0,
-              type: ButtonType.primary,
-              size: ButtonSize.normal,
-              onPressed: () {
-                showToast('内容填充按钮');
-              },
+                //默认按钮
+                GleamButton(
+                  text: '默认按钮',
+                  type: ButtonType.defaulted,
+                  size: ButtonSize.normal,
+                  onPressed: () {
+                    showToast('默认按钮');
+                  },
+                ),
+              ],
             ),
             SizedBox(
               height: 16.0,
             ),
-            GleamButton(
-              style: GleamButtonStyle.outlineButton,
-              text: '细边框按钮',
-              width: 114.0,
-              textColor: AppColors.cl333333,
-              type: ButtonType.primary,
-              size: ButtonSize.normal,
-              onPressed: () {
-                showToast('细边框按钮');
-              },
+            Row(
+              children: [
+                //警告按钮
+                GleamButton(
+                  text: '警告按钮',
+                  type: ButtonType.warning,
+                  size: ButtonSize.normal,
+                  onPressed: () {
+                    showToast('警告按钮');
+                  },
+                ),
+                SizedBox(
+                  width: 16.0,
+                ),
+                //危险按钮
+                GleamButton(
+                  text: '危险按钮',
+                  type: ButtonType.danger,
+                  size: ButtonSize.normal,
+                  onPressed: () {
+                    showToast('危险按钮');
+                  },
+                ),
+              ],
             ),
+            GroupTitle(
+              title: "加载状态",
+              padding: EdgeInsets.symmetric(horizontal: 0, vertical: 16.0),
+            ),
+            Row(
+              children: [
+                //加载状态(文字+loading图标)
+                GleamButton(
+                  text: '加载中...',
+                  width: 112.0,
+                  height: 44.0,
+                  type: ButtonType.primary,
+                  leftIcon: CupertinoActivityIndicator(),
+                  onPressed: () {
+                    showToast('加载状态(loading图标+文字)');
+                  },
+                ),
 
-            SizedBox(
-              height: 16.0,
-            ),
+                SizedBox(
+                  width: 16.0,
+                ),
 
-            GleamButton(
-              style: GleamButtonStyle.textButton,
-              text: '文字按钮',
-              width: 114.0,
-              textColor: AppColors.cl5791F3,
-              size: ButtonSize.normal,
-              onPressed: () {
-                showToast('文字按钮');
-              },
+                //加载状态(loading图标)
+                GleamButton(
+                  width: 52.0,
+                  height: 44.0,
+                  type: ButtonType.primary,
+                  leftIcon: CupertinoActivityIndicator(),
+                  onPressed: () {
+                    showToast('加载状态(loading图标)');
+                  },
+                ),
+              ],
             ),
-            SizedBox(
-              height: 16.0,
+            GroupTitle(
+              title: "按钮形状",
+              padding: EdgeInsets.symmetric(horizontal: 0, vertical: 16.0),
             ),
-
-            Text("按钮类型"),
-            SizedBox(
-              height: 16.0,
+            Row(
+              children: [
+                GleamButton(
+                  borderRadius: 0,
+                  type: ButtonType.primary,
+                  size: ButtonSize.normal,
+                  text: "方形按钮",
+                  onPressed: () {
+                    showToast('方形按钮');
+                  },
+                ),
+                SizedBox(
+                  width: 16.0,
+                ),
+                GleamButton(
+                  borderRadius: 22.0,
+                  width: 88.0,
+                  height: 44.0,
+                  text: "圆形按钮",
+                  fillColor: const Color(0xff07c160),
+                  onPressed: () {
+                    showToast('圆角按钮');
+                  },
+                ),
+              ],
             ),
-            //主要按钮
-            GleamButton(
-              text: '主要按钮',
-              type: ButtonType.primary,
-              size: ButtonSize.normal,
-              onPressed: () {
-                showToast('主要按钮');
-              },
+            GroupTitle(
+              title: "按钮尺寸",
+              padding: EdgeInsets.symmetric(horizontal: 0, vertical: 16.0),
             ),
-
-            SizedBox(
-              height: 16.0,
-            ),
-            //信息按钮
-            GleamButton(
-              text: '信息按钮',
-              type: ButtonType.info,
-              size: ButtonSize.normal,
-              onPressed: () {
-                showToast('信息按钮');
-              },
-            ),
-
-            SizedBox(
-              height: 16.0,
-            ),
-            //默认按钮
-            GleamButton(
-              text: '默认按钮',
-              type: ButtonType.defaulted,
-              size: ButtonSize.normal,
-              onPressed: () {
-                showToast('默认按钮');
-              },
-            ),
-
-            SizedBox(
-              height: 16.0,
-            ),
-            //警告按钮
-            GleamButton(
-              text: '警告按钮',
-              type: ButtonType.warning,
-              size: ButtonSize.normal,
-              onPressed: () {
-                showToast('警告按钮');
-              },
-            ),
-
-            SizedBox(
-              height: 16.0,
-            ),
-            //危险按钮
-            GleamButton(
-              text: '危险按钮',
-              type: ButtonType.danger,
-              size: ButtonSize.normal,
-              onPressed: () {
-                showToast('危险按钮');
-              },
-            ),
-            SizedBox(
-              height: 16.0,
-            ),
-            Text("加载状态"),
-            SizedBox(
-              height: 16.0,
-            ),
-
-            //加载状态(文字+loading图标)
-            GleamButton(
-              text: '加载中...',
-              width: 112.0,
-              height: 44.0,
-              type: ButtonType.primary,
-              leftIcon: CupertinoActivityIndicator(),
-              onPressed: () {
-                showToast('加载状态(loading图标+文字)');
-              },
-            ),
-
-            SizedBox(
-              height: 16.0,
-            ),
-
-            //加载状态(loading图标)
-            GleamButton(
-              width: 52.0,
-              height: 44.0,
-              type: ButtonType.primary,
-              leftIcon: CupertinoActivityIndicator(),
-              onPressed: () {
-                showToast('加载状态(loading图标)');
-              },
-            ),
-            SizedBox(
-              height: 16.0,
-            ),
-            Text("按钮形状"),
-            SizedBox(
-              height: 16.0,
-            ),
-
-            GleamButton(
-              borderRadius: 0,
-              type: ButtonType.primary,
-              size: ButtonSize.normal,
-              text: "方形按钮",
-              onPressed: () {
-                showToast('方形按钮');
-              },
-            ),
-
-            SizedBox(
-              height: 16.0,
-            ),
-
-            GleamButton(
-              borderRadius: 22.0,
-              width: 88.0,
-              height: 44.0,
-              text: "圆形按钮",
-              fillColor: const Color(0xff07c160),
-              onPressed: () {
-                showToast('圆角按钮');
-              },
-            ),
-
-            SizedBox(
-              height: 16.0,
-            ),
-            Text("按钮尺寸"),
-            SizedBox(
-              height: 16.0,
-            ),
-
             GleamButton(
               type: ButtonType.primary,
               size: ButtonSize.large,
@@ -237,76 +228,73 @@ class _GleamButtonPageState extends State<GleamButtonPage> {
             SizedBox(
               height: 16.0,
             ),
-
-            GleamButton(
-              type: ButtonType.primary,
-              size: ButtonSize.normal,
-              text: "普通按钮",
-              onPressed: () {
-                showToast('普通按钮');
-              },
+            Row(
+              children: [
+                GleamButton(
+                  type: ButtonType.primary,
+                  size: ButtonSize.normal,
+                  text: "普通按钮",
+                  onPressed: () {
+                    showToast('普通按钮');
+                  },
+                ),
+                SizedBox(
+                  width: 16.0,
+                ),
+                GleamButton(
+                  type: ButtonType.primary,
+                  size: ButtonSize.small,
+                  text: "小型按钮",
+                  onPressed: () {
+                    showToast('小型按钮');
+                  },
+                ),
+                SizedBox(
+                  width: 16.0,
+                ),
+                GleamButton(
+                  type: ButtonType.primary,
+                  size: ButtonSize.mini,
+                  text: "迷你按钮",
+                  onPressed: () {
+                    showToast('迷你按钮');
+                  },
+                ),
+              ],
             ),
-            SizedBox(
-              height: 16.0,
+            GroupTitle(
+              title: "按钮阴影",
+              padding: EdgeInsets.symmetric(horizontal: 0, vertical: 16.0),
             ),
-
-            GleamButton(
-              type: ButtonType.primary,
-              size: ButtonSize.small,
-              text: "小型按钮",
-              onPressed: () {
-                showToast('小型按钮');
-              },
+            Row(
+              children: [
+                GleamButton(
+                  showShadow: false,
+                  text: "主要按钮",
+                  type: ButtonType.primary,
+                  size: ButtonSize.normal,
+                  onPressed: () {
+                    showToast('主要按钮(无阴影)');
+                  },
+                ),
+                SizedBox(
+                  width: 16.0,
+                ),
+                GleamButton(
+                  showShadow: true,
+                  shadowColor: const Color(0xff07c160),
+                  type: ButtonType.primary,
+                  size: ButtonSize.normal, //TODO:尺寸应该可以不用设置
+                  text: "主要按钮",
+                  onPressed: () {
+                    showToast('主要按钮(有阴影)');
+                  },
+                ),
+              ],
             ),
-
-            SizedBox(
-              height: 16.0,
-            ),
-
-            GleamButton(
-              type: ButtonType.primary,
-              size: ButtonSize.mini,
-              text: "迷你按钮",
-              onPressed: () {
-                showToast('迷你按钮');
-              },
-            ),
-            SizedBox(
-              height: 16.0,
-            ),
-            Text("按钮阴影"),
-            SizedBox(
-              height: 16.0,
-            ),
-            GleamButton(
-              showShadow: false,
-              width: 148.0,
-              height: 44.0,
-              text: "主要按钮(无阴影)",
-              type: ButtonType.primary,
-              onPressed: () {
-                showToast('主要按钮(无阴影)');
-              },
-            ),
-            SizedBox(
-              height: 16.0,
-            ),
-            GleamButton(
-              showShadow: true,
-              shadowColor: const Color(0xff07c160),
-              width: 148.0,
-              height: 44.0,
-              text: "主要按钮(有阴影)",
-              onPressed: () {
-                showToast('主要按钮(有阴影)');
-              },
-            ),
-            SizedBox(
-              height: 16.0,
-            ),
-            Text("禁用状态"),
-            SizedBox(
-              height: 16.0,
+            GroupTitle(
+              title: "禁用状态",
+              padding: EdgeInsets.symmetric(horizontal: 0, vertical: 16.0),
             ),
             GleamButton(
               showShadow: true,
@@ -317,58 +305,59 @@ class _GleamButtonPageState extends State<GleamButtonPage> {
               text: "禁用状态",
               onPressed: null,
             ),
-            SizedBox(
-              height: 16.0,
+            GroupTitle(
+              title: "自定义颜色",
+              padding: EdgeInsets.symmetric(horizontal: 0, vertical: 16.0),
             ),
-            Text("自定义颜色"),
-            SizedBox(
-              height: 16.0,
-            ),
-            GleamButton(
-              showShadow: true,
-              size: ButtonSize.normal,
-              fillColor: Color(0XFF7232DD),
-              text: "单色按钮",
-              onPressed: () {
-                showToast('单色按钮');
-              },
-            ),
-            SizedBox(
-              height: 16.0,
-            ),
-            GleamButton(
-              style: GleamButtonStyle.outlineButton,
-              showShadow: true,
-              size: ButtonSize.normal,
-              fillColor: Color(0XFF7232DD),
-              text: "单色按钮",
-              textColor: Color(0XFF7232DD),
-              onPressed: () {
-                showToast('单色按钮');
-              },
-            ),
-            SizedBox(
-              height: 16.0,
-            ),
-            GleamButton(
-              width: 100,
-              showShadow: true,
-              size: ButtonSize.normal,
-              fillColor: Colors.transparent,
-              decoration: BoxDecoration(
-                gradient: LinearGradient(
-                  begin: Alignment(-1, 0),
-                  end: Alignment(1.0, 0),
-                  colors: <Color>[
-                    const Color(0xFFFF6034),
-                    const Color(0xFFEE0A24),
-                  ],
+            Row(
+              children: [
+                GleamButton(
+                  showShadow: true,
+                  size: ButtonSize.normal,
+                  fillColor: Color(0XFF7232DD),
+                  text: "单色按钮",
+                  onPressed: () {
+                    showToast('单色按钮');
+                  },
                 ),
-              ),
-              text: "渐变色按钮",
-              onPressed: () {
-                showToast('渐变色按钮');
-              },
+                SizedBox(
+                  width: 16.0,
+                ),
+                GleamButton(
+                  style: GleamButtonStyle.outlineButton,
+                  showShadow: true,
+                  size: ButtonSize.normal,
+                  fillColor: Color(0XFF7232DD),
+                  text: "单色按钮",
+                  textColor: Color(0XFF7232DD),
+                  onPressed: () {
+                    showToast('单色按钮');
+                  },
+                ),
+                SizedBox(
+                  width: 16.0,
+                ),
+                GleamButton(
+                  width: 100,
+                  showShadow: true,
+                  size: ButtonSize.normal,
+                  fillColor: Colors.transparent,
+                  decoration: BoxDecoration(
+                    gradient: LinearGradient(
+                      begin: Alignment(-1, 0),
+                      end: Alignment(1.0, 0),
+                      colors: <Color>[
+                        const Color(0xFFFF6034),
+                        const Color(0xFFEE0A24),
+                      ],
+                    ),
+                  ),
+                  text: "渐变色按钮",
+                  onPressed: () {
+                    showToast('渐变色按钮');
+                  },
+                ),
+              ],
             ),
             SizedBox(
               height: 40.0,
