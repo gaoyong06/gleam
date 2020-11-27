@@ -184,7 +184,7 @@ class GleamButton extends StatelessWidget {
 
       case ButtonType.defaulted:
         tempFillColor = AppColors.clFFFFFF;
-        tempBorderColor = Colors.transparent;
+        tempBorderColor = AppColors.clEBEDF0;
         tempTextColor = AppColors.cl323233;
         break;
 
@@ -244,6 +244,7 @@ class GleamButton extends StatelessWidget {
             textAlign: textAlign,
             style: TextStyle(
                 fontSize: fontSize ?? tempFontSize ?? defaultFontSize,
+                color: textColor ?? tempTextColor ?? defaultTextColor,
                 fontWeight: fontWeight,
                 height: 1)),
       ),
@@ -268,6 +269,7 @@ class GleamButton extends StatelessWidget {
       splashColor: splashColor,
     );
 
+    //线框按钮
     Widget _outlineButton = OutlineButton(
       padding: padding ?? tempPadding ?? defaultPadding,
       borderSide: BorderSide(
@@ -286,13 +288,40 @@ class GleamButton extends StatelessWidget {
       splashColor: splashColor ?? tempSplashColor,
     );
 
+    //文字按钮
+    Color _textColor = textColor ?? tempTextColor ?? defaultTextColor;
+    Widget _textButton = TextButton(
+      onPressed: onPressed,
+      child: content ?? _content,
+      style: ButtonStyle(
+        overlayColor: MaterialStateProperty.all(_textColor.withOpacity(0.12)),
+      ),
+    );
+
+    Widget _gleamButton;
+    switch (style) {
+      case GleamButtonStyle.flatButton:
+        _gleamButton = _flatButton;
+        break;
+
+      case GleamButtonStyle.outlineButton:
+        _gleamButton = _outlineButton;
+        break;
+
+      case GleamButtonStyle.textButton:
+        _gleamButton = _textButton;
+        break;
+
+      default:
+        _gleamButton = _flatButton;
+    }
+
     return Container(
       width: width ?? tempWidth ?? ScreenUtil().setWidth(88),
       height: height ?? tempHeight ?? ScreenUtil().setWidth(44),
       margin: margin,
       decoration: decoration,
-      child:
-          style == GleamButtonStyle.flatButton ? _flatButton : _outlineButton,
+      child: _gleamButton,
     );
   }
 }

@@ -58,8 +58,7 @@ class _GleamButtonPageState extends State<GleamButtonPage> {
                   style: GleamButtonStyle.outlineButton,
                   text: '细边框按钮',
                   width: 114.0,
-                  textColor: AppColors.cl333333,
-                  type: ButtonType.primary,
+                  textColor: AppColors.cl07C160,
                   size: ButtonSize.normal,
                   onPressed: () {
                     showToast('细边框按钮');
@@ -71,7 +70,7 @@ class _GleamButtonPageState extends State<GleamButtonPage> {
                 GleamButton(
                   style: GleamButtonStyle.textButton,
                   text: '文字按钮',
-                  textColor: AppColors.cl5791F3,
+                  textColor: AppColors.cl07C160,
                   size: ButtonSize.normal,
                   onPressed: () {
                     showToast('文字按钮');
