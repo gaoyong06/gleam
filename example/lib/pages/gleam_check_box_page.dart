@@ -28,7 +28,7 @@ class GleamCheckBoxPage extends StatelessWidget {
             _buildTitle("2:自定义样式:"),
             GleamCheckBox(
               [CheckBean("选项一"), CheckBean("选项二")],
-              textStyle: Style.ts_5791F3_15,
+              textStyle: Style.normal15Color5791F3,
               icon: Icon(Icons.check_box_outlined, color: AppColors.cl5791F3),
               activeIcon: Icon(Icons.check_box, color: AppColors.cl5791F3),
               spacing: 20,
@@ -39,7 +39,7 @@ class GleamCheckBoxPage extends StatelessWidget {
             _buildTitle("3:垂直排列:"),
             GleamCheckBox(
               [CheckBean("选项一"), CheckBean("选项二")],
-              textStyle: Style.ts_5791F3_15,
+              textStyle: Style.normal15Color5791F3,
               icon: Icon(Icons.check_box_outlined, color: AppColors.cl5791F3),
               activeIcon: Icon(Icons.check_box, color: AppColors.cl5791F3),
               direction: Axis.vertical,
@@ -63,7 +63,12 @@ class GleamCheckBoxPage extends StatelessWidget {
             ),
             _buildTitle("6:限制最大可选数量3个:"),
             GleamCheckBox(
-              [CheckBean("选项一"), CheckBean("选项二"), CheckBean("选项三"), CheckBean("选项四")],
+              [
+                CheckBean("选项一"),
+                CheckBean("选项二"),
+                CheckBean("选项三"),
+                CheckBean("选项四")
+              ],
               direction: Axis.vertical,
               spacing: 10,
               maxCheckCount: 3,
