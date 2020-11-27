@@ -154,15 +154,21 @@ class _GleamButtonPageState extends State<GleamButtonPage> {
             ),
             Row(
               children: [
-                //加载状态(文字+loading图标)
                 GleamButton(
-                  text: '加载中...',
-                  width: 112.0,
+                  width: 52.0,
                   height: 44.0,
                   type: ButtonType.primary,
-                  leftIcon: CupertinoActivityIndicator(),
+                  leftIcon: SizedBox(
+                    width: 20.0,
+                    height: 20.0,
+                    child: CircularProgressIndicator(
+                      valueColor:
+                          AlwaysStoppedAnimation<Color>(AppColors.clFFFFFF),
+                      strokeWidth: 1.5,
+                    ),
+                  ),
                   onPressed: () {
-                    showToast('加载状态(loading图标+文字)');
+                    showToast('加载状态(android loading图标)');
                   },
                 ),
 
@@ -177,7 +183,23 @@ class _GleamButtonPageState extends State<GleamButtonPage> {
                   type: ButtonType.primary,
                   leftIcon: CupertinoActivityIndicator(),
                   onPressed: () {
-                    showToast('加载状态(loading图标)');
+                    showToast('加载状态(ios loading图标)');
+                  },
+                ),
+
+                SizedBox(
+                  width: 16.0,
+                ),
+
+                //加载状态(文字+loading图标)
+                GleamButton(
+                  text: '加载中...',
+                  width: 112.0,
+                  height: 44.0,
+                  type: ButtonType.primary,
+                  leftIcon: CupertinoActivityIndicator(),
+                  onPressed: () {
+                    showToast('加载状态(loading图标+文字)');
                   },
                 ),
               ],
@@ -205,7 +227,7 @@ class _GleamButtonPageState extends State<GleamButtonPage> {
                   width: 88.0,
                   height: 44.0,
                   text: "圆形按钮",
-                  fillColor: const Color(0xff07c160),
+                  fillColor: AppColors.cl5791F3,
                   onPressed: () {
                     showToast('圆角按钮');
                   },
